@@ -14,10 +14,9 @@ export default function LeadershipCta() {
     <>
     <section
       style={{
-        background: '#FFFFFF',
         position: 'relative',
         paddingTop: '8rem',
-        paddingBottom: '4rem',
+        paddingBottom: '8rem',
         overflow: 'hidden',
       }}
       className="hero-overlap-section"

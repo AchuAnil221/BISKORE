@@ -25,7 +25,7 @@ export default function VisionSection() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   return (
-    <section className="hero-overlap-section" style={{ background: '#F2EFE9', paddingTop: '4rem', paddingBottom: '8rem', position: 'relative', overflow: 'hidden' }}>
+    <section className="hero-overlap-section" style={{ paddingTop: '4rem', paddingBottom: '8rem', position: 'relative', overflow: 'hidden' }}>
       {/* Inject keyframe once globally */}
       <style>{MARCH_KEYFRAMES}</style>
 

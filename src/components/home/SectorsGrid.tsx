@@ -32,7 +32,6 @@ export default function SectorsGrid() {
   return (
     <section
       style={{
-        background: '#FFFFFF',
         position: 'relative',
         paddingTop: '8rem',
         paddingBottom: '8rem',

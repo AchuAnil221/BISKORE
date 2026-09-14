@@ -10,8 +10,9 @@ export default function HowWeWork() {
   return (
     <section
       style={{
-        background: '#F8F7F4',
         position: 'relative',
+        paddingTop: '8rem',
+        paddingBottom: '8rem',
         overflow: 'hidden',
       }}
       className="hero-overlap-section"

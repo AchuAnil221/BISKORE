@@ -10,14 +10,13 @@ export default function GroupSnapshot() {
 
   return (
     <section
-      className="hero-overlap-section"
       style={{
         position: 'relative',
         paddingTop: '8rem',
-        paddingBottom: '4rem',
-        background: '#FFFFFF',
+        paddingBottom: '8rem',
         overflow: 'hidden',
       }}
+      className="hero-overlap-section"
     >
 
 

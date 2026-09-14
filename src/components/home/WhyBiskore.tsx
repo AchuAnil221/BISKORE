@@ -7,7 +7,7 @@ import { STRENGTHS, VALUES } from '@/lib/constants';
 
 export default function WhyBiskore() {
   return (
-    <section className="hero-overlap-section" style={{ background: '#FFFFFF', position: 'relative' }}>
+    <section className="hero-overlap-section" style={{ position: 'relative' }}>
 
       <div className="container" style={{ paddingTop: '8rem', paddingBottom: '8rem' }}>
         {/* Strengths */}

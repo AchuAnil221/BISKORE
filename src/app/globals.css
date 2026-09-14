@@ -22,9 +22,9 @@
   --color-cream-light: #FFF8E7;
 
   /* Surface Layers — Light Theme */
-  --surface-bg:        #FFFFFF;
-  --surface-bg-alt:    #F8F7F4;
-  --surface-bg-warm:   #F2EFE9;
+  --surface-bg:        #F8F7F4;
+  --surface-bg-alt:    #F2EFE9;
+  --surface-bg-warm:   #FFF9EB;
   --surface-card:      #FFFFFF;
   --surface-border:    rgba(0, 0, 0, 0.08);
   --surface-border-gold: rgba(184, 134, 11, 0.2);
