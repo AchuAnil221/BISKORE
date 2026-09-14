@@ -76,10 +76,10 @@ export const SECTORS = [
     href: "/sectors/fresh-produce",
     categories: [
       { name: "Fresh Vegetables", detail: "Leafy greens, root veg, seasonal produce" },
-      { name: "Fresh Fruits", detail: "Tropical, seasonal and everyday varieties" },
-      { name: "Sugar", detail: "Bulk wholesale supply, industry" },
       { name: "Wholesale", detail: "Large-volume supply for mandis & caterers" },
+      { name: "Fresh Fruits", detail: "Tropical, seasonal and everyday varieties" },
       { name: "Retail", detail: "Packaged and loose produce for outlets" },
+      { name: "Sugar", detail: "Bulk wholesale supply, industry" },
       { name: "Institutional", detail: "Hotels, canteen, food processors, supermarkets" },
     ],
     supplyChain: [
@@ -115,12 +115,18 @@ export const SECTORS = [
       { name: "Home Appliances", detail: "Kitchen & household, domestic distribution" },
     ],
     supplyChain: [
-      { step: "01", title: "Global Sourcing", detail: "Direct relationships with international manufacturers." },
-      { step: "02", title: "Documentation", detail: "Full customs and regulatory compliance handled in-house." },
-      { step: "03", title: "Quality Inspection", detail: "Every shipment inspected on arrival before distribution." },
-      { step: "04", title: "Fleet Distribution", detail: "Delivered pan-India through the Biskore fleet." },
+      { step: "01", title: "Global Sourcing", detail: "Direct relationships with international manufacturers to ensure authentic, quality products." },
+      { step: "02", title: "Import & Customs", detail: "End-to-end documentation and regulatory compliance handled completely in-house." },
+      { step: "03", title: "Quality Inspection", detail: "Every shipment is rigidly inspected upon arrival before entering our network." },
+      { step: "04", title: "Biskore Fleet", detail: "Moved securely across state lines on our dedicated fleet." },
+      { step: "05", title: "Retail & Wholesale", detail: "Delivered to major distributors and retail partners pan-India." },
     ],
-    logisticsSupport: [],
+    logisticsSupport: [
+      "Secure transport for high-value electronics and fragile goods",
+      "Seamless port-to-warehouse transit handling",
+      "Specialized multi-stop routing for wholesale deliveries",
+      "Interstate logistics with All India Permits"
+    ],
   },
   {
     id: "koblaq",
@@ -144,8 +150,19 @@ export const SECTORS = [
       { name: "Footwear", detail: "Casual, formal, everyday" },
       { name: "Accessories", detail: "Bags, belts, add-ons" },
     ],
-    supplyChain: [],
-    logisticsSupport: [],
+    supplyChain: [
+      { step: "01", title: "Design & Source", detail: "Trend-driven apparel and lifestyle products designed for everyday accessibility." },
+      { step: "02", title: "Manufacturing", detail: "Partnering with top-tier textile and cosmetic manufacturers for consistent output." },
+      { step: "03", title: "Quality Assurance", detail: "Rigorous fabric and material testing before retail packaging." },
+      { step: "04", title: "Inventory Routing", detail: "Smart warehousing and distribution using the Biskore logistics arm." },
+      { step: "05", title: "Consumer Reach", detail: "Placed in leading retail outlets, ensuring mass availability." },
+    ],
+    logisticsSupport: [
+      "High-volume inventory movement for seasonal apparel collections",
+      "Careful handling of fragile cosmetic and perfume products",
+      "Direct-to-retail delivery synchronization",
+      "Scalable fleet capacity during peak fashion seasons"
+    ],
   },
   {
     id: "tastecore",
@@ -167,8 +184,19 @@ export const SECTORS = [
       { name: "Juices", detail: "Fresh-pressed, packaged, fruit blends" },
       { name: "Packaged Foods", detail: "Snacks, namkeens, ready-to-cook" },
     ],
-    supplyChain: [],
-    logisticsSupport: [],
+    supplyChain: [
+      { step: "01", title: "Ingredient Sourcing", detail: "Procuring raw spices, grains, and beverage bases from verified agricultural partners." },
+      { step: "02", title: "Processing & Blending", detail: "State-of-the-art processing to guarantee consistent flavor profiles in every batch." },
+      { step: "03", title: "Hygienic Packaging", detail: "Food-grade, airtight packaging to maintain shelf life and freshness." },
+      { step: "04", title: "Safe Transit", detail: "Temperature-monitored and secure transport via the Biskore fleet." },
+      { step: "05", title: "FMCG Distribution", detail: "Stocking shelves in supermarkets, kirana stores, and food service institutions." },
+    ],
+    logisticsSupport: [
+      "Strict food-grade transport hygiene standards",
+      "Temperature-sensitive logistics for juices and beverages",
+      "Rapid stock replenishment for fast-moving consumer goods",
+      "Integrated supply chain from processing plant to retail shelf"
+    ],
   },
   {
     id: "logistics",
@@ -196,7 +224,13 @@ export const SECTORS = [
       { step: "04", title: "Live Tracking", detail: "Delivery monitored in real time" },
       { step: "05", title: "POD & Close", detail: "Proof of delivery issued" },
     ],
-    logisticsSupport: [],
+    logisticsSupport: [
+      "Own fleet of heavy and light commercial vehicles",
+      "All India Permits for unrestricted inter-state freight",
+      "Real-time GPS tracking and transit monitoring",
+      "Dedicated capacity for Biskore Group sectors",
+      "Third-party B2B freight solutions available"
+    ],
   },
 ] as const;
 

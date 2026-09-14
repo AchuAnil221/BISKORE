@@ -75,7 +75,7 @@ export default function Header() {
           >
             {/* Logo */}
             <BiskoreLogo 
-              size="md" 
+              size="lg" 
               src="/images/biskore_logo_2.png" 
             />
 

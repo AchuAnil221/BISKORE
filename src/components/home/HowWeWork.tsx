@@ -18,7 +18,7 @@ export default function HowWeWork() {
       className="hero-overlap-section"
     >
       {/* ── HOW WE WORK STEPS ── */}
-      <div style={{ paddingTop: '8rem', paddingBottom: '4rem' }}>
+      <div style={{ paddingBottom: '4rem' }}>
         <div className="container">
           {/* Heading */}
           <div style={{ marginBottom: '5rem' }}>

@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import SectorSupplyChainAnim from '@/components/sectors/SectorSupplyChainAnim';
+import SectorHeroAnimation from '@/components/sectors/SectorHeroAnimation';
 import { SECTORS } from '@/lib/constants';
 
 type Params = { slug: string };
@@ -33,133 +34,150 @@ export default async function SectorPage({ params }: { params: Promise<Params> }
 
   return (
     <main>
-      {/* Hero — dark green */}
+      {/* Hero — Light Theme */}
       <section
         style={{
-          paddingTop: '10rem',
-          paddingBottom: '6rem',
-          background: 'linear-gradient(135deg, #062C22 0%, #0A3D30 100%)',
+          paddingTop: '12rem',
+          paddingBottom: '8rem',
+          background: '#F8F7F4',
           position: 'relative',
           overflow: 'hidden',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          minHeight: '70vh',
         }}
       >
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            backgroundImage:
-              'linear-gradient(rgba(255,183,29,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,183,29,0.05) 1px, transparent 1px)',
-            backgroundSize: '60px 60px',
-          }}
-        />
-        {/* Large icon watermark */}
-        <div
-          style={{
-            position: 'absolute',
-            right: '-2rem',
-            top: '50%',
-            transform: 'translateY(-50%)',
-            fontSize: 'clamp(12rem, 25vw, 28rem)',
-            opacity: 0.06,
-            lineHeight: 1,
-            userSelect: 'none',
-            pointerEvents: 'none',
-          }}
-        >
-          {sector.icon}
-        </div>
+        {/* Dynamic Background Animation */}
+        <SectorHeroAnimation sectorId={sector.id} accentColor={sector.accentColor || '#FFB71D'} />
 
-        <div className="container" style={{ position: 'relative' }}>
-          {/* Breadcrumb */}
-          <nav aria-label="Breadcrumb" style={{ marginBottom: '2rem' }}>
-            <ol style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', listStyle: 'none', fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)' }}>
-              <li><Link href="/" className="hover-gold" style={{ color: 'rgba(255,255,255,0.45)', transition: 'color 200ms' }}>Home</Link></li>
-              <li>/</li>
-              <li><Link href="/sectors" className="hover-gold" style={{ color: 'rgba(255,255,255,0.45)', transition: 'color 200ms' }}>Sectors</Link></li>
-              <li>/</li>
-              <li style={{ color: '#FFB71D' }}>{sector.name}</li>
-            </ol>
-          </nav>
-
+        <div className="container" style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
+          
           <ScrollReveal>
-            <div className="section-badge">
-              <span className="gold-line" />
-              <span style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#FFB71D' }}>
-                Division 0{sectorIndex + 1}
-              </span>
-            </div>
-            <h1 className="text-display" style={{ marginTop: '0.75rem', maxWidth: 800, color: '#FFFFFF' }}>
-              {sector.icon}{' '}
-              <span style={{ background: 'linear-gradient(135deg,#FFB71D,#F5D399)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-                {sector.name}
-              </span>
-            </h1>
-            <p
+            {/* Title & Description */}
+            <h1
               style={{
-                marginTop: '1.75rem',
-                fontSize: 'clamp(1rem, 1.5vw, 1.15rem)',
-                fontWeight: 300,
-                lineHeight: 1.8,
-                color: 'rgba(255,255,255,0.72)',
-                maxWidth: 680,
-                borderLeft: '3px solid #FFB71D',
-                paddingLeft: '1.5rem',
+                fontSize: 'clamp(3rem, 6vw, 5.5rem)',
+                fontWeight: 900,
+                letterSpacing: '-0.03em',
+                lineHeight: 1,
+                color: '#0D0D0D',
+                marginBottom: '2rem',
               }}
             >
-              {sector.description}
+              {sector.name}
+            </h1>
+            
+            <p
+              style={{
+                fontSize: 'clamp(1rem, 1.5vw, 1.25rem)',
+                color: '#555',
+                lineHeight: 1.8,
+                maxWidth: '700px',
+                margin: '0 auto',
+                fontWeight: 400,
+              }}
+            >
+              {sector.tagline}
             </p>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* Supply Chain (How it works) */}
-      {sector.supplyChain.length > 0 && (
-        <SectorSupplyChainAnim sector={sector} />
-      )}
-
       {/* Categories (What we supply) */}
-      {sector.categories.length > 0 && (
+      {sector.categories && sector.categories.length > 0 && (
         <section className="section" style={{ background: '#FFFFFF' }}>
           <div className="container">
-            <ScrollReveal>
-              <div className="section-badge" style={{ marginBottom: '1rem' }}>
-                <span className="gold-line" />
-                <span className="text-label">
-                  {sector.id === 'logistics' ? 'Service Capability' : 'Product Categories'}
-                </span>
-              </div>
-              <h2 className="text-h2" style={{ marginBottom: '3rem', maxWidth: 600 }}>
-                {sector.id === 'fresh-produce' ? 'What we supply' : <>What we <span className="gradient-text">offer</span></>}
-              </h2>
-            </ScrollReveal>
-
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-                gap: '1px',
-                background: 'rgba(0,0,0,0.07)',
-                border: '1px solid rgba(0,0,0,0.07)',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                gap: '4rem',
+                alignItems: 'start',
               }}
             >
-              {sector.categories.map((cat, i) => (
-                <ScrollReveal key={cat.name} delay={(Math.min((i % 3) * 100 + 100, 500)) as 100 | 200 | 300 | 400 | 500}>
-                  <div
-                    className="hover-cat"
-                    style={{
-                      padding: '2rem',
-                      background: '#FFFFFF',
-                      height: '100%',
-                      transition: 'background 300ms',
-                    }}
-                  >
-                    <div style={{ width: 24, height: 2, background: sector.accentColor || '#FFB71D', marginBottom: '1rem' }} />
-                    <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#0D0D0D', marginBottom: '0.5rem' }}>
-                      {cat.name}
-                    </h3>
-                    <p style={{ fontSize: '0.85rem', color: '#666', lineHeight: 1.65 }}>
-                      {cat.detail}
-                    </p>
+              {/* Left Side: Sentence / Context */}
+              <ScrollReveal>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
+                  <span style={{ width: '30px', height: '2px', background: sector.accentColor || '#FFB71D' }} />
+                  <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.15em', color: sector.accentColor || '#FFB71D', textTransform: 'uppercase' }}>
+                    {sector.id === 'logistics' ? 'Service Capability' : 'Product Categories'}
+                  </span>
+                </div>
+                <h2 className="text-h2" style={{ marginBottom: '1.5rem', maxWidth: 600 }}>
+                  {sector.id === 'fresh-produce' ? 'What we supply' : <>What we <span className="gradient-text">offer</span></>}
+                </h2>
+                <p
+                  style={{
+                    fontSize: '1.05rem',
+                    color: '#555',
+                    lineHeight: 1.8,
+                    maxWidth: '500px',
+                  }}
+                >
+                  {sector.description}
+                </p>
+              </ScrollReveal>
+
+              {/* Right Side: Cards */}
+              <div
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
+                  gap: '1px',
+                  background: 'rgba(0,0,0,0.07)',
+                  border: '1px solid rgba(0,0,0,0.07)',
+                }}
+              >
+                {sector.categories.map((cat, i) => (
+                  <ScrollReveal key={cat.name} delay={(Math.min((i % 3) * 100 + 100, 500)) as 100 | 200 | 300 | 400 | 500}>
+                    <div
+                      className="hover-cat"
+                      style={{
+                        padding: '2rem',
+                        background: '#FFFFFF',
+                        height: '100%',
+                        transition: 'background 300ms',
+                      }}
+                    >
+                      <div style={{ width: 24, height: 2, background: sector.accentColor || '#FFB71D', marginBottom: '1rem' }} />
+                      <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#0D0D0D', marginBottom: '0.5rem' }}>
+                        {cat.name}
+                      </h3>
+                      <p style={{ fontSize: '0.85rem', color: '#666', lineHeight: 1.65 }}>
+                        {cat.detail}
+                      </p>
+                    </div>
+                  </ScrollReveal>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Supply Chain (How it works) */}
+      {sector.id === 'fresh-produce' && sector.supplyChain.length > 0 && (
+        <SectorSupplyChainAnim sector={sector} />
+      )}
+
+      {sector.id !== 'fresh-produce' && sector.supplyChain.length > 0 && (
+        <section className="section" style={{ background: '#F8F7F4' }}>
+          <div className="container">
+            <ScrollReveal>
+              <h2 className="text-h2" style={{ marginBottom: '4rem', textAlign: 'center', color: '#062C22' }}>
+                How It Works
+              </h2>
+            </ScrollReveal>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem' }}>
+              {sector.supplyChain.map((step, idx) => (
+                <ScrollReveal key={idx} delay={idx * 0.1}>
+                  <div style={{ padding: '2.5rem 2rem', background: '#FFFFFF', borderRadius: '16px', border: '1px solid rgba(0,0,0,0.05)', height: '100%' }}>
+                    <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#062C22', marginBottom: '1rem' }}>
+                      <span style={{ color: sector.accentColor || '#FFB71D', marginRight: '0.5rem' }}>0{idx + 1}.</span>
+                      {step.title}
+                    </div>
+                    <p style={{ color: '#555', lineHeight: 1.7 }}>{step.desc}</p>
                   </div>
                 </ScrollReveal>
               ))}

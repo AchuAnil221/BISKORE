@@ -72,9 +72,7 @@ export default function SectorSupplyChainAnim({ sector }: { sector: any }) {
                   pointerEvents: 'none',
                 }}
               >
-                <h3 style={{ fontSize: '0.8rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#B8860B', marginBottom: '1rem' }}>
-                  {step.step} / {sector.name}
-                </h3>
+
                 <h2 style={{ fontSize: 'clamp(2rem, 3vw, 3rem)', fontWeight: 300, lineHeight: 1.1, color: '#0D0D0D', marginBottom: '1.5rem' }}>
                   {step.title}
                 </h2>
@@ -104,8 +102,31 @@ export default function SectorSupplyChainAnim({ sector }: { sector: any }) {
             </motion.g>
             
             <motion.g style={{ opacity: product1Opacity, y: product1Y }}>
-              <circle cx="150" cy="150" r="12" fill="#FFB71D" />
-              <path d="M150 145 l-5 10 h10 z" fill="#FFF" />
+              {sector.id === 'trade' ? (
+                <g>
+                  {/* Smartphone / Gadget */}
+                  <rect x="142" y="138" width="16" height="24" rx="2" fill="#222" />
+                  <rect x="144" y="140" width="12" height="18" fill="#FFB71D" />
+                </g>
+              ) : sector.id === 'koblaq' ? (
+                <g>
+                  {/* T-Shirt */}
+                  <path d="M 140 142 L 145 138 L 155 138 L 160 142 L 158 148 L 153 145 L 153 160 L 147 160 L 147 145 L 142 148 Z" fill="#E91E63" />
+                </g>
+              ) : sector.id === 'logistics' ? (
+                <g>
+                  {/* Pallet / Cargo */}
+                  <rect x="140" y="142" width="20" height="16" fill="#8C7342" />
+                  <line x1="145" y1="142" x2="145" y2="158" stroke="#5D4037" strokeWidth="1" />
+                  <line x1="155" y1="142" x2="155" y2="158" stroke="#5D4037" strokeWidth="1" />
+                </g>
+              ) : (
+                <g>
+                  {/* Produce / Food */}
+                  <circle cx="150" cy="150" r="12" fill="#FFB71D" />
+                  <path d="M150 145 l-5 10 h10 z" fill="#FFF" opacity="0.6" />
+                </g>
+              )}
             </motion.g>
 
             {/* --- Phase 2: Packaging --- */}
@@ -117,7 +138,27 @@ export default function SectorSupplyChainAnim({ sector }: { sector: any }) {
                 <path d="M170 130 l15 -10 v40 l-15 10" fill="#C0BAAC" />
               </motion.g>
               {/* Product inside */}
-              <circle cx="150" cy="150" r="12" fill="#FFB71D" />
+              {sector.id === 'trade' ? (
+                <g>
+                  <rect x="142" y="138" width="16" height="24" rx="2" fill="#222" />
+                  <rect x="144" y="140" width="12" height="18" fill="#FFB71D" />
+                </g>
+              ) : sector.id === 'koblaq' ? (
+                <g>
+                  <path d="M 140 142 L 145 138 L 155 138 L 160 142 L 158 148 L 153 145 L 153 160 L 147 160 L 147 145 L 142 148 Z" fill="#E91E63" />
+                </g>
+              ) : sector.id === 'logistics' ? (
+                <g>
+                  <rect x="140" y="142" width="20" height="16" fill="#8C7342" />
+                  <line x1="145" y1="142" x2="145" y2="158" stroke="#5D4037" strokeWidth="1" />
+                  <line x1="155" y1="142" x2="155" y2="158" stroke="#5D4037" strokeWidth="1" />
+                </g>
+              ) : (
+                <g>
+                  <circle cx="150" cy="150" r="12" fill="#FFB71D" />
+                  <path d="M150 145 l-5 10 h10 z" fill="#FFF" opacity="0.6" />
+                </g>
+              )}
             </motion.g>
 
             {/* --- Phase 3: Ship & Quality --- */}

@@ -79,7 +79,7 @@ export default function SectorsGrid() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'start' }}>
 
           {/* LEFT — each row is ~40vh tall so page scrolls through each sector */}
-          <div style={{ display: 'flex', flexDirection: 'column', paddingTop: '25vh', paddingBottom: '35vh' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', paddingBottom: '4rem' }}>
             {SECTORS.map((sector, i) => (
               <div
                 key={sector.id}

@@ -46,37 +46,85 @@ export default function ContactPage() {
       {/* Hero — dark green */}
       <section
         style={{
-          paddingTop: '10rem',
-          paddingBottom: '5rem',
-          background: 'linear-gradient(135deg, #062C22 0%, #0A3D30 100%)',
+          paddingTop: '11rem',
+          paddingBottom: '7rem',
+          background: 'linear-gradient(180deg, #F8F7F4 0%, #FDF3DB 40%, #E8DFCB 100%)',
           position: 'relative',
           overflow: 'hidden',
         }}
       >
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            backgroundImage:
-              'linear-gradient(rgba(255,183,29,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,183,29,0.05) 1px, transparent 1px)',
-            backgroundSize: '60px 60px',
-          }}
-        />
-        <div className="container" style={{ position: 'relative' }}>
+        {/* Animated Abstract Connections Background */}
+        <div style={{ position: 'absolute', inset: 0, opacity: 0.45 }}>
+          <svg width="100%" height="100%" viewBox="0 0 1920 600" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="#062C22" stopOpacity="0.1" />
+                <stop offset="50%" stopColor="#062C22" stopOpacity="0.6" />
+                <stop offset="100%" stopColor="#062C22" stopOpacity="0.1" />
+              </linearGradient>
+            </defs>
+            <style>
+              {`
+                .anim-line { 
+                  stroke-dasharray: 2000; 
+                  stroke-dashoffset: 2000; 
+                  animation: dashSweep 10s linear infinite; 
+                }
+                .anim-line:nth-child(2) { animation-delay: -3s; animation-duration: 12s; }
+                .anim-line:nth-child(3) { animation-delay: -6s; animation-duration: 16s; }
+                .anim-line:nth-child(4) { animation-delay: -1s; animation-duration: 14s; }
+                .anim-line:nth-child(5) { animation-delay: -5s; animation-duration: 18s; }
+                @keyframes dashSweep {
+                  0% { stroke-dashoffset: 2000; }
+                  100% { stroke-dashoffset: -2000; }
+                }
+                .anim-node { animation: pulseNode 4s ease-in-out infinite alternate; transform-origin: center; transform-box: fill-box; }
+                @keyframes pulseNode {
+                  0% { transform: scale(0.6); opacity: 0.4; }
+                  100% { transform: scale(1.4); opacity: 1; }
+                }
+              `}
+            </style>
+            
+            {/* Connection Lines (Sweeping Curves) */}
+            <path className="anim-line" d="M -100 150 Q 500 300 1200 -50" fill="none" stroke="url(#lineGrad)" strokeWidth="2" />
+            <path className="anim-line" d="M -50 450 Q 700 100 1600 550" fill="none" stroke="url(#lineGrad)" strokeWidth="1.5" />
+            <path className="anim-line" d="M 200 -100 Q 800 500 1800 100" fill="none" stroke="url(#lineGrad)" strokeWidth="2.5" />
+            <path className="anim-line" d="M 300 700 Q 1100 0 2000 400" fill="none" stroke="url(#lineGrad)" strokeWidth="2" />
+            <path className="anim-line" d="M 1000 -50 Q 1300 600 2200 150" fill="none" stroke="url(#lineGrad)" strokeWidth="1.5" />
+            
+            {/* Nodes perfectly placed on the path intersections/curves */}
+            <g fill="#0A3D30">
+              {/* On Path 1 */}
+              <circle cx="200" cy="225" r="5" className="anim-node" style={{ animationDelay: '0s' }} />
+              {/* On Path 2 */}
+              <circle cx="450" cy="255" r="4" className="anim-node" style={{ animationDelay: '1s' }} />
+              {/* On Path 3 intersection */}
+              <circle cx="780" cy="250" r="6" className="anim-node" style={{ animationDelay: '2s' }} />
+              {/* On Path 4 */}
+              <circle cx="1150" cy="180" r="5" className="anim-node" style={{ animationDelay: '0.5s' }} />
+              {/* On Path 5 */}
+              <circle cx="1450" cy="300" r="4" className="anim-node" style={{ animationDelay: '1.5s' }} />
+            </g>
+          </svg>
+        </div>
+
+        <div className="container" style={{ position: 'relative', textAlign: 'center' }}>
           <ScrollReveal>
-            <div className="section-badge">
+            <div className="section-badge" style={{ justifyContent: 'center' }}>
               <span className="gold-line" />
               <span style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#FFB71D' }}>
-                Contact
+                Contact Us
               </span>
+              <span className="gold-line" />
             </div>
-            <h1 className="text-display" style={{ marginTop: '0.75rem', maxWidth: 700, color: '#FFFFFF' }}>
+            <h1 className="text-display" style={{ marginTop: '0.75rem', maxWidth: 800, margin: '0.75rem auto 0', color: '#0D0D0D' }}>
               Let&apos;s{' '}
-              <span style={{ background: 'linear-gradient(135deg,#FFB71D,#F5D399)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+              <span style={{ color: '#0A3D30' }}>
                 connect
               </span>
             </h1>
-            <p style={{ marginTop: '1.5rem', maxWidth: 560, color: 'rgba(255,255,255,0.72)', fontSize: '1.05rem', lineHeight: 1.75 }}>
+            <p style={{ marginTop: '1.5rem', maxWidth: 640, margin: '1.5rem auto 0', color: '#555555', fontSize: '1.05rem', lineHeight: 1.75 }}>
               We welcome enquiries from trade partners, farmers, distributors, logistics clients,
               brand partners, and investors interested in any of Biskore&apos;s five business sectors.
             </p>

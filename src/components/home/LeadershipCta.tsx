@@ -1,10 +1,10 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { RevealLines } from '@/components/ui/RevealText';
 import ScrollReveal from '@/components/ui/ScrollReveal';
-import ParallaxImage from '@/components/ui/ParallaxImage';
 import { LEADERSHIP, SITE } from '@/lib/constants';
 
 export default function LeadershipCta() {
@@ -179,14 +179,15 @@ export default function LeadershipCta() {
                   }
                 >
                   {'image' in leader && leader.image ? (
-                    <ParallaxImage
-                      src={leader.image}
-                      alt={leader.name}
-                      speed={0.18}
-                      aspectRatio="unset"
-                      style={{ width: '100%', height: '100%', aspectRatio: 'unset' }}
-                      sizes="40vw"
-                    />
+                    <div className="hover-founder-image" style={{ width: '100%', height: '100%', position: 'relative' }}>
+                      <Image
+                        src={leader.image}
+                        alt={leader.name}
+                        fill
+                        style={{ objectFit: 'cover', objectPosition: 'center top' }}
+                        sizes="40vw"
+                      />
+                    </div>
                   ) : (
                     <div style={{ textAlign: 'center' }}>
                       <div style={{
@@ -211,17 +212,7 @@ export default function LeadershipCta() {
                 </div>
               ))}
 
-              {/* Gold accent frame */}
-              <div style={{
-                position: 'absolute',
-                top: 16,
-                right: -16,
-                bottom: -16,
-                left: 16,
-                border: '1px solid rgba(255,183,29,0.3)',
-                pointerEvents: 'none',
-                zIndex: -1,
-              }} />
+
             </div>
           </div>
         </div>
@@ -231,7 +222,7 @@ export default function LeadershipCta() {
               <div style={{ display: 'flex', alignItems: 'flex-start' }}>
                 <blockquote
                   className="quote-reveal is-visible"
-                  style={{ margin: 0, opacity: 1, transform: 'none', maxWidth: '1000px' }}
+                  style={{ margin: 0, opacity: 1, transform: 'none', width: '100%' }}
                 >
                   <p
                     style={{
@@ -245,23 +236,11 @@ export default function LeadershipCta() {
                   >
                     &ldquo;We believe consistent quality isn&apos;t a feature — it&apos;s a promise that holds every business we touch to a single standard.&rdquo;
                   </p>
-                  <footer
-                    style={{
-                      marginTop: '1.5rem',
-                      fontSize: '0.75rem',
-                      letterSpacing: '0.12em',
-                      textTransform: 'uppercase',
-                      color: 'rgba(0, 0, 0, 0.5)',
-                    }}
-                  >
-                    Biju &amp; Sujith — Co-Founders, Biskore Dynamics LLP
-                  </footer>
                 </blockquote>
               </div>
             </ScrollReveal>
           </div>
         </div>
-      </div>
     </section>
   );
 }

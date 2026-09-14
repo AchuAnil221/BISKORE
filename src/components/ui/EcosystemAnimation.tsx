@@ -159,72 +159,140 @@ export default function EcosystemAnimation() {
           </g>
         </g>
 
-        {/* Cityscape (Background) - Brands/Trade Destination */}
-        <g transform="translate(1000, 680)" fill="url(#cityGradBack)" opacity="0.6">
-          <rect x="0" y="50" width="80" height="150" />
-          <rect x="90" y="20" width="120" height="180" />
-          <rect x="220" y="80" width="70" height="120" />
-          <rect x="300" y="0" width="100" height="200" />
-          <rect x="410" y="60" width="90" height="140" />
-          <rect x="520" y="30" width="140" height="170" />
-          <rect x="680" y="90" width="100" height="110" />
-          <rect x="800" y="40" width="120" height="160" />
+        {/* Cityscape (Background) - distant buildings with faint window grids */}
+        <g transform="translate(1000, 680)" opacity="0.45">
+          {/* Building 1 */}
+          <rect x="0" y="50" width="80" height="150" fill="#C8BCA8" />
+          {[...Array(5)].map((_,r) => [...Array(3)].map((_,c) => (
+            <rect key={`b1-${r}-${c}`} x={8+c*24} y={58+r*26} width="14" height="16" fill="#A0907A" opacity="0.5" />
+          )))}
+          {/* Building 2 */}
+          <rect x="90" y="20" width="120" height="180" fill="#B8AD9A" />
+          <rect x="90" y="20" width="120" height="8" fill="#A09080" />
+          {[...Array(6)].map((_,r) => [...Array(4)].map((_,c) => (
+            <rect key={`b2-${r}-${c}`} x={98+c*27} y={35+r*26} width="16" height="16" fill="#8C7D6A" opacity="0.45" />
+          )))}
+          {/* Building 3 */}
+          <rect x="220" y="80" width="70" height="120" fill="#C4B8A4" />
+          {[...Array(4)].map((_,r) => [...Array(2)].map((_,c) => (
+            <rect key={`b3-${r}-${c}`} x={228+c*30} y={90+r*25} width="18" height="15" fill="#9A8C7A" opacity="0.4" />
+          )))}
+          {/* Building 4 - tallest */}
+          <rect x="300" y="0" width="100" height="200" fill="#BDB0A0" />
+          <rect x="300" y="0" width="100" height="10" fill="#9A8E80" />
+          <rect x="340" y="-20" width="20" height="20" fill="#A09080" />
+          {[...Array(7)].map((_,r) => [...Array(3)].map((_,c) => (
+            <rect key={`b4-${r}-${c}`} x={308+c*30} y={18+r*25} width="18" height="16" fill="#8A7D6D" opacity="0.5" />
+          )))}
+          {/* Building 5 */}
+          <rect x="410" y="60" width="90" height="140" fill="#C2B6A2" />
+          {[...Array(4)].map((_,r) => [...Array(3)].map((_,c) => (
+            <rect key={`b5-${r}-${c}`} x={418+c*26} y={70+r*28} width="16" height="17" fill="#9A8C7A" opacity="0.4" />
+          )))}
+          {/* Building 6 */}
+          <rect x="520" y="30" width="140" height="170" fill="#B8AC9A" />
+          <rect x="520" y="30" width="140" height="9" fill="#A09080" />
+          {[...Array(5)].map((_,r) => [...Array(4)].map((_,c) => (
+            <rect key={`b6-${r}-${c}`} x={530+c*32} y={46+r*28} width="20" height="18" fill="#8C7D6A" opacity="0.4" />
+          )))}
+          {/* Building 7 */}
+          <rect x="680" y="90" width="100" height="110" fill="#C0B4A2" />
+          {[...Array(3)].map((_,r) => [...Array(3)].map((_,c) => (
+            <rect key={`b7-${r}-${c}`} x={690+c*30} y={100+r*28} width="18" height="17" fill="#9A8C7A" opacity="0.4" />
+          )))}
+          {/* Building 8 */}
+          <rect x="800" y="40" width="120" height="160" fill="#BEB2A0" />
+          <rect x="800" y="40" width="120" height="9" fill="#A09080" />
+          {[...Array(5)].map((_,r) => [...Array(3)].map((_,c) => (
+            <rect key={`b8-${r}-${c}`} x={810+c*36} y={56+r*27} width="22" height="16" fill="#8C7D6A" opacity="0.45" />
+          )))}
         </g>
 
         {/* Cityscape (Foreground) */}
         <g transform="translate(1200, 710)">
-          <g fill="url(#cityGradFront)">
-            <rect x="0" y="30" width="100" height="170" />
-            <rect x="110" y="80" width="80" height="120" />
-            <rect x="210" y="10" width="130" height="190" />
-            <rect x="360" y="60" width="90" height="140" />
-            <rect x="470" y="40" width="110" height="160" />
-            <rect x="600" y="90" width="120" height="110" />
-          </g>
+
+          {/* Bldg A - tall left */}
+          <rect x="0" y="30" width="100" height="170" fill="#A89880" />
+          <rect x="0" y="30" width="100" height="10" fill="#8A7A65" />
+          <rect x="38" y="10" width="24" height="20" fill="#9A8A72" />
+          {[...Array(5)].map((_,r) => [...Array(3)].map((_,c) => (
+            <rect key={`fa-${r}-${c}`} x={8+c*31} y={48+r*28} width="20" height="17" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.1)" strokeWidth="0.5" />
+          )))}
+          {/* Ground floor - dark shopfront */}
+          <rect x="0" y="170" width="100" height="30" fill="#6A5D4A" />
+          <rect x="10" y="175" width="80" height="20" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" strokeWidth="0.5" />
+
+          {/* Bldg B - medium */}
+          <rect x="110" y="80" width="80" height="120" fill="#B0A290" />
+          <rect x="110" y="80" width="80" height="8" fill="#8A7A68" />
+          {[...Array(3)].map((_,r) => [...Array(2)].map((_,c) => (
+            <rect key={`fb-${r}-${c}`} x={118+c*36} y={96+r*30} width="22" height="18" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.1)" strokeWidth="0.5" />
+          )))}
+          <rect x="110" y="170" width="80" height="30" fill="#7A6C58" />
 
           {/* Fresh Produce Store Detail (Building at x=110) */}
           <g transform="translate(110, 80)">
-            {/* Crate of Multiple Produces */}
             <g transform="translate(13, 0)">
-              {/* Apple (Red) */}
-              <circle cx="20" cy="25" r="7" fill="#D32F2F" opacity="0.5" />
-              <path d="M 20 18 Q 23 15 25 18 Q 23 20 20 18 Z" fill="#6B8E23" opacity="0.6" />
-              
-              {/* Orange/Citrus (Gold) */}
-              <circle cx="34" cy="28" r="6" fill="#FFB71D" opacity="0.5" />
-              
-              {/* Leafy Green/Broccoli */}
-              <circle cx="28" cy="20" r="5" fill="#4CAF50" opacity="0.5" />
-              <circle cx="34" cy="19" r="4.5" fill="#388E3C" opacity="0.5" />
-              <circle cx="24" cy="17" r="4" fill="#2E7D32" opacity="0.5" />
-              
-              {/* Wooden Crate Front */}
-              <path d="M 12 30 L 42 30 L 38 42 L 16 42 Z" fill="#8C7342" opacity="0.4" />
-              <path d="M 14 34 L 40 34 M 15 38 L 39 38" stroke="#5D4037" strokeWidth="1" opacity="0.2" />
+              <circle cx="20" cy="25" r="7" fill="#D32F2F" opacity="0.6" />
+              <path d="M 20 18 Q 23 15 25 18 Q 23 20 20 18 Z" fill="#6B8E23" opacity="0.7" />
+              <circle cx="34" cy="28" r="6" fill="#FFB71D" opacity="0.65" />
+              <circle cx="28" cy="20" r="5" fill="#4CAF50" opacity="0.65" />
+              <circle cx="34" cy="19" r="4.5" fill="#388E3C" opacity="0.65" />
+              <circle cx="24" cy="17" r="4" fill="#2E7D32" opacity="0.65" />
+              <path d="M 12 30 L 42 30 L 38 42 L 16 42 Z" fill="#8C7342" opacity="0.55" />
+              <path d="M 14 34 L 40 34 M 15 38 L 39 38" stroke="#5D4037" strokeWidth="1" opacity="0.3" />
             </g>
-            
-            {/* Striped Awning */}
-            <path d="M -5 55 L 85 55 L 80 45 L 0 45 Z" fill="#4CAF50" opacity="0.5" />
-            <path d="M 15 55 L 20 45 M 35 55 L 40 45 M 55 55 L 60 45 M 75 55 L 80 45" stroke="#2E7D32" strokeWidth="4" opacity="0.3" />
-            {/* Storefront Window */}
-            <rect x="5" y="55" width="70" height="15" fill="#2A3B38" opacity="0.3" />
+            <path d="M -5 55 L 85 55 L 80 45 L 0 45 Z" fill="#4CAF50" opacity="0.6" />
+            <path d="M 15 55 L 20 45 M 35 55 L 40 45 M 55 55 L 60 45 M 75 55 L 80 45" stroke="#2E7D32" strokeWidth="4" opacity="0.35" />
+            <rect x="5" y="55" width="70" height="15" fill="#2A3B38" opacity="0.35" />
           </g>
 
-          {/* Koblaq Clothing Store Detail (Building at x=210) */}
+          {/* Bldg C - tallest, Koblaq */}
+          <rect x="210" y="10" width="130" height="190" fill="#A09080" />
+          <rect x="210" y="10" width="130" height="11" fill="#7A6C5C" />
+          <rect x="260" y="-15" width="30" height="25" fill="#8A7C6A" />
+          {[...Array(6)].map((_,r) => [...Array(4)].map((_,c) => (
+            <rect key={`fc-${r}-${c}`} x={218+c*30} y={28+r*28} width="20" height="18" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" strokeWidth="0.5" />
+          )))}
+          {/* Ground floor dark */}
+          <rect x="210" y="170" width="130" height="30" fill="#5A4E3C" />
+
+          {/* Koblaq Clothing Store Detail */}
           <g transform="translate(210, 10)">
-            {/* KOBLAQ Signage at Top */}
-            <rect x="25" y="15" width="80" height="20" fill="#111" opacity="0.3" />
-            <text x="65" y="29" fill="#FFB71D" fontSize="10" fontFamily="sans-serif" letterSpacing="3" textAnchor="middle" fontWeight="600" opacity="0.4">KOBLAQ</text>
-            
-            {/* Elegant Storefront Window */}
-            <rect x="15" y="90" width="100" height="60" fill="#1A2523" opacity="0.4" />
-            <rect x="15" y="90" width="100" height="60" fill="none" stroke="#FFB71D" strokeWidth="1" opacity="0.25" />
-            
-            {/* Shopping Bag Icon inside window */}
-            <path d="M 50 103 L 80 103 L 76 128 L 54 128 Z" fill="none" stroke="#FFB71D" strokeWidth="1.5" opacity="0.4" />
-            <path d="M 58 103 Q 65 91 72 103" fill="none" stroke="#FFB71D" strokeWidth="1.5" opacity="0.4" />
+            <rect x="25" y="15" width="80" height="20" fill="#111" opacity="0.4" />
+            <text x="65" y="29" fill="#FFB71D" fontSize="10" fontFamily="sans-serif" letterSpacing="3" textAnchor="middle" fontWeight="600" opacity="0.7">KOBLAQ</text>
+            <rect x="15" y="90" width="100" height="60" fill="#1A2523" opacity="0.45" />
+            <rect x="15" y="90" width="100" height="60" fill="none" stroke="#FFB71D" strokeWidth="1" opacity="0.3" />
+            <path d="M 50 103 L 80 103 L 76 128 L 54 128 Z" fill="none" stroke="#FFB71D" strokeWidth="1.5" opacity="0.5" />
+            <path d="M 58 103 Q 65 91 72 103" fill="none" stroke="#FFB71D" strokeWidth="1.5" opacity="0.5" />
           </g>
+
+          {/* Bldg D */}
+          <rect x="360" y="60" width="90" height="140" fill="#ACA090" />
+          <rect x="360" y="60" width="90" height="9" fill="#8A7C6C" />
+          {[...Array(4)].map((_,r) => [...Array(2)].map((_,c) => (
+            <rect key={`fd-${r}-${c}`} x={370+c*40} y={76+r*28} width="24" height="17" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.1)" strokeWidth="0.5" />
+          )))}
+          <rect x="360" y="170" width="90" height="30" fill="#6A5E4C" />
+
+          {/* Bldg E */}
+          <rect x="470" y="40" width="110" height="160" fill="#A89A88" />
+          <rect x="470" y="40" width="110" height="10" fill="#887A68" />
+          <rect x="510" y="22" width="30" height="18" fill="#9A8C7A" />
+          {[...Array(5)].map((_,r) => [...Array(3)].map((_,c) => (
+            <rect key={`fe-${r}-${c}`} x={478+c*34} y={58+r*26} width="22" height="16" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.1)" strokeWidth="0.5" />
+          )))}
+          <rect x="470" y="170" width="110" height="30" fill="#605040" />
+
+          {/* Bldg F */}
+          <rect x="600" y="90" width="120" height="110" fill="#B0A492" />
+          <rect x="600" y="90" width="120" height="9" fill="#8A7C6C" />
+          {[...Array(3)].map((_,r) => [...Array(3)].map((_,c) => (
+            <rect key={`ff-${r}-${c}`} x={610+c*36} y={106+r*28} width="24" height="17" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.1)" strokeWidth="0.5" />
+          )))}
+          <rect x="600" y="170" width="120" height="30" fill="#6A5C4C" />
         </g>
+
 
         {/* Farm / Landscape (Left Side) - Fresh Produce Origin */}
         <g fill="#A68D5C" opacity="0.4">
@@ -274,15 +342,41 @@ export default function EcosystemAnimation() {
               <rect x="54" y="35" width="8" height="8" fill="#1A1A1A" />
               <rect x="66" y="35" width="8" height="8" fill="#1A1A1A" />
               
-              {/* Containers (Various Colors for realism) */}
-              <rect x="100" y="35" width="40" height="25" fill="#C23A3A" />
-              <rect x="145" y="35" width="40" height="25" fill="#3A6EC2" />
-              <rect x="190" y="35" width="40" height="25" fill="#C29F3A" />
-              <rect x="235" y="35" width="40" height="25" fill="#3A8C66" />
-              
-              <rect x="100" y="10" width="40" height="25" fill="#3A8C66" />
-              <rect x="145" y="10" width="40" height="25" fill="#C23A3A" />
-              <rect x="190" y="10" width="40" height="25" fill="#3A6EC2" />
+              {/* Detailed Realistic Shipping Containers */}
+              {[
+                { x: 100, y: 35, color: '#A56A5B', dark: '#874C3D' }, // Bottom Row (Muted Terracotta)
+                { x: 145, y: 35, color: '#738C9B', dark: '#526977' }, // Dusty Blue
+                { x: 190, y: 35, color: '#D2AC63', dark: '#B58E45' }, // Muted Gold
+                { x: 235, y: 35, color: '#2C5A4C', dark: '#194437' }, // Muted Green
+                { x: 100, y: 10, color: '#2C5A4C', dark: '#194437' }, // Top Row (Muted Green)
+                { x: 145, y: 10, color: '#A56A5B', dark: '#874C3D' }, // Muted Terracotta
+                { x: 190, y: 10, color: '#738C9B', dark: '#526977' }  // Dusty Blue
+              ].map((c, idx) => (
+                <g key={`ship-container-${idx}`} transform={`translate(${c.x}, ${c.y})`}>
+                  <rect x="0" y="0" width="40" height="25" fill={c.color} />
+                  {/* Corrugated ribbing */}
+                  {[...Array(8)].map((_, i) => (
+                    <line key={`rib-${i}`} x1={2.5 + i * 5} y1="0" x2={2.5 + i * 5} y2="25" stroke="rgba(0,0,0,0.15)" strokeWidth="1" />
+                  ))}
+                  {/* Edge highlights/shadows */}
+                  <rect x="0" y="0" width="40" height="1.5" fill="rgba(255,255,255,0.2)" />
+                  <rect x="0" y="23.5" width="40" height="1.5" fill="rgba(0,0,0,0.2)" />
+                  <rect x="0" y="0" width="1.5" height="25" fill="rgba(255,255,255,0.1)" />
+                  <rect x="38.5" y="0" width="1.5" height="25" fill="rgba(0,0,0,0.2)" />
+                  
+                  {/* Doors (only on some for texture) */}
+                  {idx % 2 === 0 && (
+                    <g transform="translate(34, 0)">
+                      <rect x="0" y="0" width="6" height="25" fill={c.dark} />
+                      <line x1="3" y1="0" x2="3" y2="25" stroke="rgba(0,0,0,0.4)" strokeWidth="0.5" />
+                    </g>
+                  )}
+                  {/* Decal */}
+                  {idx % 3 === 0 && (
+                    <rect x="4" y="5" width="10" height="4" fill="rgba(255,255,255,0.8)" rx="0.5" />
+                  )}
+                </g>
+              ))}
               
               {/* Subtle Reflection */}
               <path d="M 30 100 L 280 100 L 270 120 L 40 120 Z" fill="#21332F" opacity="0.6" />

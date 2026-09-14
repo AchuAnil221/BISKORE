@@ -46,8 +46,8 @@ export function ScrollSplitCard({
   const getX = (i: number, total: number) => {
     const center = (total - 1) / 2;
     const diff = i - center;
-    // Stage 1 to 2: Separate further (-32 per step), then overlap closer (-16 per step)
-    return useTransform(scrollYProgress, [0, 0.35, 0.9], [0, diff * 32, diff * 16]);
+    // Stage 1 to 2: Separate further, then hold that separation so they don't touch
+    return useTransform(scrollYProgress, [0, 0.35, 0.9], [0, diff * 64, diff * 56]);
   };
 
   const getRotateZ = (i: number, total: number) => {
@@ -68,7 +68,7 @@ export function ScrollSplitCard({
       ref={containerRef}
       className={cn("relative h-[300vh] w-full", className)}
     >
-      <div className="sticky top-0 flex flex-col h-screen w-full items-center justify-center overflow-hidden [perspective:1200px]">
+      <div className="sticky top-[85px] flex flex-col h-[calc(100vh-85px)] w-full items-center justify-center overflow-hidden [perspective:1200px]">
         {titleNode && (
           <div className="relative z-10 w-full" style={{ marginBottom: '5rem' }}>
             {titleNode}
@@ -128,14 +128,7 @@ export function ScrollSplitCard({
                   boxShadow,
                 }}
               >
-                {/* Grainy Noise Overlay */}
-                <div
-                  className="pointer-events-none absolute inset-0 opacity-5 mix-blend-overlay"
-                  style={{
-                    backgroundImage: `url("https://framerusercontent.com/images/6mcf62RlDfRfU61Yg5vb2pefpi4.png?width=256&height=256")`,
-                    backgroundRepeat: "repeat",
-                  }}
-                />
+
 
                 {card.icon && <div className="relative z-10 mb-4">{card.icon}</div>}
                 <h3 className="relative z-10 mb-3 text-xl font-bold leading-tight max-w-[85%]">
