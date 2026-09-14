@@ -196,16 +196,6 @@ export default function Header() {
                                 }
                               }}
                             >
-                              <span
-                                style={{
-                                  width: 6,
-                                  height: 6,
-                                  borderRadius: '50%',
-                                  background: '#FFB71D',
-                                  flexShrink: 0,
-                                  opacity: isActive(child.href) ? 1 : 0.5,
-                                }}
-                              />
                               {child.label}
                             </Link>
                           ))}

@@ -55,11 +55,8 @@ export default function SectorsGrid() {
               flex: '1 1 auto',
             }}
           />
-          <ScrollReveal delay={200} className="mb-2 md:mb-3">
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '0.75rem' }}>
-              <p style={{ fontSize: '0.85rem', color: '#888', margin: 0 }}>
-                Each sector operates under one quality standard.
-              </p>
+          <ScrollReveal delay={200}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.75rem' }}>
               <Link href="/sectors" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
                 fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.12em',
@@ -71,6 +68,9 @@ export default function SectorsGrid() {
                   <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </Link>
+              <p style={{ fontSize: '0.85rem', color: '#888', margin: 0, textAlign: 'right' }}>
+                Each sector operates under one quality standard.
+              </p>
             </div>
           </ScrollReveal>
         </div>

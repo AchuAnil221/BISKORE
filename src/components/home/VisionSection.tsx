@@ -6,11 +6,11 @@ import { VISION, MISSION_PER_SECTOR, FUTURE_OUTLOOK } from '@/lib/constants';
 
 /* Per-card brand palette — lighter defaults, darker on hover */
 const CARD_COLORS = [
-  { bg: '#5BA87A', hover: '#2A6147' },  // Fresh Produce — sage green
-  { bg: '#D4AA28', hover: '#8A6A08' },  // Trade — warm gold
-  { bg: '#6E6E68', hover: '#2E2E2A' },  // Koblaq — medium stone
-  { bg: '#C49030', hover: '#6E4C0A' },  // Tastecore — amber
-  { bg: '#1A7058', hover: '#073D30' },  // Logistics — teal green
+  { bg: '#5BA87A', hover: '#4A9769' },  // Fresh Produce
+  { bg: '#D4AA28', hover: '#C49A18' },  // Trade
+  { bg: '#6E6E68', hover: '#5E5E58' },  // Koblaq
+  { bg: '#C49030', hover: '#B48020' },  // Tastecore
+  { bg: '#1A7058', hover: '#0A6048' },  // Logistics
 ];
 
 /* Shared animation style string injected once at module level */
@@ -75,7 +75,7 @@ export default function VisionSection() {
               ? {
                   strokeDasharray: '7 3',
                   strokeDashoffset: 300,
-                  animation: 'svgMarchAnim 25s linear infinite',
+                  animation: 'svgMarchAnim 45s linear infinite',
                 }
               : {
                   strokeDasharray: undefined,
@@ -140,7 +140,7 @@ export default function VisionSection() {
                       bottom: '-10px',
                       pointerEvents: 'none',
                       color: isHovered ? 'rgba(255,255,255,0.85)' : 'rgba(255,255,255,0.25)',
-                      transform: isHovered ? 'scale(1.2) rotate(10deg)' : 'scale(1) rotate(0deg)',
+                      transform: isHovered ? 'translateY(-6px) scale(1.05) rotate(3deg)' : 'translateY(0) scale(1) rotate(0deg)',
                       transformOrigin: 'bottom right',
                       transition: 'color 600ms ease, transform 700ms cubic-bezier(0.16, 1, 0.3, 1)',
                     }}

@@ -1,13 +1,29 @@
+'use client';
+
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import BiskoreLogo from '@/components/ui/BiskoreLogo';
 import { SITE, NAV_LINKS, SECTORS } from '@/lib/constants';
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const footerRef = useRef<HTMLElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: footerRef,
+    offset: ["start end", "end end"]
+  });
+
+  const scale = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [0.3, 1]);
 
   return (
-    <footer
+    <motion.footer
+      ref={footerRef}
       style={{
+        scale,
+        opacity,
         background: '#062C22',
         borderTop: '1px solid rgba(255, 183, 29, 0.15)',
         paddingTop: '5rem',
@@ -154,6 +170,6 @@ export default function Footer() {
           </p>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 }

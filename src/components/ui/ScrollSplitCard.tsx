@@ -35,8 +35,8 @@ export function ScrollSplitCard({
     offset: ["start start", "end end"],
   });
 
-  const scale = useTransform(scrollYProgress, [0, 0.4], [1, 0.9]);
-  const rotateY = useTransform(scrollYProgress, [0.4, 0.8], [0, 180]);
+  const scale = useTransform(scrollYProgress, [0, 0.35], [1, 0.9]);
+  const rotateY = useTransform(scrollYProgress, [0.35, 0.9], [0, 180]);
 
   const borderOpacity = useTransform(scrollYProgress, [0, 0.2], [0, 0.2]);
   const shadowOpacity = useTransform(scrollYProgress, [0, 0.2], [0, 0.4]);
@@ -47,14 +47,14 @@ export function ScrollSplitCard({
     const center = (total - 1) / 2;
     const diff = i - center;
     // Stage 1 to 2: Separate further (-32 per step), then overlap closer (-16 per step)
-    return useTransform(scrollYProgress, [0, 0.4, 0.8], [0, diff * 32, diff * 16]);
+    return useTransform(scrollYProgress, [0, 0.35, 0.9], [0, diff * 32, diff * 16]);
   };
 
   const getRotateZ = (i: number, total: number) => {
     const center = (total - 1) / 2;
     const diff = i - center;
     // Stage 2 to 3: slight fan out
-    return useTransform(scrollYProgress, [0.4, 0.8], [0, diff * -6]);
+    return useTransform(scrollYProgress, [0.35, 0.9], [0, diff * -6]);
   };
 
   const getBorderRadius = (i: number, total: number) => {
@@ -66,11 +66,11 @@ export function ScrollSplitCard({
   return (
     <div
       ref={containerRef}
-      className={cn("relative h-[500vh] w-full", className)}
+      className={cn("relative h-[300vh] w-full", className)}
     >
-      <div className="sticky top-0 flex flex-col h-screen w-full items-center justify-center overflow-hidden [perspective:1200px] pt-12">
+      <div className="sticky top-0 flex flex-col h-screen w-full items-center justify-center overflow-hidden [perspective:1200px]">
         {titleNode && (
-          <div className="relative z-10 mb-8 w-full">
+          <div className="relative z-10 w-full" style={{ marginBottom: '8rem' }}>
             {titleNode}
           </div>
         )}

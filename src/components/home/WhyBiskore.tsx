@@ -78,26 +78,27 @@ export default function WhyBiskore() {
         <ScrollSplitCard
           titleNode={
             <div style={{ textAlign: 'center' }}>
-              <div className="section-badge" style={{ justifyContent: 'center' }}>
+              <div className="section-badge" style={{ justifyContent: 'center', marginBottom: '1rem' }}>
                 <span className="gold-line" />
                 <span className="text-label">Core Values</span>
                 <span className="gold-line" />
               </div>
-              <RevealText
+              <RevealLines
                 as="h2"
+                lines={['What we stand for']}
+                duration={1000}
+                stagger={140}
                 style={{
-                  fontSize: 'clamp(1.75rem, 3.5vw, 3rem)',
+                  fontSize: 'clamp(2rem, 5vw, 4rem)',
                   fontWeight: 300,
+                  lineHeight: 1.1,
+                  letterSpacing: '-0.03em',
                   color: '#0D0D0D',
-                  marginTop: '1.5rem',
-                  letterSpacing: '-0.02em',
                   textAlign: 'center',
                   display: 'flex',
                   justifyContent: 'center',
                 }}
-              >
-                What we stand for
-              </RevealText>
+              />
             </div>
           }
           imageSrc="/images/abstract_core_values_bg.jpg"
