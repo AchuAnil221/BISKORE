@@ -83,10 +83,18 @@ export const SECTORS = [
       { name: "Institutional", detail: "Hotels, canteen, food processors, supermarkets" },
     ],
     supplyChain: [
-      { step: "01", title: "Farm Collection", detail: "Direct from growers, with fair, transparent pricing." },
-      { step: "02", title: "Sort & Grade", detail: "Every batch checked for quality and grade before dispatch." },
-      { step: "03", title: "Biskore Fleet", detail: "Delivered on our own vehicles — no third-party handling." },
-      { step: "04", title: "Market Delivery", detail: "Reaching wholesale markets, retailers, and institutions." },
+      { step: "01", title: "Farm Collection", detail: "Direct from growers, ensuring fair pricing and full traceability." },
+      { step: "02", title: "Sorting & Grading", detail: "Every batch is inspected for quality and grade before packaging." },
+      { step: "03", title: "Quality Control", detail: "Rigorous standards maintained for freshness and compliance." },
+      { step: "04", title: "Biskore Fleet", detail: "Delivered pan-India on our own temperature-controlled vehicles." },
+      { step: "05", title: "Market Distribution", detail: "Reaching wholesale mandis, retail partners, and institutions." },
+    ],
+    logisticsSupport: [
+      "Own fleet of vehicles dedicated to fresh produce movement",
+      "Cold-chain and temperature-sensitive logistics capability",
+      "Multi-city and multi-route distribution reach",
+      "Direct delivery to wholesale mandis, retail stores, and institutions",
+      "Rapid-turnaround model optimised for perishable goods",
     ],
   },
   {
@@ -112,6 +120,7 @@ export const SECTORS = [
       { step: "03", title: "Quality Inspection", detail: "Every shipment inspected on arrival before distribution." },
       { step: "04", title: "Fleet Distribution", detail: "Delivered pan-India through the Biskore fleet." },
     ],
+    logisticsSupport: [],
   },
   {
     id: "koblaq",
@@ -136,6 +145,7 @@ export const SECTORS = [
       { name: "Accessories", detail: "Bags, belts, add-ons" },
     ],
     supplyChain: [],
+    logisticsSupport: [],
   },
   {
     id: "tastecore",
@@ -158,6 +168,7 @@ export const SECTORS = [
       { name: "Packaged Foods", detail: "Snacks, namkeens, ready-to-cook" },
     ],
     supplyChain: [],
+    logisticsSupport: [],
   },
   {
     id: "logistics",
@@ -185,6 +196,7 @@ export const SECTORS = [
       { step: "04", title: "Live Tracking", detail: "Delivery monitored in real time" },
       { step: "05", title: "POD & Close", detail: "Proof of delivery issued" },
     ],
+    logisticsSupport: [],
   },
 ] as const;
 

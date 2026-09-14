@@ -11,7 +11,6 @@ export default function LeadershipCta() {
   const [activeFounder, setActiveFounder] = useState(0);
 
   return (
-    <>
     <section
       style={{
         position: 'relative',
@@ -226,48 +225,43 @@ export default function LeadershipCta() {
             </div>
           </div>
         </div>
+          {/* ── FOUNDER QUOTE BLOCK ── */}
+          <div style={{ gridColumn: '1 / 13', marginTop: '6rem', paddingTop: '4rem', borderTop: '1px solid rgba(0,0,0,0.07)' }}>
+            <ScrollReveal>
+              <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+                <blockquote
+                  className="quote-reveal is-visible"
+                  style={{ margin: 0, opacity: 1, transform: 'none', maxWidth: '1000px' }}
+                >
+                  <p
+                    style={{
+                      fontSize: 'clamp(1.5rem, 3.5vw, 3rem)',
+                      fontWeight: 300,
+                      lineHeight: 1.25,
+                      letterSpacing: '-0.02em',
+                      color: 'rgba(0, 0, 0, 0.85)',
+                      fontStyle: 'italic',
+                    }}
+                  >
+                    &ldquo;We believe consistent quality isn&apos;t a feature — it&apos;s a promise that holds every business we touch to a single standard.&rdquo;
+                  </p>
+                  <footer
+                    style={{
+                      marginTop: '1.5rem',
+                      fontSize: '0.75rem',
+                      letterSpacing: '0.12em',
+                      textTransform: 'uppercase',
+                      color: 'rgba(0, 0, 0, 0.5)',
+                    }}
+                  >
+                    Biju &amp; Sujith — Co-Founders, Biskore Dynamics LLP
+                  </footer>
+                </blockquote>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
       </div>
     </section>
-
-      {/* ── FOUNDER QUOTE BLOCK ── */}
-      <section style={{ paddingTop: '6rem', paddingBottom: '8rem', background: '#062C22' }}>
-        <div className="container">
-          <ScrollReveal>
-            <div
-              style={{ display: 'flex', alignItems: 'flex-start', gap: '3rem' }}
-            >
-              <blockquote
-                className="quote-reveal is-visible"
-                style={{ flex: 1, margin: 0, opacity: 1, transform: 'none' }}
-              >
-                <p
-                  style={{
-                    fontSize: 'clamp(1.5rem, 3.5vw, 3rem)',
-                    fontWeight: 300,
-                    lineHeight: 1.25,
-                    letterSpacing: '-0.02em',
-                    color: 'rgba(255, 255, 255, 0.95)',
-                    fontStyle: 'italic',
-                  }}
-                >
-                  &ldquo;We believe consistent quality isn&apos;t a feature — it&apos;s a promise that holds every business we touch to a single standard.&rdquo;
-                </p>
-                <footer
-                  style={{
-                    marginTop: '1.5rem',
-                    fontSize: '0.75rem',
-                    letterSpacing: '0.12em',
-                    textTransform: 'uppercase',
-                    color: 'rgba(255, 255, 255, 0.55)',
-                  }}
-                >
-                  Biju &amp; Sujith — Co-Founders, Biskore Dynamics LLP
-                </footer>
-              </blockquote>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-    </>
   );
 }

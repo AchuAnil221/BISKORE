@@ -270,10 +270,10 @@ export default function VisionSection() {
                   alignItems: 'flex-start',
                   gap: '1.25rem',
                   padding: '1.5rem 2rem',
-                  border: '1px solid rgba(0,0,0,0.05)',
+                  border: '1px solid rgba(0,0,0,0.08)',
                   borderRadius: '12px',
                   background: '#FFFFFF',
-                  boxShadow: '0 4px 24px rgba(0,0,0,0.04)',
+                  boxShadow: '0 4px 24px rgba(0,0,0,0.08)',
                   transition: 'all 300ms',
                   height: '100%',
                 }}

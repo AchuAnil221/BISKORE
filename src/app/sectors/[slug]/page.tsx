@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import SectorSupplyChainAnim from '@/components/sectors/SectorSupplyChainAnim';
 import { SECTORS } from '@/lib/constants';
 
 type Params = { slug: string };
@@ -111,7 +112,12 @@ export default async function SectorPage({ params }: { params: Promise<Params> }
         </div>
       </section>
 
-      {/* Categories */}
+      {/* Supply Chain (How it works) */}
+      {sector.supplyChain.length > 0 && (
+        <SectorSupplyChainAnim sector={sector} />
+      )}
+
+      {/* Categories (What we supply) */}
       {sector.categories.length > 0 && (
         <section className="section" style={{ background: '#FFFFFF' }}>
           <div className="container">
@@ -123,7 +129,7 @@ export default async function SectorPage({ params }: { params: Promise<Params> }
                 </span>
               </div>
               <h2 className="text-h2" style={{ marginBottom: '3rem', maxWidth: 600 }}>
-                What we <span className="gradient-text">offer</span>
+                {sector.id === 'fresh-produce' ? 'What we supply' : <>What we <span className="gradient-text">offer</span></>}
               </h2>
             </ScrollReveal>
 
@@ -147,7 +153,7 @@ export default async function SectorPage({ params }: { params: Promise<Params> }
                       transition: 'background 300ms',
                     }}
                   >
-                    <div style={{ width: 24, height: 2, background: '#FFB71D', marginBottom: '1rem' }} />
+                    <div style={{ width: 24, height: 2, background: sector.accentColor || '#FFB71D', marginBottom: '1rem' }} />
                     <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#0D0D0D', marginBottom: '0.5rem' }}>
                       {cat.name}
                     </h3>
@@ -162,43 +168,23 @@ export default async function SectorPage({ params }: { params: Promise<Params> }
         </section>
       )}
 
-      {/* Supply Chain */}
-      {sector.supplyChain.length > 0 && (
+      {/* Logistics Support */}
+      {sector.logisticsSupport && sector.logisticsSupport.length > 0 && (
         <section className="section" style={{ background: '#F8F7F4' }}>
           <div className="container">
             <ScrollReveal>
-              <div className="section-badge" style={{ marginBottom: '1rem' }}>
-                <span className="gold-line" />
-                <span className="text-label">
-                  {sector.id === 'logistics' ? 'Delivery Process' : 'Supply Chain'}
-                </span>
-              </div>
-              <h2 className="text-h2" style={{ marginBottom: '3.5rem' }}>
-                How it <span className="gradient-text">works</span>
+              <h2 className="text-h2" style={{ marginBottom: '3rem', color: '#062C22' }}>
+                Logistics Support
               </h2>
             </ScrollReveal>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.25rem' }}>
-              {sector.supplyChain.map((step, i) => (
-                <ScrollReveal key={step.step} delay={(Math.min(i * 100 + 100, 500)) as 100 | 200 | 300 | 400 | 500}>
-                  <div
-                    className="hover-step"
-                    style={{
-                      padding: '2rem',
-                      border: '1px solid rgba(0,0,0,0.07)',
-                      background: '#FFFFFF',
-                      boxShadow: '0 2px 12px rgba(0,0,0,0.05)',
-                      transition: 'all 300ms',
-                    }}
-                  >
-                    <div style={{ fontSize: '2rem', fontWeight: 900, color: 'rgba(255,183,29,0.3)', lineHeight: 1, marginBottom: '1rem', letterSpacing: '-0.02em' }}>
-                      {step.step}
-                    </div>
-                    <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#0D0D0D', marginBottom: '0.625rem' }}>
-                      {step.title}
-                    </h3>
-                    <p style={{ fontSize: '0.875rem', color: '#666', lineHeight: 1.65 }}>
-                      {step.detail}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', maxWidth: '800px' }}>
+              {sector.logisticsSupport.map((point: string, i: number) => (
+                <ScrollReveal key={i} delay={(Math.min(i * 100 + 100, 500)) as 100 | 200 | 300 | 400 | 500}>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
+                    <div style={{ width: 6, height: 6, borderRadius: '50%', background: sector.accentColor || '#FFB71D', marginTop: '0.5rem', flexShrink: 0 }} />
+                    <p style={{ fontSize: '1.1rem', color: '#444', lineHeight: 1.6 }}>
+                      {point}
                     </p>
                   </div>
                 </ScrollReveal>

@@ -70,7 +70,7 @@ export function ScrollSplitCard({
     >
       <div className="sticky top-0 flex flex-col h-screen w-full items-center justify-center overflow-hidden [perspective:1200px]">
         {titleNode && (
-          <div className="relative z-10 w-full" style={{ marginBottom: '8rem' }}>
+          <div className="relative z-10 w-full" style={{ marginBottom: '5rem' }}>
             {titleNode}
           </div>
         )}
@@ -130,7 +130,7 @@ export function ScrollSplitCard({
               >
                 {/* Grainy Noise Overlay */}
                 <div
-                  className="pointer-events-none absolute inset-0 opacity-20 mix-blend-overlay"
+                  className="pointer-events-none absolute inset-0 opacity-5 mix-blend-overlay"
                   style={{
                     backgroundImage: `url("https://framerusercontent.com/images/6mcf62RlDfRfU61Yg5vb2pefpi4.png?width=256&height=256")`,
                     backgroundRepeat: "repeat",
