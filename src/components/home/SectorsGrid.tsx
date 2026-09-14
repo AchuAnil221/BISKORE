@@ -60,17 +60,6 @@ export default function SectorsGrid() {
               <p style={{ fontSize: '0.85rem', color: '#888', margin: 0, textAlign: 'right' }}>
                 Each sector operates under one quality standard.
               </p>
-              <Link href="/sectors" style={{
-                display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-                fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.12em',
-                textTransform: 'uppercase', color: '#0D0D0D',
-                borderBottom: '1px solid #0D0D0D', paddingBottom: '2px',
-              }} className="hover-gold">
-                All Sectors
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-                  <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </Link>
             </div>
           </ScrollReveal>
         </div>

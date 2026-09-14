@@ -160,12 +160,7 @@ export default function TastecoreContent({ sector }: SectorProps) {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
-                <span style={{ width: '28px', height: '2px', background: '#E64A19' }} />
-                <span style={{ fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.12em', color: '#E64A19', textTransform: 'uppercase' }}>
-                  Section 01 • Flavor Philosophy
-                </span>
-              </div>
+              
               <h2
                 style={{
                   fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)',
@@ -237,8 +232,8 @@ export default function TastecoreContent({ sector }: SectorProps) {
                 {/* Product 1: Spice Sachet (Top Left) */}
                 <g transform="translate(225, 130)">
                   <motion.g
-                    initial={{ opacity: 0, x: 0, y: 0 }}
-                    animate={{ opacity: 1, x: -120, y: -60 }}
+                    initial={{ x: -120, y: -60 }}
+                    animate={{ x: -35, y: -20 }}
                     transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse' }}
                   >
                     <rect x="-16" y="-20" width="32" height="40" rx="3" fill="#E64A19" />
@@ -249,8 +244,8 @@ export default function TastecoreContent({ sector }: SectorProps) {
                 {/* Product 2: Juice Bottle (Top Right) */}
                 <g transform="translate(225, 130)">
                   <motion.g
-                    initial={{ opacity: 0, x: 0, y: 0 }}
-                    animate={{ opacity: 1, x: 120, y: -60 }}
+                    initial={{ x: 120, y: -60 }}
+                    animate={{ x: 35, y: -20 }}
                     transition={{ duration: 2.2, repeat: Infinity, repeatType: 'reverse', delay: 0.2 }}
                   >
                     <rect x="-10" y="-22" width="20" height="38" rx="2" fill="#FFA000" />
@@ -262,8 +257,8 @@ export default function TastecoreContent({ sector }: SectorProps) {
                 {/* Product 3: Breakfast Cereal Box (Bottom Left) */}
                 <g transform="translate(225, 130)">
                   <motion.g
-                    initial={{ opacity: 0, x: 0, y: 0 }}
-                    animate={{ opacity: 1, x: -110, y: 55 }}
+                    initial={{ x: -110, y: 55 }}
+                    animate={{ x: -35, y: 20 }}
                     transition={{ duration: 2.4, repeat: Infinity, repeatType: 'reverse', delay: 0.4 }}
                   >
                     <rect x="-18" y="-18" width="36" height="36" rx="3" fill="#F57C00" />
@@ -274,8 +269,8 @@ export default function TastecoreContent({ sector }: SectorProps) {
                 {/* Product 4: Soft Drink Soda Can (Bottom Right) */}
                 <g transform="translate(225, 130)">
                   <motion.g
-                    initial={{ opacity: 0, x: 0, y: 0 }}
-                    animate={{ opacity: 1, x: 110, y: 55 }}
+                    initial={{ x: 110, y: 55 }}
+                    animate={{ x: 35, y: 20 }}
                     transition={{ duration: 2.1, repeat: Infinity, repeatType: 'reverse', delay: 0.6 }}
                   >
                     <rect x="-12" y="-20" width="24" height="40" rx="4" fill="#C2185B" />
@@ -292,13 +287,7 @@ export default function TastecoreContent({ sector }: SectorProps) {
       <section style={{ padding: '7rem 0', background: '#FFFFFF' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 4.5rem' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
-              <span style={{ width: '24px', height: '2px', background: '#E64A19' }} />
-              <span style={{ fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.12em', color: '#E64A19', textTransform: 'uppercase' }}>
-                Section 02 • Consumer Range
-              </span>
-              <span style={{ width: '24px', height: '2px', background: '#E64A19' }} />
-            </div>
+            
             <h2
               style={{
                 fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)',
@@ -329,7 +318,7 @@ export default function TastecoreContent({ sector }: SectorProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.08 }}
-                whileHover={{ y: -6, boxShadow: `0 20px 35px -10px ${p.accent}26` }}
+                whileHover={{ y: -6 }}
                 onMouseEnter={() => setHoveredCard(idx)}
                 onMouseLeave={() => setHoveredCard(null)}
                 style={{
@@ -342,21 +331,7 @@ export default function TastecoreContent({ sector }: SectorProps) {
                   flexDirection: 'column',
                 }}
               >
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-                  {p.icon}
-                  <span
-                    style={{
-                      fontSize: '0.75rem',
-                      fontWeight: 700,
-                      color: p.accent,
-                      background: `${p.accent}15`,
-                      padding: '0.35rem 0.85rem',
-                      borderRadius: '100px',
-                    }}
-                  >
-                    {p.badge}
-                  </span>
-                </div>
+
 
                 <div style={{ fontSize: '0.8rem', color: '#888', fontWeight: 600, marginBottom: '0.35rem' }}>
                   {p.category}
@@ -377,13 +352,7 @@ export default function TastecoreContent({ sector }: SectorProps) {
       <section style={{ padding: '7rem 0', background: '#F8F7F4' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 4.5rem' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
-              <span style={{ width: '24px', height: '2px', background: '#E64A19' }} />
-              <span style={{ fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.12em', color: '#E64A19', textTransform: 'uppercase' }}>
-                Section 03 • Processing Standard
-              </span>
-              <span style={{ width: '24px', height: '2px', background: '#E64A19' }} />
-            </div>
+            
             <h2
               style={{
                 fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)',
@@ -489,13 +458,7 @@ export default function TastecoreContent({ sector }: SectorProps) {
       <section style={{ padding: '7rem 0', background: '#FFFFFF' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 4rem' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
-              <span style={{ width: '24px', height: '2px', background: '#E64A19' }} />
-              <span style={{ fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.12em', color: '#E64A19', textTransform: 'uppercase' }}>
-                Section 04 • Consumer Trust
-              </span>
-              <span style={{ width: '24px', height: '2px', background: '#E64A19' }} />
-            </div>
+            
             <h2
               style={{
                 fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)',
@@ -551,142 +514,56 @@ export default function TastecoreContent({ sector }: SectorProps) {
         </div>
       </section>
 
-      {/* SECTION 05: Ready for the Market (Tastecore -> Packages -> Truck -> Distribution Nodes) */}
-      <section style={{ padding: '8rem 0', background: '#BF360C', color: '#FFFFFF', position: 'relative', overflow: 'hidden' }}>
-        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-          <div style={{ maxWidth: '850px', margin: '0 auto', textAlign: 'center' }}>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <div
-                style={{
-                  display: 'inline-block',
-                  background: 'rgba(255,255,255,0.2)',
-                  color: '#FFF',
-                  padding: '0.4rem 1.25rem',
-                  borderRadius: '100px',
-                  fontSize: '0.8rem', fontWeight: 600,
-                  letterSpacing: '0.12em',
-                  textTransform: 'uppercase',
-                  marginBottom: '1.5rem',
-                }}
-              >
-                Distribution Fleet Integration
-              </div>
+      {/* SECTION 05: Ready for the Market */}
+      <section className="section">
+        <div className="container">
+          <div
+            style={{
+              background: 'linear-gradient(135deg, #BF360C 0%, #D84315 100%)',
+              borderRadius: '24px',
+              padding: '3.5rem',
+              color: '#FFFFFF',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+              gap: '2rem',
+              position: 'relative',
+              overflow: 'hidden'
+            }}
+          >
+            <div style={{ maxWidth: '600px', position: 'relative', zIndex: 2 }}>
 
-              <h2
-                style={{
-                  fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)',
-                  fontWeight: 300,
-                  letterSpacing: '-0.03em',
-                  lineHeight: 1.12,
-                  color: '#FFFFFF',
-                  marginBottom: '1.75rem',
-                }}
-              >
+              <h3 className="text-h3" style={{ color: '#FFFFFF', marginBottom: '0.75rem' }}>
                 From Our Products to Everyday Tables
-              </h2>
-
-              <p style={{
-                  fontSize: 'clamp(1rem, 1.4vw, 1.15rem)',
-                  color: 'rgba(255,255,255,0.9)',
-                  lineHeight: 1.85, fontWeight: 300,
-                  marginBottom: '3.5rem',
-                }}
-              >
+              </h3>
+              <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '1.05rem', lineHeight: 1.6 }}>
                 Tastecore blends and packages high-demand consumer foods, while Biskore Logistics guarantees timely multi-city supermarket and retail store replenishment.
               </p>
+            </div>
 
-              {/* Animated Truck Route into Distribution Nodes */}
-              <div
-                style={{
-                  background: 'rgba(255,255,255,0.1)',
-                  borderRadius: '24px',
-                  padding: '2.5rem',
-                  border: '1px solid rgba(255,255,255,0.2)',
-                  marginBottom: '3.5rem',
-                }}
-              >
-                <svg viewBox="0 0 700 100" style={{ width: '100%', height: 'auto', overflow: 'visible' }}>
-                  <line x1="50" y1="50" x2="650" y2="50" stroke="rgba(255,255,255,0.3)" strokeWidth="3" />
-                  <motion.line
-                    x1="50"
-                    y1="50"
-                    x2="650"
-                    y2="50"
-                    stroke="#FFD54F"
-                    strokeWidth="3"
-                    strokeDasharray="8 8"
-                    animate={{ strokeDashoffset: [0, -32] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
-                  />
-
-                  <circle cx="100" cy="50" r="10" fill="#FFD54F" />
-                  <text x="100" y="80" textAnchor="middle" fill="#FFF" fontSize="12">Tastecore Hub</text>
-
-                  <circle cx="350" cy="50" r="10" fill="#FFD54F" />
-                  <text x="350" y="80" textAnchor="middle" fill="#FFF" fontSize="12">FMCG Depot</text>
-
-                  <circle cx="600" cy="50" r="10" fill="#4CAF50" />
-                  <text x="600" y="80" textAnchor="middle" fill="#FFF" fontSize="12" fontWeight="700">Retail Stores</text>
-
-                  {/* Moving Delivery Van */}
-                  <motion.g
-                    animate={{ x: [80, 580] }}
-                    transition={{ duration: 6.5, repeat: Infinity, ease: 'easeInOut' }}
-                  >
-                    <g transform="translate(-20, 25)">
-                      <rect x="0" y="0" width="36" height="20" rx="2" fill="#FFFFFF" />
-                      <polygon points="36,6 44,6 50,13 50,20 36,20" fill="#FFB71D" />
-                      <circle cx="10" cy="22" r="4" fill="#212121" />
-                      <circle cx="26" cy="22" r="4" fill="#212121" />
-                      <circle cx="44" cy="22" r="4" fill="#212121" />
-                    </g>
-                  </motion.g>
-                </svg>
-              </div>
-
-              {/* Action Buttons */}
-              <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
-                <Link
-                  href="/contact"
-                  style={{
-                    padding: '1.1rem 2.5rem',
-                    fontSize: '1rem',
-                    fontWeight: 700,
-                    borderRadius: '100px',
-                    background: '#FFFFFF',
-                    color: '#BF360C',
-                    textDecoration: 'none',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.75rem',
-                  }}
-                >
-                  Distribute Tastecore Products
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                    <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </Link>
-                <Link
-                  href="/sectors/logistics"
-                  style={{
-                    padding: '1.1rem 2.5rem',
-                    fontSize: '1rem',
-                    fontWeight: 600,
-                    borderRadius: '100px',
-                    border: '1px solid rgba(255,255,255,0.4)',
-                    color: '#FFFFFF',
-                    textDecoration: 'none',
-                  }}
-                >
-                  Explore Cold & Dry Logistics
-                </Link>
-              </div>
-            </motion.div>
+            <Link
+              href="/contact"
+              style={{
+                padding: '1.1rem 2.25rem',
+                fontSize: '1rem',
+                fontWeight: 700,
+                borderRadius: '100px',
+                background: '#FFFFFF',
+                color: '#0D0D0D',
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                position: 'relative',
+                zIndex: 2,
+              }}
+            >
+              Distribute Tastecore Products
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>

@@ -177,17 +177,18 @@ export default function Header() {
                                 padding: '0.65rem 1rem',
                                 borderRadius: '10px',
                                 fontSize: '0.875rem',
-                                fontWeight: 500,
-                                color: isActive(child.href) ? '#062C22' : '#3D3D3D',
+                                color: isActive(child.href) ? '#0D0D0D' : '#3D3D3D',
                                 transition: 'all 200ms',
                                 background: isActive(child.href)
-                                  ? 'rgba(6, 44, 34, 0.07)'
+                                  ? navActiveColor
                                   : 'transparent',
+                                fontWeight: isActive(child.href) ? 600 : 500,
                               }}
                               onMouseEnter={(e) => {
-                                (e.currentTarget as HTMLElement).style.background =
-                                  'rgba(6, 44, 34, 0.07)';
-                                (e.currentTarget as HTMLElement).style.color = '#062C22';
+                                if (!isActive(child.href)) {
+                                  (e.currentTarget as HTMLElement).style.background = 'rgba(0, 0, 0, 0.05)';
+                                  (e.currentTarget as HTMLElement).style.color = '#0D0D0D';
+                                }
                               }}
                               onMouseLeave={(e) => {
                                 if (!isActive(child.href)) {

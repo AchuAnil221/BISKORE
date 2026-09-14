@@ -245,46 +245,20 @@ export default function KoblaqContent({ sector }: SectorProps) {
             style={{ maxWidth: '850px', margin: '0 auto' }}
           >
             {/* Elegant Luxury Typography Wordmark replaced with actual logo */}
-            <div style={{ marginBottom: '1.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <img
-                src="/images/koblaq/logo_cropped_6.png"
-                alt="Koblaq Logo"
-                style={{
-                  height: '140px',
-                  width: 'auto',
-                  mixBlendMode: 'screen',
-                  opacity: 0.9,
-                  marginBottom: '1rem',
-                  clipPath: 'inset(4px)',
-                }}
-              />
-              <div
-                style={{
-                  fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)',
-                  fontWeight: 300,
-                  letterSpacing: '0.3em',
-                  color: '#C5A059',
-                  textTransform: 'uppercase',
-                  marginTop: '1rem',
-                }}
-              >
-                Lifestyle, made accessible.
+            <div style={{ display: 'flex', flexWrap: 'wrap-reverse', alignItems: 'center', justifyContent: 'space-between', gap: '3rem', textAlign: 'left' }}>
+              <div style={{ flex: '1 1 400px' }}>
+                <div style={{ fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)', fontWeight: 300, letterSpacing: '0.2em', color: '#C5A059', textTransform: 'uppercase', lineHeight: 1.3 }}>
+                  Lifestyle, made accessible.
+                </div>
+                <div style={{ width: '60px', height: '1px', background: '#C5A059', margin: '2rem 0', opacity: 0.6 }} />
+                <p style={{ fontSize: 'clamp(1rem, 1.4vw, 1.15rem)', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.85, maxWidth: '650px', fontWeight: 300 }}>
+                  Koblaq brings together clothing, beauty, fragrances, footwear and everyday lifestyle products under one accessible brand.
+                </p>
+              </div>
+              <div style={{ flex: '1 1 300px', display: 'flex', justifyContent: 'center' }}>
+                <img src="/images/koblaq/logo_cropped_6.png" alt="Koblaq Logo" style={{ height: 'auto', width: '100%', maxWidth: '450px', mixBlendMode: 'screen', opacity: 0.9, clipPath: 'inset(4px)' }} />
               </div>
             </div>
-
-            <div style={{ width: '60px', height: '1px', background: '#C5A059', margin: '2rem auto', opacity: 0.6 }} />
-
-            <p style={{
-                fontSize: 'clamp(1rem, 1.4vw, 1.15rem)',
-                color: 'rgba(255, 255, 255, 0.75)',
-                lineHeight: 1.85,
-                maxWidth: '720px',
-                margin: '0 auto',
-                fontWeight: 300,
-              }}
-            >
-              Koblaq brings together clothing, beauty, fragrances, footwear and everyday lifestyle products under one accessible brand.
-            </p>
           </motion.div>
         </div>
       </section>
@@ -320,7 +294,7 @@ export default function KoblaqContent({ sector }: SectorProps) {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
               gap: '1.75rem',
             }}
           >
@@ -339,7 +313,7 @@ export default function KoblaqContent({ sector }: SectorProps) {
                   borderRadius: '20px',
                   padding: '2.5rem 2rem',
                   border: hoveredCard === idx ? `1px solid ${item.accent}` : '1px solid rgba(255,255,255,0.07)',
-                  boxShadow: hoveredCard === idx ? `0 20px 40px -15px ${item.accent}33` : '0 10px 30px rgba(0,0,0,0.3)',
+                  
                   transition: 'border 300ms, box-shadow 300ms',
                   display: 'flex',
                   flexDirection: 'column',
@@ -348,25 +322,7 @@ export default function KoblaqContent({ sector }: SectorProps) {
                   overflow: 'hidden',
                 }}
               >
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
-                  <div style={{ padding: '0.75rem', borderRadius: '12px', background: 'rgba(255,255,255,0.03)' }}>
-                    {item.icon}
-                  </div>
-                  <span
-                    style={{
-                      fontSize: '0.7rem',
-                      fontWeight: 700,
-                      letterSpacing: '0.12em',
-                      textTransform: 'uppercase',
-                      color: item.accent,
-                      background: `${item.accent}15`,
-                      padding: '0.35rem 0.85rem',
-                      borderRadius: '100px',
-                    }}
-                  >
-                    {item.category}
-                  </span>
-                </div>
+                
 
                 <h3 style={{ fontSize: '1.35rem', fontWeight: 700, color: '#FFFFFF', marginBottom: '0.75rem' }}>
                   {item.title}
@@ -483,62 +439,7 @@ export default function KoblaqContent({ sector }: SectorProps) {
             </p>
           </div>
 
-          {/* Interactive Quality Scanner Visualization */}
-          <div
-            style={{
-              background: '#0D0D0F',
-              borderRadius: '24px',
-              padding: '2.5rem',
-              border: '1px solid rgba(197, 160, 89, 0.25)',
-              marginBottom: '4rem',
-              overflow: 'hidden',
-              position: 'relative',
-            }}
-          >
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
-              <span style={{ fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.1em', color: '#C5A059' }}>
-                OPTICAL FABRIC & DERMA SAFETY SCANNER
-              </span>
-              <span style={{ fontSize: '0.8rem', color: '#4CAF50', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#4CAF50' }} />
-                100% Passed
-              </span>
-            </div>
-
-            <svg viewBox="0 0 800 120" style={{ width: '100%', height: 'auto', overflow: 'visible' }}>
-              {/* Product item: Luxury Koblaq Garment */}
-              <g transform="translate(360, 20)">
-                <path d="M20 15L40 5L60 15L55 25L50 22V75H30V22L25 25L20 15Z" fill="none" stroke="#FFFFFF" strokeWidth="2" />
-                <line x1="40" y1="5" x2="40" y2="75" stroke="#C5A059" strokeWidth="1" strokeDasharray="3 3" />
-                <circle cx="40" cy="30" r="2" fill="#C5A059" />
-                <circle cx="40" cy="45" r="2" fill="#C5A059" />
-              </g>
-
-              {/* Scanning Laser Beam (Moves top to bottom) */}
-              <motion.line
-                x1="320"
-                y1="20"
-                x2="480"
-                y2="20"
-                stroke="#00E5FF"
-                strokeWidth="2"
-                animate={{ y1: [15, 85, 15], y2: [15, 85, 15] }}
-                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-              />
-
-              {/* Verified Checkmark Badge appearing */}
-              <motion.g
-                initial={{ scale: 0.8, opacity: 0.5 }}
-                animate={{ scale: [1, 1.15, 1], opacity: [0.8, 1, 0.8] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                transform="translate(480, 45)"
-              >
-                <circle cx="0" cy="0" r="16" fill="#1B5E20" stroke="#4CAF50" strokeWidth="2" />
-                <path d="M-6 0L-2 4L6 -4" fill="none" stroke="#FFF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                <text x="30" y="5" fill="#4CAF50" fontSize="12" fontWeight="700">VERIFIED SAFE</text>
-              </motion.g>
-            </svg>
-          </div>
+          
 
           {/* 4 Cards */}
           <div
@@ -579,133 +480,56 @@ export default function KoblaqContent({ sector }: SectorProps) {
         </div>
       </section>
 
-      {/* SECTION 05: From Brand to Market (Koblaq -> Product -> Package -> Biskore Distribution) */}
-      <section style={{ padding: '8rem 0', background: 'linear-gradient(180deg, #111113 0%, #062C22 100%)', color: '#FFFFFF' }}>
+      {/* SECTION 05: From Brand to Market */}
+      <section className="section">
         <div className="container">
-          <div style={{ maxWidth: '850px', margin: '0 auto', textAlign: 'center' }}>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <div
-                style={{
-                  display: 'inline-block',
-                  background: 'rgba(197, 160, 89, 0.2)',
-                  color: '#C5A059',
-                  padding: '0.4rem 1.25rem',
-                  borderRadius: '100px',
-                  fontSize: '0.8rem', fontWeight: 600,
-                  letterSpacing: '0.12em',
-                  textTransform: 'uppercase',
-                  marginBottom: '1.5rem',
-                }}
-              >
-                Group Integration
-              </div>
+          <div
+            style={{
+              background: 'linear-gradient(180deg, #111113 0%, #062C22 100%)',
+              borderRadius: '24px',
+              padding: '3.5rem',
+              color: '#FFFFFF',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+              gap: '2rem',
+              position: 'relative',
+              overflow: 'hidden'
+            }}
+          >
+            <div style={{ maxWidth: '600px', position: 'relative', zIndex: 2 }}>
 
-              <h2
-                style={{
-                  fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)',
-                  fontWeight: 300,
-                  letterSpacing: '-0.03em',
-                  lineHeight: 1.12,
-                  color: '#FFFFFF',
-                  marginBottom: '1.75rem',
-                }}
-              >
+              <h3 className="text-h3" style={{ color: '#FFFFFF', marginBottom: '0.75rem' }}>
                 Built as a Brand. Supported by a Business.
-              </h2>
-
-              <p style={{
-                  fontSize: 'clamp(1rem, 1.4vw, 1.15rem)',
-                  color: 'rgba(255,255,255,0.8)',
-                  lineHeight: 1.85, fontWeight: 300,
-                  marginBottom: '3.5rem',
-                }}
-              >
+              </h3>
+              <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.05rem', lineHeight: 1.6 }}>
                 Koblaq creates the design, fragrance, and lifestyle allure — while Biskore’s unified logistics infrastructure moves products into regional stores and direct-to-consumer networks pan-India.
               </p>
+            </div>
 
-              {/* Visual Flow: Product -> Package -> Small Truck */}
-              <div
-                style={{
-                  background: 'rgba(255,255,255,0.04)',
-                  borderRadius: '24px',
-                  padding: '3rem 2rem',
-                  border: '1px solid rgba(255,255,255,0.1)',
-                  marginBottom: '3.5rem',
-                }}
-              >
-                <div
-                  style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
-                    gap: '1.5rem',
-                    alignItems: 'center',
-                  }}
-                >
-                  <div>
-                    <div style={{ fontSize: '0.75rem', color: '#C5A059', fontWeight: 700, letterSpacing: '0.1em', marginBottom: '0.5rem' }}>01. BRAND</div>
-                    <div style={{ fontSize: '1.25rem', fontWeight: 300 }}>Koblaq Design</div>
-                  </div>
-                  <div style={{ color: 'rgba(255,255,255,0.3)', fontSize: '1.5rem' }}>→</div>
-                  <div>
-                    <div style={{ fontSize: '0.75rem', color: '#C5A059', fontWeight: 700, letterSpacing: '0.1em', marginBottom: '0.5rem' }}>02. PRODUCT</div>
-                    <div style={{ fontSize: '1.25rem', fontWeight: 300 }}>Lifestyle Goods</div>
-                  </div>
-                  <div style={{ color: 'rgba(255,255,255,0.3)', fontSize: '1.5rem' }}>→</div>
-                  <div>
-                    <div style={{ fontSize: '0.75rem', color: '#C5A059', fontWeight: 700, letterSpacing: '0.1em', marginBottom: '0.5rem' }}>03. PACKAGE</div>
-                    <div style={{ fontSize: '1.25rem', fontWeight: 300 }}>Luxury Boxed</div>
-                  </div>
-                  <div style={{ color: 'rgba(255,255,255,0.3)', fontSize: '1.5rem' }}>→</div>
-                  <div>
-                    <div style={{ fontSize: '0.75rem', color: '#4CAF50', fontWeight: 700, letterSpacing: '0.1em', marginBottom: '0.5rem' }}>04. TRANSIT</div>
-                    <div style={{ fontSize: '1.25rem', fontWeight: 300, color: '#4CAF50' }}>Biskore Fleet</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Link CTA to Contact or Logistics */}
-              <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
-                <Link
-                  href="/contact"
-                  style={{
-                    padding: '1.1rem 2.5rem',
-                    fontSize: '1rem',
-                    fontWeight: 700,
-                    borderRadius: '100px',
-                    background: '#C5A059',
-                    color: '#0D0D0D',
-                    textDecoration: 'none',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.75rem',
-                  }}
-                >
-                  Inquire Retail Partnerships
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                    <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </Link>
-                <Link
-                  href="/sectors/logistics"
-                  style={{
-                    padding: '1.1rem 2.5rem',
-                    fontSize: '1rem',
-                    fontWeight: 600,
-                    borderRadius: '100px',
-                    border: '1px solid rgba(255,255,255,0.25)',
-                    color: '#FFFFFF',
-                    textDecoration: 'none',
-                  }}
-                >
-                  View Distribution Logistics
-                </Link>
-              </div>
-            </motion.div>
+            <Link
+              href="/contact"
+              style={{
+                padding: '1.1rem 2.25rem',
+                fontSize: '1rem',
+                fontWeight: 700,
+                borderRadius: '100px',
+                background: '#FFFFFF',
+                color: '#0D0D0D',
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                position: 'relative',
+                zIndex: 2,
+              }}
+            >
+              Inquire Retail Partnerships
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>

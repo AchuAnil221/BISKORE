@@ -137,12 +137,7 @@ export default function LogisticsContent({ sector }: SectorProps) {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
-                <span style={{ width: '28px', height: '2px', background: '#FF9800' }} />
-                <span style={{ fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.12em', color: '#FF9800', textTransform: 'uppercase' }}>
-                  Section 01 • Interstate Transport
-                </span>
-              </div>
+              
               <h2
                 style={{
                   fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)',
@@ -258,13 +253,7 @@ export default function LogisticsContent({ sector }: SectorProps) {
       <section style={{ padding: '7rem 0', background: '#F8F7F4' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 4.5rem' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
-              <span style={{ width: '24px', height: '2px', background: '#FF9800' }} />
-              <span style={{ fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.12em', color: '#FF9800', textTransform: 'uppercase' }}>
-                Section 02 • Core Capabilities
-              </span>
-              <span style={{ width: '24px', height: '2px', background: '#FF9800' }} />
-            </div>
+            
             <h2
               style={{
                 fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)',
@@ -281,59 +270,7 @@ export default function LogisticsContent({ sector }: SectorProps) {
             </p>
           </div>
 
-          {/* Interactive Dynamic Truck Cargo Simulator based on hovered service */}
-          <div
-            style={{
-              background: '#F8F7F4',
-              borderRadius: '24px',
-              padding: '2rem 2.5rem',
-              border: '1px solid rgba(255, 152, 0, 0.25)',
-              marginBottom: '3.5rem',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              flexWrap: 'wrap',
-              gap: '2rem',
-            }}
-          >
-            <div>
-              <div style={{ fontSize: '0.75rem', color: '#FF9800', fontWeight: 700, letterSpacing: '0.1em', marginBottom: '0.35rem' }}>
-                CURRENTLY INSPECTING CONFIGURATION
-              </div>
-              <div style={{ fontSize: '1.5rem', fontWeight: 300, color: '#0D0D0D' }}>
-                {services[selectedService].title}
-              </div>
-              <div style={{ fontSize: '0.9rem', color: '#666666' }}>
-                {services[selectedService].desc}
-              </div>
-            </div>
 
-            {/* Dynamic Animated Truck SVG Graphic reflecting the selected configuration */}
-            <div style={{ width: '180px', height: '80px' }}>
-              <svg viewBox="0 0 180 80" style={{ width: '100%', height: 'auto' }}>
-                <rect
-                  x="10"
-                  y="15"
-                  width="100"
-                  height="45"
-                  rx="3"
-                  fill={selectedService === 1 ? '#0A3D30' : selectedService === 3 ? '#334155' : '#1E293B'}
-                  stroke="#FF9800"
-                  strokeWidth="1.5"
-                />
-                <text x="60" y="42" textAnchor="middle" fill="#0D0D0D" fontSize="9" fontWeight="700">
-                  {services[selectedService].badge}
-                </text>
-                {/* Truck Cabin */}
-                <polygon points="110,30 135,30 150,45 150,60 110,60" fill="#FF9800" />
-                <polygon points="115,35 130,35 140,45 115,45" fill="#E2E8F0" />
-                {/* Wheels */}
-                <circle cx="35" cy="62" r="8" fill="#333" stroke="#94A3B8" strokeWidth="2" />
-                <circle cx="85" cy="62" r="8" fill="#333" stroke="#94A3B8" strokeWidth="2" />
-                <circle cx="135" cy="62" r="8" fill="#333" stroke="#94A3B8" strokeWidth="2" />
-              </svg>
-            </div>
-          </div>
 
           {/* 5 Primary Cards + 1 Smaller 6th Card */}
           <div
@@ -397,13 +334,7 @@ export default function LogisticsContent({ sector }: SectorProps) {
       <section style={{ padding: '7.5rem 0', background: '#F8F7F4' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 4.5rem' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
-              <span style={{ width: '24px', height: '2px', background: '#FF9800' }} />
-              <span style={{ fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.12em', color: '#FF9800', textTransform: 'uppercase' }}>
-                Section 03 • The Delivery Protocol
-              </span>
-              <span style={{ width: '24px', height: '2px', background: '#FF9800' }} />
-            </div>
+            
             <h2
               style={{
                 fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)',
@@ -420,74 +351,7 @@ export default function LogisticsContent({ sector }: SectorProps) {
             </p>
           </div>
 
-          {/* MAIN ANIMATION: Truck physically travels along the 5 stages */}
-          <div
-            style={{
-              background: '#FFF8F0',
-              borderRadius: '24px',
-              padding: '3rem 2.5rem',
-              border: '1px solid rgba(255, 152, 0, 0.25)',
-              marginBottom: '3.5rem',
-              overflow: 'hidden',
-            }}
-          >
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '2rem' }}>
-              <span style={{ fontSize: '0.85rem', fontWeight: 300, letterSpacing: '0.1em', color: '#FF9800' }}>
-                LIVE RUNTIME DISPATCH TRACK
-              </span>
-              <span style={{ fontSize: '0.8rem', color: '#38BDF8', fontWeight: 600 }}>
-                Automatic Waybill & Telemetry Sync
-              </span>
-            </div>
 
-            <svg viewBox="0 0 900 140" style={{ width: '100%', height: 'auto', overflow: 'visible' }}>
-              {/* Active Highway line */}
-              <line x1="50" y1="70" x2="850" y2="70" stroke="#1E293B" strokeWidth="6" strokeLinecap="round" />
-              <motion.line
-                x1="50"
-                y1="70"
-                x2="850"
-                y2="70"
-                stroke="#FF9800"
-                strokeWidth="4"
-                strokeDasharray="12 12"
-                animate={{ strokeDashoffset: [0, -48] }}
-                transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
-              />
-
-              {/* 5 Stages */}
-              {deliveryStages.map((stg, i) => {
-                const x = 90 + i * 180;
-                return (
-                  <g key={stg.code} transform={`translate(${x}, 70)`}>
-                    <circle cx="0" cy="0" r="18" fill="#FFF0DF" stroke="#FF9800" strokeWidth="3" />
-                    <text x="0" y="5" textAnchor="middle" fill="#0D0D0D" fontSize="11" fontWeight="700">
-                      {stg.icon}
-                    </text>
-                    <text x="0" y="38" textAnchor="middle" fill="#0D0D0D" fontSize="11" fontWeight="800">
-                      {stg.title}
-                    </text>
-                  </g>
-                );
-              })}
-
-              {/* Moving Biskore Truck traveling between stages */}
-              <motion.g
-                animate={{ x: [80, 810] }}
-                transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-              >
-                <g transform="translate(-25, 25)">
-                  <rect x="0" y="5" width="40" height="22" rx="2" fill="#FF9800" />
-                  <polygon points="40,12 48,12 54,20 54,27 40,27" fill="#F59E0B" />
-                  <circle cx="10" cy="28" r="4.5" fill="#333" />
-                  <circle cx="28" cy="28" r="4.5" fill="#333" />
-                  <circle cx="47" cy="28" r="4.5" fill="#333" />
-                  {/* Beam */}
-                  <polygon points="54,22 68,18 68,26" fill="#FEF08A" opacity="0.6" />
-                </g>
-              </motion.g>
-            </svg>
-          </div>
 
           {/* 5 Step Information Cards */}
           <div
@@ -527,13 +391,7 @@ export default function LogisticsContent({ sector }: SectorProps) {
       <section style={{ padding: '7rem 0', background: '#F8F7F4', borderTop: '1px solid rgba(255, 152, 0, 0.15)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 4.5rem' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
-              <span style={{ width: '24px', height: '2px', background: '#FF9800' }} />
-              <span style={{ fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.12em', color: '#FF9800', textTransform: 'uppercase' }}>
-                Section 04 • Pan-India Reach
-              </span>
-              <span style={{ width: '24px', height: '2px', background: '#FF9800' }} />
-            </div>
+            
             <h2
               style={{
                 fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)',
@@ -550,89 +408,7 @@ export default function LogisticsContent({ sector }: SectorProps) {
             </p>
           </div>
 
-          {/* Large Abstract India Network Map */}
-          <div
-            style={{
-              background: '#F8F7F4',
-              borderRadius: '24px',
-              padding: '3.5rem 2rem',
-              border: '1px solid rgba(255, 152, 0, 0.25)',
-              position: 'relative',
-              overflow: 'hidden',
-            }}
-          >
-            <svg viewBox="0 0 700 480" style={{ width: '100%', height: 'auto', overflow: 'visible' }}>
-              {/* Stylized Abstract India Outline */}
-              <path
-                d="M320 40 L380 90 L420 160 L490 180 L440 240 L380 340 L350 440 L310 380 L260 280 L230 220 L270 140 L290 80 Z"
-                fill="rgba(255, 152, 0, 0.04)"
-                stroke="rgba(255, 152, 0, 0.2)"
-                strokeWidth="2"
-              />
 
-              {/* Central Biskore National Logistics Hub Point */}
-              <g transform="translate(340, 240)">
-                <circle cx="0" cy="0" r="16" fill="rgba(255, 152, 0, 0.2)" />
-                <circle cx="0" cy="0" r="8" fill="#FF9800" />
-                <text x="0" y="-22" textAnchor="middle" fill="#FF9800" fontSize="12" fontWeight="800">
-                  BISKORE HUB
-                </text>
-              </g>
-
-              {/* Branching Routes Drawing Outward */}
-              {/* Route North */}
-              <motion.path
-                d="M340 240 Q350 140 330 70"
-                fill="none"
-                stroke="#FF9800"
-                strokeWidth="2.5"
-                strokeDasharray="6 6"
-                animate={{ strokeDashoffset: [40, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
-              />
-              <circle cx="330" cy="70" r="6" fill="#38BDF8" />
-              <text x="330" y="55" textAnchor="middle" fill="#38BDF8" fontSize="10" fontWeight="700">Northern Corridor</text>
-
-              {/* Route West */}
-              <motion.path
-                d="M340 240 Q280 230 240 210"
-                fill="none"
-                stroke="#FF9800"
-                strokeWidth="2.5"
-                strokeDasharray="6 6"
-                animate={{ strokeDashoffset: [40, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: 'linear', delay: 0.3 }}
-              />
-              <circle cx="240" cy="210" r="6" fill="#38BDF8" />
-              <text x="220" y="195" textAnchor="middle" fill="#38BDF8" fontSize="10" fontWeight="700">Western Ports</text>
-
-              {/* Route East */}
-              <motion.path
-                d="M340 240 Q410 220 460 200"
-                fill="none"
-                stroke="#FF9800"
-                strokeWidth="2.5"
-                strokeDasharray="6 6"
-                animate={{ strokeDashoffset: [40, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: 'linear', delay: 0.6 }}
-              />
-              <circle cx="460" cy="200" r="6" fill="#38BDF8" />
-              <text x="470" y="185" textAnchor="middle" fill="#38BDF8" fontSize="10" fontWeight="700">Eastern Mandis</text>
-
-              {/* Route South */}
-              <motion.path
-                d="M340 240 Q360 340 345 420"
-                fill="none"
-                stroke="#FF9800"
-                strokeWidth="2.5"
-                strokeDasharray="6 6"
-                animate={{ strokeDashoffset: [40, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: 'linear', delay: 0.9 }}
-              />
-              <circle cx="345" cy="420" r="6" fill="#38BDF8" />
-              <text x="345" y="445" textAnchor="middle" fill="#38BDF8" fontSize="10" fontWeight="700">Southern Ports</text>
-            </svg>
-          </div>
         </div>
       </section>
 
@@ -640,13 +416,7 @@ export default function LogisticsContent({ sector }: SectorProps) {
       <section style={{ padding: '8rem 0', background: '#F8F7F4' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 4.5rem' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
-              <span style={{ width: '24px', height: '2px', background: '#FF9800' }} />
-              <span style={{ fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.12em', color: '#FF9800', textTransform: 'uppercase' }}>
-                Section 05 • Competitive Advantage
-              </span>
-              <span style={{ width: '24px', height: '2px', background: '#FF9800' }} />
-            </div>
+            
             <h2
               style={{
                 fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)',
@@ -688,10 +458,10 @@ export default function LogisticsContent({ sector }: SectorProps) {
                 }}
               >
                 <div style={{ marginBottom: '1.5rem' }}>{c.icon}</div>
-                <h3 style={{ fontSize: '1.35rem', fontWeight: 300, color: '#0D0D0D', marginBottom: '0.5rem' }}>
+                <h3 style={{ fontSize: '1.35rem', fontWeight: 300, color: '#0D0D0D', marginBottom: '0.5rem', minHeight: '3.5rem' }}>
                   {c.title}
                 </h3>
-                <div style={{ fontSize: '0.9rem', color: '#FF9800', fontWeight: 600, marginBottom: '1rem' }}>
+                <div style={{ fontSize: '0.9rem', color: '#FF9800', fontWeight: 600, marginBottom: '1rem', minHeight: '2.5rem' }}>
                   {c.subtitle}
                 </div>
                 <p style={{ fontSize: '0.95rem', color: '#555555', lineHeight: 1.85, fontWeight: 300, flexGrow: 1 }}>
@@ -706,51 +476,42 @@ export default function LogisticsContent({ sector }: SectorProps) {
             style={{
               background: 'linear-gradient(135deg, #FFF5EA 0%, #FFF0DF 100%)',
               borderRadius: '24px',
-              padding: '4rem 3rem',
+              padding: '3.5rem',
+              color: '#0D0D0D',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+              gap: '2rem',
               border: '1px solid rgba(255, 152, 0, 0.3)',
-              textAlign: 'center',
-              maxWidth: '850px',
-              margin: '0 auto',
             }}
           >
-            <h3
-              style={{
-                fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)',
-                fontWeight: 300,
-                color: '#0D0D0D',
-                marginBottom: '1rem',
-              }}
-            >
-              Need to move something? Let’s talk.
-            </h3>
-            <p
-              style={{
-                fontSize: 'clamp(1rem, 1.4vw, 1.15rem)',
-                color: 'rgba(255,255,255,0.75)',
-                marginBottom: '2.5rem',
-                maxWidth: '600px',
-                margin: '0 auto 2.5rem',
-              }}
-            >
-              Whether you need dedicated cold-chain reefer runs or pan-India general freight contracts, Biskore Logistics delivers.
-            </p>
+            <div style={{ maxWidth: '600px' }}>
+              <h3 className="text-h3" style={{ color: '#0D0D0D', marginBottom: '0.75rem' }}>
+                Need to move something? Let’s talk.
+              </h3>
+              <p style={{ color: '#555555', fontSize: '1.05rem', lineHeight: 1.6 }}>
+                Whether you need dedicated cold-chain reefer runs or pan-India general freight contracts, Biskore Logistics delivers.
+              </p>
+            </div>
+            
             <Link
               href="/contact"
               style={{
-                padding: '1.15rem 3rem',
-                fontSize: '1.05rem',
+                padding: '1.1rem 2.25rem',
+                fontSize: '1rem',
                 fontWeight: 700,
                 borderRadius: '100px',
-                background: '#FF9800',
-                color: '#0B0F17',
+                background: '#FFFFFF',
+                color: '#0D0D0D',
                 textDecoration: 'none',
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '0.75rem',
+                gap: '0.5rem',
               }}
             >
               Request Fleet Quote
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </Link>

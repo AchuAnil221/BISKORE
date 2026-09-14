@@ -60,10 +60,10 @@ export default async function SectorPage({ params }: { params: Promise<Params> }
             {/* Title & Description */}
             <h1
               style={{
-                fontSize: 'clamp(3rem, 6vw, 5.5rem)',
-                fontWeight: 900,
-                letterSpacing: '-0.03em',
-                lineHeight: 1,
+                fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+                fontWeight: 500,
+                letterSpacing: '-0.02em',
+                lineHeight: 1.15,
                 color: '#0D0D0D',
                 marginBottom: '2rem',
               }}
@@ -73,7 +73,7 @@ export default async function SectorPage({ params }: { params: Promise<Params> }
             
             <p
               style={{
-                fontSize: 'clamp(1rem, 1.5vw, 1.25rem)',
+                fontSize: 'clamp(1rem, 1.5vw, 1.2rem)',
                 color: '#555',
                 lineHeight: 1.8,
                 maxWidth: '700px',
@@ -94,65 +94,7 @@ export default async function SectorPage({ params }: { params: Promise<Params> }
       {sector.id === 'tastecore' && <TastecoreContent sector={sector} />}
       {sector.id === 'logistics' && <LogisticsContent sector={sector} />}
 
-      {/* Sector Navigation (Preserved at page bottom) */}
-      <section className="section-sm" style={{ background: '#FFFFFF', borderTop: '1px solid rgba(0,0,0,0.07)' }}>
-        <div className="container">
-          <div style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem', flexWrap: 'wrap' }}>
-            {prevSector ? (
-              <Link
-                href={prevSector.href}
-                className="hover-next-nav"
-                style={{
-                  display: 'flex', alignItems: 'center', gap: '1rem',
-                  padding: '1.25rem 1.75rem',
-                  border: '1px solid rgba(0,0,0,0.08)',
-                  background: '#F8F7F4',
-                  transition: 'all 300ms',
-                  textDecoration: 'none',
-                  color: 'inherit',
-                }}
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                  <path d="M19 12H5M11 18l-6-6 6-6" stroke="#062C22" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                <div>
-                  <p style={{ fontSize: '0.7rem', color: '#B8860B', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Previous</p>
-                  <p style={{ fontWeight: 600, color: '#0D0D0D' }}>{prevSector.name}</p>
-                </div>
-              </Link>
-            ) : <div />}
 
-            <Link href="/sectors" style={{ alignSelf: 'center', fontSize: '0.8rem', color: '#B8860B', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-              All Sectors
-            </Link>
-
-            {nextSector ? (
-              <Link
-                href={nextSector.href}
-                className="hover-next-nav"
-                style={{
-                  display: 'flex', alignItems: 'center', gap: '1rem',
-                  padding: '1.25rem 1.75rem',
-                  border: '1px solid rgba(0,0,0,0.08)',
-                  background: '#F8F7F4',
-                  transition: 'all 300ms',
-                  textDecoration: 'none',
-                  color: 'inherit',
-                  textAlign: 'right' as const,
-                }}
-              >
-                <div>
-                  <p style={{ fontSize: '0.7rem', color: '#B8860B', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Next</p>
-                  <p style={{ fontWeight: 600, color: '#0D0D0D' }}>{nextSector.name}</p>
-                </div>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                  <path d="M5 12h14M13 6l6 6-6 6" stroke="#062C22" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </Link>
-            ) : <div />}
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

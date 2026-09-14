@@ -28,10 +28,10 @@ export default function AboutPage() {
           <ScrollReveal>
             <h1
               style={{
-                fontSize: 'clamp(3.5rem, 7vw, 6rem)',
-                fontWeight: 900,
-                letterSpacing: '-0.03em',
-                lineHeight: 1,
+                fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+                fontWeight: 500,
+                letterSpacing: '-0.02em',
+                lineHeight: 1.15,
                 color: '#0D0D0D',
                 marginBottom: '1.5rem',
               }}
@@ -40,9 +40,9 @@ export default function AboutPage() {
             </h1>
             <p
               style={{
-                fontSize: 'clamp(1rem, 1.5vw, 1.25rem)',
+                fontSize: 'clamp(1rem, 1.5vw, 1.2rem)',
                 color: '#555',
-                lineHeight: 1.8,
+                lineHeight: 1.7,
                 maxWidth: '700px',
                 margin: '0 auto',
                 fontWeight: 400,
@@ -77,16 +77,22 @@ export default function AboutPage() {
                 <span className="text-label">The Biskore Name</span>
               </div>
               <AnimatedBiskoreName />
-              <p style={{ marginBottom: '1.25rem', color: '#555', lineHeight: 1.75 }}>
+              <p style={{marginBottom: '1.25rem', color: '#555', lineHeight: 1.7, 
+fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', 
+fontWeight: 400}}>
                 The name Biskore combines <strong style={{ color: '#062C22' }}>BI-S</strong> — representing the two
                 founders, Biju and Sujith — with <strong style={{ color: '#062C22' }}>Kore/Core</strong>, symbolising
                 the central strength, unity, and foundation of the company.
               </p>
-              <p style={{ marginBottom: '1.25rem', color: '#555', lineHeight: 1.75 }}>
+              <p style={{marginBottom: '1.25rem', color: '#555', lineHeight: 1.7, 
+fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', 
+fontWeight: 400}}>
                 What began as a farm-to-market fresh produce operation in Kasargod has grown into an integrated group
                 spanning international trade, two consumer brands, and a pan-India logistics fleet.
               </p>
-              <p style={{ color: '#555', lineHeight: 1.75 }}>
+              <p style={{color: '#555', lineHeight: 1.7, 
+fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', 
+fontWeight: 400}}>
                 Every vertical is built on the same principle: direct sourcing, consistent quality, and long-term
                 partnership with farmers, suppliers, and clients alike.
               </p>
@@ -127,7 +133,11 @@ export default function AboutPage() {
                 <span className="text-label">Leadership</span>
                 <span className="gold-line" />
               </div>
-              <h2 className="text-h2" style={{ marginTop: '0.75rem' }}>
+              <h2 className="text-h2" style={{marginTop: '0.75rem', 
+fontSize: 'clamp(2rem, 5vw, 4rem)', 
+fontWeight: 300, 
+letterSpacing: '-0.03em', 
+lineHeight: 1.1}}>
                 The <span className="gradient-text">founders</span>
               </h2>
             </div>
@@ -171,10 +181,12 @@ export default function AboutPage() {
                     )}
                   </div>
                   <div style={{ padding: '2rem 1.5rem', textAlign: 'center' }}>
-                    <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0D0D0D', marginBottom: '0.5rem' }}>
+                    <h3 style={{fontSize: '1.25rem', fontWeight: 500, color: '#0D0D0D', marginBottom: '0.5rem', 
+letterSpacing: '-0.02em'}}>
                       {leader.name}
                     </h3>
-                    <p style={{ fontSize: '0.8rem', color: '#B8860B', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                    <p style={{fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', color: '#B8860B', letterSpacing: '0.08em', textTransform: 'uppercase', 
+fontWeight: 400}}>
                       {leader.role}
                     </p>
                   </div>
@@ -195,10 +207,15 @@ export default function AboutPage() {
                 <span className="text-label">Quality & Compliance</span>
                 <span className="gold-line" />
               </div>
-              <h2 className="text-h2" style={{ marginTop: '0.75rem' }}>
+              <h2 className="text-h2" style={{marginTop: '0.75rem', 
+fontSize: 'clamp(2rem, 5vw, 4rem)', 
+fontWeight: 300, 
+letterSpacing: '-0.03em', 
+lineHeight: 1.1}}>
                 One standard. <span className="gradient-text">All five sectors.</span>
               </h2>
-              <p style={{ marginTop: '1rem', maxWidth: 560, margin: '1rem auto 0', color: '#666', fontSize: '0.95rem', lineHeight: 1.75 }}>
+              <p style={{marginTop: '1rem', maxWidth: 560, margin: '1rem auto 0', color: '#666', fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', lineHeight: 1.7, 
+fontWeight: 400}}>
                 Biskore maintains a single, non-negotiable quality standard across every business vertical.
               </p>
             </div>
@@ -253,7 +270,8 @@ export default function AboutPage() {
                   <h4 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#0A3D30', marginBottom: '0.75rem' }}>
                     {item.title}
                   </h4>
-                  <p style={{ fontSize: '0.9rem', lineHeight: 1.65, color: '#555' }}>
+                  <p style={{fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', lineHeight: 1.7, color: '#555', 
+fontWeight: 400}}>
                     {item.desc}
                   </p>
                 </div>
@@ -267,7 +285,11 @@ export default function AboutPage() {
       <section className="section-sm" style={{ background: '#062C22' }}>
         <div className="container" style={{ textAlign: 'center' }}>
           <ScrollReveal>
-            <h2 className="text-h2" style={{ marginBottom: '1.5rem', color: '#FFFFFF' }}>
+            <h2 className="text-h2" style={{marginBottom: '1.5rem', color: '#FFFFFF', 
+fontSize: 'clamp(2rem, 5vw, 4rem)', 
+fontWeight: 300, 
+letterSpacing: '-0.03em', 
+lineHeight: 1.1}}>
               Ready to <span style={{ background: 'linear-gradient(135deg,#FFB71D,#F5D399)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>partner with us?</span>
             </h2>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -277,7 +299,7 @@ export default function AboutPage() {
                 fontWeight: 700, fontSize: '0.875rem', letterSpacing: '0.05em',
                 textTransform: 'uppercase', borderRadius: '9999px', transition: 'all 400ms',
               }}>Contact Us</Link>
-              <Link href="/sectors" className="btn-outline-light">Explore Sectors</Link>
+              <Link href="/" className="btn-outline-light">Explore Sectors</Link>
             </div>
           </ScrollReveal>
         </div>

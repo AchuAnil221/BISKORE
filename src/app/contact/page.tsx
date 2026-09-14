@@ -118,13 +118,18 @@ export default function ContactPage() {
               </span>
               <span className="gold-line" />
             </div>
-            <h1 className="text-display" style={{ marginTop: '0.75rem', maxWidth: 800, margin: '0.75rem auto 0', color: '#0D0D0D' }}>
+            <h1 className="text-display" style={{marginTop: '0.75rem', maxWidth: 800, margin: '0.75rem auto 0', color: '#0D0D0D', 
+fontSize: 'clamp(2rem, 5vw, 3.5rem)', 
+fontWeight: 500, 
+letterSpacing: '-0.02em', 
+lineHeight: 1.15}}>
               Let&apos;s{' '}
               <span style={{ color: '#0A3D30' }}>
                 connect
               </span>
             </h1>
-            <p style={{ marginTop: '1.5rem', maxWidth: 640, margin: '1.5rem auto 0', color: '#555555', fontSize: '1.05rem', lineHeight: 1.75 }}>
+            <p style={{marginTop: '1.5rem', maxWidth: 640, margin: '1.5rem auto 0', color: '#555555', fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', lineHeight: 1.7, 
+fontWeight: 400}}>
               We welcome enquiries from trade partners, farmers, distributors, logistics clients,
               brand partners, and investors interested in any of Biskore&apos;s five business sectors.
             </p>
@@ -158,7 +163,7 @@ export default function ContactPage() {
                   { label: 'Website', content: <a href="https://www.biskore.com" target="_blank" rel="noopener noreferrer" style={{ fontSize: '1rem', fontWeight: 600, color: '#062C22' }} onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = '0.7')} onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = '1')}>www.biskore.com</a> },
                 ].map(({ label, content }) => (
                   <div key={label} style={{ padding: '1.75rem', border: '1px solid rgba(0,0,0,0.08)', background: '#F8F7F4' }}>
-                    <p style={{ fontSize: '0.7rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#B8860B', marginBottom: '0.75rem' }}>
+                    <p style={{ fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', fontWeight: 400, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#B8860B', marginBottom: '0.75rem' }}>
                       {label}
                     </p>
                     {content}
@@ -176,18 +181,27 @@ export default function ContactPage() {
                   border: '1px solid rgba(0,0,0,0.07)',
                 }}
               >
-                <h2 className="text-h2" style={{ marginBottom: '0.5rem' }}>
+                <h2 className="text-h2" style={{marginBottom: '0.5rem', 
+fontSize: 'clamp(2rem, 5vw, 4rem)', 
+fontWeight: 300, 
+letterSpacing: '-0.03em', 
+lineHeight: 1.1}}>
                   Send us a <span className="gradient-text">message</span>
                 </h2>
-                <p style={{ marginBottom: '2.5rem', color: '#666', fontSize: '0.95rem' }}>
+                <p style={{marginBottom: '2.5rem', color: '#666', fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', 
+fontWeight: 400, 
+lineHeight: 1.7}}>
                   Fill in your details and we&apos;ll get back to you shortly.
                 </p>
 
                 {status === 'success' ? (
                   <div style={{ padding: '2rem', background: 'rgba(6,44,34,0.06)', border: '1px solid rgba(6,44,34,0.15)', textAlign: 'center' }}>
                     <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>✅</div>
-                    <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#062C22', marginBottom: '0.5rem' }}>Message sent!</h3>
-                    <p style={{ color: '#666', fontSize: '0.9rem' }}>Thank you for reaching out. We&apos;ll get back to you soon.</p>
+                    <h3 style={{fontSize: '1.25rem', fontWeight: 500, color: '#062C22', marginBottom: '0.5rem', 
+letterSpacing: '-0.02em'}}>Message sent!</h3>
+                    <p style={{color: '#666', fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', 
+fontWeight: 400, 
+lineHeight: 1.7}}>Thank you for reaching out. We&apos;ll get back to you soon.</p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
@@ -267,7 +281,9 @@ export default function ContactPage() {
                     </div>
 
                     {status === 'error' && (
-                      <p style={{ fontSize: '0.85rem', color: '#CC0000' }}>
+                      <p style={{fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', color: '#CC0000', 
+fontWeight: 400, 
+lineHeight: 1.7}}>
                         Something went wrong. Please try again or email us directly.
                       </p>
                     )}

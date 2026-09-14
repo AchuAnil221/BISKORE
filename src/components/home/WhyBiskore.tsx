@@ -79,9 +79,7 @@ export default function WhyBiskore() {
           titleNode={
             <div style={{ textAlign: 'center' }}>
               <div className="section-badge" style={{ justifyContent: 'center', marginBottom: '1rem' }}>
-                <span className="gold-line" />
                 <span className="text-label">Core Values</span>
-                <span className="gold-line" />
               </div>
               <RevealLines
                 as="h2"

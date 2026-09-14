@@ -40,7 +40,7 @@ export function ScrollSplitCard({
 
   const borderOpacity = useTransform(scrollYProgress, [0, 0.2], [0, 0.2]);
   const shadowOpacity = useTransform(scrollYProgress, [0, 0.2], [0, 0.4]);
-  const boxShadow = useMotionTemplate`inset 0 1px 1px rgba(255, 255, 255, ${borderOpacity}), inset 0 -24px 48px rgba(0, 0, 0, ${shadowOpacity}), 0 25px 50px -12px rgba(0, 0, 0, ${shadowOpacity})`;
+  const boxShadow = useMotionTemplate`0 25px 50px -12px rgba(0, 0, 0, ${shadowOpacity})`;
 
   // Positions and rotations for up to 5 cards
   const getX = (i: number, total: number) => {

@@ -278,37 +278,11 @@ export default function FreshProduceContent({ sector }: SectorProps) {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.7 }}
             >
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "0.75rem",
-                  marginBottom: "1.25rem",
-                }}
-              >
-                <span
-                  style={{
-                    width: "28px",
-                    height: "2px",
-                    background: "#2E7D32",
-                  }}
-                />
-                <span
-                  style={{
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    letterSpacing: "0.15em",
-                    color: "#2E7D32",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  Section 01 • Sourcing Paradigm
-                </span>
-              </div>
+              
               <h2
                 style={{
-                  fontSize: "clamp(2.4rem, 4vw, 3.5rem)",
-                  fontWeight: 800,
+                  fontSize: "clamp(2.25rem, 4.5vw, 3.75rem)",
+                  fontWeight: 300,
                   letterSpacing: "-0.02em",
                   lineHeight: 1.15,
                   color: "#062C22",
@@ -651,36 +625,11 @@ export default function FreshProduceContent({ sector }: SectorProps) {
               margin: "0 auto 4rem",
             }}
           >
-            <div
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.5rem",
-                marginBottom: "1rem",
-              }}
-            >
-              <span
-                style={{ width: "24px", height: "2px", background: "#2E7D32" }}
-              />
-              <span
-                style={{
-                  fontSize: "0.8rem",
-                  fontWeight: 700,
-                  letterSpacing: "0.15em",
-                  color: "#2E7D32",
-                  textTransform: "uppercase",
-                }}
-              >
-                Section 02 • Systematic Flow
-              </span>
-              <span
-                style={{ width: "24px", height: "2px", background: "#2E7D32" }}
-              />
-            </div>
+            
             <h2
               style={{
-                fontSize: "clamp(2.2rem, 3.5vw, 3rem)",
-                fontWeight: 800,
+                fontSize: "clamp(2.25rem, 4.5vw, 3.75rem)",
+                fontWeight: 300,
                 letterSpacing: "-0.02em",
                 color: "#062C22",
                 marginBottom: "1rem",
@@ -694,61 +643,7 @@ export default function FreshProduceContent({ sector }: SectorProps) {
             </p>
           </div>
 
-          {/* Animated Traveling Crate Pathway */}
-          <div
-            style={{
-              position: "relative",
-              marginBottom: "3rem",
-              padding: "0 2rem",
-            }}
-          >
-            <div
-              style={{
-                height: "4px",
-                background:
-                  "linear-gradient(90deg, #A5D6A7 0%, #4CAF50 50%, #2E7D32 100%)",
-                borderRadius: "4px",
-                position: "relative",
-              }}
-            >
-              {/* Traveling Crate along line */}
-              <motion.div
-                animate={{ left: ["2%", "96%"] }}
-                transition={{
-                  duration: 7,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                style={{
-                  position: "absolute",
-                  top: "-16px",
-                  width: "32px",
-                  height: "32px",
-                  background: "#FFFFFF",
-                  borderRadius: "50%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  border: "2px solid #2E7D32",
-                }}
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <rect
-                    x="3"
-                    y="6"
-                    width="18"
-                    height="14"
-                    rx="2"
-                    fill="#D7CCC8"
-                    stroke="#5D4037"
-                    strokeWidth="1.5"
-                  />
-                  <circle cx="8" cy="11" r="3" fill="#E53935" />
-                  <circle cx="14" cy="10" r="3.5" fill="#43A047" />
-                </svg>
-              </motion.div>
-            </div>
-          </div>
+
 
           {/* 5 Step Cards */}
           <div
@@ -800,7 +695,7 @@ export default function FreshProduceContent({ sector }: SectorProps) {
                   <span
                     style={{
                       fontSize: "1.25rem",
-                      fontWeight: 900,
+                      fontWeight: 300,
                       color: "#C8E6C9",
                       letterSpacing: "-0.02em",
                     }}
@@ -845,36 +740,11 @@ export default function FreshProduceContent({ sector }: SectorProps) {
               margin: "0 auto 4rem",
             }}
           >
-            <div
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.5rem",
-                marginBottom: "1rem",
-              }}
-            >
-              <span
-                style={{ width: "24px", height: "2px", background: "#2E7D32" }}
-              />
-              <span
-                style={{
-                  fontSize: "0.8rem",
-                  fontWeight: 700,
-                  letterSpacing: "0.15em",
-                  color: "#2E7D32",
-                  textTransform: "uppercase",
-                }}
-              >
-                Section 03 • Product Catalog
-              </span>
-              <span
-                style={{ width: "24px", height: "2px", background: "#2E7D32" }}
-              />
-            </div>
+            
             <h2
               style={{
-                fontSize: "clamp(2.2rem, 3.5vw, 3rem)",
-                fontWeight: 800,
+                fontSize: "clamp(2.25rem, 4.5vw, 3.75rem)",
+                fontWeight: 300,
                 letterSpacing: "-0.02em",
                 color: "#062C22",
                 marginBottom: "1rem",
@@ -921,35 +791,11 @@ export default function FreshProduceContent({ sector }: SectorProps) {
                   flexDirection: "column",
                 }}
               >
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    marginBottom: "1.5rem",
-                  }}
-                >
-                  {item.icon}
-                  <span
-                    style={{
-                      fontSize: "0.75rem",
-                      fontWeight: 700,
-                      letterSpacing: "0.08em",
-                      textTransform: "uppercase",
-                      color: "#2E7D32",
-                      background: "#E8F5E9",
-                      padding: "0.35rem 0.85rem",
-                      borderRadius: "100px",
-                    }}
-                  >
-                    {item.tag}
-                  </span>
-                </div>
 
                 <h3
                   style={{
                     fontSize: "1.35rem",
-                    fontWeight: 800,
+                    fontWeight: 300,
                     color: "#062C22",
                     marginBottom: "0.75rem",
                   }}
@@ -988,36 +834,11 @@ export default function FreshProduceContent({ sector }: SectorProps) {
               margin: "0 auto 4rem",
             }}
           >
-            <div
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.5rem",
-                marginBottom: "1rem",
-              }}
-            >
-              <span
-                style={{ width: "24px", height: "2px", background: "#2E7D32" }}
-              />
-              <span
-                style={{
-                  fontSize: "0.8rem",
-                  fontWeight: 700,
-                  letterSpacing: "0.15em",
-                  color: "#2E7D32",
-                  textTransform: "uppercase",
-                }}
-              >
-                Section 04 • Infrastructure
-              </span>
-              <span
-                style={{ width: "24px", height: "2px", background: "#2E7D32" }}
-              />
-            </div>
+            
             <h2
               style={{
-                fontSize: "clamp(2.2rem, 3.5vw, 3rem)",
-                fontWeight: 800,
+                fontSize: "clamp(2.25rem, 4.5vw, 3.75rem)",
+                fontWeight: 300,
                 letterSpacing: "-0.02em",
                 color: "#062C22",
                 marginBottom: "1rem",
@@ -1298,7 +1119,7 @@ export default function FreshProduceContent({ sector }: SectorProps) {
               <h3
                 style={{
                   fontSize: "1.4rem",
-                  fontWeight: 800,
+                  fontWeight: 300,
                   color: "#062C22",
                   marginBottom: "1rem",
                 }}
@@ -1352,7 +1173,7 @@ export default function FreshProduceContent({ sector }: SectorProps) {
               <h3
                 style={{
                   fontSize: "1.4rem",
-                  fontWeight: 800,
+                  fontWeight: 300,
                   color: "#062C22",
                   marginBottom: "1rem",
                 }}
@@ -1407,7 +1228,7 @@ export default function FreshProduceContent({ sector }: SectorProps) {
               <h3
                 style={{
                   fontSize: "1.4rem",
-                  fontWeight: 800,
+                  fontWeight: 300,
                   color: "#062C22",
                   marginBottom: "1rem",
                 }}
@@ -1427,250 +1248,69 @@ export default function FreshProduceContent({ sector }: SectorProps) {
       </section>
 
       {/* SECTION 05: From Farm to People (Full-Width Closing + Transition to Logistics) */}
-      <section
-        style={{
-          padding: "8rem 0",
-          background: "#062C22",
-          color: "#FFFFFF",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        {/* Abstract organic background glow */}
-        <div
-          style={{
-            position: "absolute",
-            width: "600px",
-            height: "600px",
-            borderRadius: "50%",
-            background:
-              "radial-gradient(circle, rgba(76, 175, 80, 0.15) 0%, rgba(6, 44, 34, 0) 70%)",
-            top: "-20%",
-            right: "-10%",
-            pointerEvents: "none",
-          }}
-        />
-
-        <div className="container" style={{ position: "relative", zIndex: 2 }}>
+      {/* Final CTA Section */}
+      <section className="section">
+        <div className="container">
           <div
-            style={{ maxWidth: "850px", margin: "0 auto", textAlign: "center" }}
+            style={{
+              background: 'radial-gradient(circle at center, #0A3D30 0%, #062C22 100%)',
+              borderRadius: '24px',
+              padding: '3.5rem',
+              color: '#FFFFFF',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+              gap: '2rem',
+              position: 'relative',
+              overflow: 'hidden'
+            }}
           >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-            >
-              <div
-                style={{
-                  display: "inline-block",
-                  background: "rgba(76, 175, 80, 0.2)",
-                  color: "#81C784",
-                  padding: "0.4rem 1.2rem",
-                  borderRadius: "100px",
-                  fontSize: "0.8rem",
-                  fontWeight: 700,
-                  letterSpacing: "0.12em",
-                  textTransform: "uppercase",
-                  marginBottom: "1.5rem",
-                }}
-              >
-                Section 05 • Unified Impact
-              </div>
+            <div
+              style={{
+                position: "absolute",
+                width: "600px",
+                height: "600px",
+                borderRadius: "50%",
+                background:
+                  "radial-gradient(circle, rgba(76, 175, 80, 0.15) 0%, rgba(6, 44, 34, 0) 70%)",
+                top: "-50%",
+                right: "-10%",
+                pointerEvents: "none",
+              }}
+            />
 
-              <h2
-                style={{
-                  fontSize: "clamp(2.5rem, 4.5vw, 4rem)",
-                  fontWeight: 900,
-                  letterSpacing: "-0.02em",
-                  lineHeight: 1.15,
-                  color: "#FFFFFF",
-                  marginBottom: "2rem",
-                }}
-              >
+            <div style={{ maxWidth: '600px', position: 'relative', zIndex: 2 }}>
+              <h3 className="text-h3" style={{ color: '#FFFFFF', marginBottom: '0.75rem' }}>
                 Moving Freshness Forward
-              </h2>
-
-              <p
-                style={{
-                  fontSize: "clamp(1.1rem, 1.4vw, 1.35rem)",
-                  color: "rgba(255,255,255,0.8)",
-                  lineHeight: 1.8,
-                  marginBottom: "3rem",
-                  fontWeight: 300,
-                }}
-              >
-                From growers to distribution points and end customers, Biskore
-                connects every stage through sourcing, quality and logistics.
+              </h3>
+              <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.05rem', lineHeight: 1.6 }}>
+                From growers to distribution points and end customers, Biskore connects every stage through sourcing, quality and logistics.
               </p>
+            </div>
 
-              {/* Truck Reaches Final Destination -> Route Continues toward Logistics */}
-              <div
-                style={{
-                  background: "rgba(255,255,255,0.05)",
-                  borderRadius: "20px",
-                  padding: "2.5rem",
-                  border: "1px solid rgba(255,255,255,0.1)",
-                  marginBottom: "3.5rem",
-                }}
-              >
-                <svg
-                  viewBox="0 0 700 100"
-                  style={{ width: "100%", height: "auto", overflow: "visible" }}
-                >
-                  {/* Route track */}
-                  <line
-                    x1="50"
-                    y1="50"
-                    x2="650"
-                    y2="50"
-                    stroke="rgba(255,255,255,0.15)"
-                    strokeWidth="3"
-                  />
-                  <motion.line
-                    x1="50"
-                    y1="50"
-                    x2="650"
-                    y2="50"
-                    stroke="#4CAF50"
-                    strokeWidth="3"
-                    strokeDasharray="10 10"
-                    animate={{ strokeDashoffset: [0, -40] }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "linear",
-                    }}
-                  />
-
-                  {/* Node 1: Produce */}
-                  <circle cx="100" cy="50" r="10" fill="#4CAF50" />
-                  <text
-                    x="100"
-                    y="80"
-                    textAnchor="middle"
-                    fill="#FFF"
-                    fontSize="12"
-                  >
-                    Farm Harvest
-                  </text>
-
-                  {/* Node 2: Cold Sorting */}
-                  <circle cx="350" cy="50" r="10" fill="#4CAF50" />
-                  <text
-                    x="350"
-                    y="80"
-                    textAnchor="middle"
-                    fill="#FFF"
-                    fontSize="12"
-                  >
-                    Market Hub
-                  </text>
-
-                  {/* Node 3: Biskore Logistics Fleet Continues */}
-                  <circle cx="600" cy="50" r="12" fill="#FFB71D" />
-                  <text
-                    x="600"
-                    y="80"
-                    textAnchor="middle"
-                    fill="#FFB71D"
-                    fontSize="12"
-                    fontWeight="700"
-                  >
-                    Biskore Logistics
-                  </text>
-
-                  {/* Moving Animated Truck */}
-                  <motion.g
-                    animate={{ x: [80, 580] }}
-                    transition={{
-                      duration: 6,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                  >
-                    <g transform="translate(-20, 25)">
-                      <rect
-                        x="0"
-                        y="0"
-                        width="36"
-                        height="20"
-                        rx="2"
-                        fill="#FFFFFF"
-                      />
-                      <polygon
-                        points="36,6 44,6 50,13 50,20 36,20"
-                        fill="#81C784"
-                      />
-                      <circle cx="10" cy="22" r="4" fill="#062C22" />
-                      <circle cx="26" cy="22" r="4" fill="#062C22" />
-                      <circle cx="44" cy="22" r="4" fill="#062C22" />
-                    </g>
-                  </motion.g>
-                </svg>
-              </div>
-
-              {/* Seamless Action Link to Logistics */}
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  gap: "1.5rem",
-                  flexWrap: "wrap",
-                }}
-              >
-                <Link
-                  href="/sectors/logistics"
-                  className="btn btn-primary"
-                  style={{
-                    padding: "1.1rem 2.5rem",
-                    fontSize: "1rem",
-                    fontWeight: 700,
-                    borderRadius: "100px",
-                    background: "#4CAF50",
-                    color: "#062C22",
-                    textDecoration: "none",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "0.75rem",
-                    transition: "all 250ms ease",
-                  }}
-                >
-                  Explore Biskore Logistics Network
-                  <svg
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                  >
-                    <path
-                      d="M5 12h14M12 5l7 7-7 7"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </Link>
-                <Link
-                  href="/contact"
-                  style={{
-                    padding: "1.1rem 2.5rem",
-                    fontSize: "1rem",
-                    fontWeight: 600,
-                    borderRadius: "100px",
-                    border: "1px solid rgba(255,255,255,0.25)",
-                    color: "#FFFFFF",
-                    textDecoration: "none",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "0.5rem",
-                  }}
-                >
-                  Source Produce With Us
-                </Link>
-              </div>
-            </motion.div>
+            <Link
+              href="/contact"
+              style={{
+                padding: '1.1rem 2.25rem',
+                fontSize: '1rem',
+                fontWeight: 700,
+                borderRadius: '100px',
+                background: '#FFFFFF',
+                color: '#0D0D0D',
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                position: 'relative',
+                zIndex: 2,
+              }}
+            >
+              Source Produce With Us
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>

@@ -118,12 +118,6 @@ export default function ImportExportContent({ sector }: SectorProps) {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
-                <span style={{ width: '28px', height: '2px', background: '#1976D2' }} />
-                <span style={{ fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.12em', color: '#1976D2', textTransform: 'uppercase' }}>
-                  Section 01 • Global Inflow
-                </span>
-              </div>
               <h2
                 style={{
                   fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)',
@@ -166,32 +160,28 @@ export default function ImportExportContent({ sector }: SectorProps) {
               transition={{ duration: 0.8 }}
               style={{
                 position: 'relative',
-                background: 'linear-gradient(135deg, #0A192F 0%, #0F2A4A 100%)',
+                background: 'linear-gradient(135deg, #1976D2 0%, #1565C0 100%)',
                 borderRadius: '24px',
                 padding: '2.5rem 2rem',
+                border: '1px solid rgba(25, 118, 210, 0.3)',
                 overflow: 'hidden',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
               }}
             >
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-                <span style={{ fontSize: '0.75rem', color: '#64B5F6', fontWeight: 700, letterSpacing: '0.1em' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '1.5rem', width: '100%' }}>
+                <span style={{ fontSize: '0.85rem', color: '#FFFFFF', fontWeight: 700, letterSpacing: '0.12em' }}>
                   GLOBAL MARITIME & AIR CORRIDORS
-                </span>
-                <span style={{ fontSize: '0.75rem', color: '#4CAF50', display: 'flex', alignItems: 'center', gap: '0.4rem', fontWeight: 600 }}>
-                  <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#4CAF50' }} />
-                  Live Trade Lanes
                 </span>
               </div>
 
-              <svg viewBox="0 0 500 280" style={{ width: '100%', height: 'auto', overflow: 'visible' }}>
+              <svg viewBox="180 0 300 200" style={{ width: '100%', height: 'auto', overflow: 'visible', maxWidth: '400px' }}>
                 {/* Simplified Continents Silhouette */}
-                {/* North America */}
-                <path d="M40 50 Q70 30 110 50 Q130 90 100 130 Q70 120 40 90 Z" fill="rgba(255,255,255,0.08)" />
                 {/* Europe */}
                 <path d="M220 40 Q260 30 280 60 Q260 80 230 75 Z" fill="rgba(255,255,255,0.08)" />
                 {/* East Asia */}
                 <path d="M360 50 Q430 40 450 90 Q420 140 370 110 Z" fill="rgba(255,255,255,0.08)" />
-                {/* Southeast Asia */}
-                <path d="M370 140 Q410 150 400 180 Q360 170 370 140 Z" fill="rgba(255,255,255,0.08)" />
                 {/* India Silhouette highlighted */}
                 <path
                   d="M305 110 L330 115 L325 155 L315 170 L305 145 Z"
@@ -285,13 +275,6 @@ export default function ImportExportContent({ sector }: SectorProps) {
       <section style={{ padding: '7rem 0', background: '#F8F7F4' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 4rem' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
-              <span style={{ width: '24px', height: '2px', background: '#1976D2' }} />
-              <span style={{ fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.12em', color: '#1976D2', textTransform: 'uppercase' }}>
-                Section 02 • Core Import Verticals
-              </span>
-              <span style={{ width: '24px', height: '2px', background: '#1976D2' }} />
-            </div>
             <h2
               style={{
                 fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)',
@@ -390,13 +373,6 @@ export default function ImportExportContent({ sector }: SectorProps) {
       <section style={{ padding: '7rem 0', background: '#FFFFFF' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 4rem' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
-              <span style={{ width: '24px', height: '2px', background: '#1976D2' }} />
-              <span style={{ fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.12em', color: '#1976D2', textTransform: 'uppercase' }}>
-                Section 03 • 5-Stage Protocol
-              </span>
-              <span style={{ width: '24px', height: '2px', background: '#1976D2' }} />
-            </div>
             <h2
               style={{
                 fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)',
@@ -515,21 +491,6 @@ export default function ImportExportContent({ sector }: SectorProps) {
       <section style={{ padding: '7rem 0', background: '#0A192F', color: '#FFFFFF' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 4.5rem' }}>
-            <div
-              style={{
-                display: 'inline-block',
-                background: 'rgba(33, 150, 243, 0.15)',
-                color: '#64B5F6',
-                padding: '0.35rem 1.2rem',
-                borderRadius: '100px',
-                fontSize: '0.8rem', fontWeight: 600,
-                letterSpacing: '0.12em',
-                textTransform: 'uppercase',
-                marginBottom: '1.25rem',
-              }}
-            >
-              Section 04 • Maritime to Hinterland
-            </div>
             <h2
               style={{
                 fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)',
@@ -664,13 +625,6 @@ export default function ImportExportContent({ sector }: SectorProps) {
       <section style={{ padding: '7rem 0', background: '#F8F7F4' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 4rem' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
-              <span style={{ width: '24px', height: '2px', background: '#1976D2' }} />
-              <span style={{ fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.12em', color: '#1976D2', textTransform: 'uppercase' }}>
-                Section 05 • Risk Mitigation
-              </span>
-              <span style={{ width: '24px', height: '2px', background: '#1976D2' }} />
-            </div>
             <h2
               style={{
                 fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)',
@@ -706,7 +660,7 @@ export default function ImportExportContent({ sector }: SectorProps) {
                   background: '#FFFFFF',
                   borderRadius: '20px',
                   padding: '3rem 2.5rem',
-                  border: '1px solid rgba(0,0,0,0.06)',
+                  border: '1px solid rgba(0,0,0,0.15)',
                   display: 'flex',
                   flexDirection: 'column',
                 }}
