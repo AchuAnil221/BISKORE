@@ -1,0 +1,18 @@
+
+/Users/achuanil/Documents/Biskore/src/components/sectors/pages/FreshProduceContent.tsx
+  17:47  warning  'sector' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/achuanil/Documents/Biskore/src/components/sectors/pages/ImportExportContent.tsx
+  363:18  error  Parsing error: Expected corresponding JSX closing tag for 'motion.div'
+
+/Users/achuanil/Documents/Biskore/src/components/sectors/pages/KoblaqContent.tsx
+  376:18  error  Parsing error: Expected corresponding JSX closing tag for 'motion.div'
+
+/Users/achuanil/Documents/Biskore/src/components/sectors/pages/LogisticsContent.tsx
+  387:18  error  Parsing error: Expected corresponding JSX closing tag for 'motion.div'
+
+/Users/achuanil/Documents/Biskore/src/components/sectors/pages/TastecoreContent.tsx
+  362:18  error  Parsing error: Expected corresponding JSX closing tag for 'motion.div'
+
+✖ 5 problems (4 errors, 1 warning)
+

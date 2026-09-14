@@ -319,7 +319,12 @@ export const FUTURE_OUTLOOK = [
 ] as const;
 
 // ─── LEADERSHIP ──────────────────────────────────────────────
-export const LEADERSHIP = [
+export const LEADERSHIP: {
+  name: string;
+  role: string;
+  initial: string;
+  image?: string;
+}[] = [
   {
     name: "Biju",
     role: "Co-Founder & Managing Partner",
@@ -332,4 +337,4 @@ export const LEADERSHIP = [
     initial: "S",
     image: "/images/founder_sujith.jpg",
   },
-] as const;
+];

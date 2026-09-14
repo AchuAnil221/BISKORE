@@ -91,7 +91,7 @@ export default function SectorSupplyChainAnim({ sector }: { sector: any }) {
           <svg width="600" height="600" viewBox="0 0 200 200" style={{ overflow: 'visible' }}>
             
             {/* --- Phase 1: Building --- */}
-            <motion.g style={{ opacity: bldgOpacity, scale: bldgScale }} originX={100} originY={100}>
+            <motion.g style={{ opacity: bldgOpacity, scale: bldgScale, transformOrigin: '100px 100px' }}>
               <rect x="70" y="80" width="60" height="80" fill="#062C22" rx="4" />
               <rect x="50" y="100" width="100" height="60" fill="#0A3D30" rx="4" />
               <rect x="90" y="140" width="20" height="20" fill="#F8F7F4" />
@@ -132,7 +132,7 @@ export default function SectorSupplyChainAnim({ sector }: { sector: any }) {
             {/* --- Phase 2: Packaging --- */}
             <motion.g style={{ opacity: phase2Opacity }}>
               {/* Box framing the product */}
-              <motion.g style={{ scale: boxScale, rotate: boxRotate }} originX={150} originY={150}>
+              <motion.g style={{ scale: boxScale, rotate: boxRotate, transformOrigin: '150px 150px' }}>
                 <rect x="130" y="130" width="40" height="40" fill="none" stroke="#062C22" strokeWidth="4" rx="4" />
                 <path d="M130 130 l15 -10 h40 l-15 10" fill="#D8D2C4" />
                 <path d="M170 130 l15 -10 v40 l-15 10" fill="#C0BAAC" />
@@ -173,7 +173,7 @@ export default function SectorSupplyChainAnim({ sector }: { sector: any }) {
                 <path d="M20 160 Q 60 170 100 160 T 180 160" fill="none" stroke="#5BA87A" strokeWidth="4" />
               </motion.g>
               {/* Quality Checkmark */}
-              <motion.g style={{ opacity: checkOpacity, scale: checkScale }} originX={100} originY={70}>
+              <motion.g style={{ opacity: checkOpacity, scale: checkScale, transformOrigin: '100px 70px' }}>
                 <circle cx="100" cy="70" r="25" fill="#4CAF50" />
                 <path d="M85 70 l10 10 l20 -20" fill="none" stroke="#FFF" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
               </motion.g>
@@ -215,12 +215,12 @@ export default function SectorSupplyChainAnim({ sector }: { sector: any }) {
               />
               
               {/* End Nodes */}
-              <motion.g style={{ scale: endNodeScale }} originX={30} originY={60}>
+              <motion.g style={{ scale: endNodeScale, transformOrigin: '30px 60px' }}>
                 <circle cx="30" cy="60" r="10" fill="#062C22" />
                 <path d="M25 60 l4 4 l8 -8" fill="none" stroke="#FFF" strokeWidth="2" />
               </motion.g>
               
-              <motion.g style={{ scale: endNodeScale }} originX={170} originY={60}>
+              <motion.g style={{ scale: endNodeScale, transformOrigin: '170px 60px' }}>
                 <circle cx="170" cy="60" r="10" fill="#062C22" />
                 <path d="M165 60 l4 4 l8 -8" fill="none" stroke="#FFF" strokeWidth="2" />
               </motion.g>
