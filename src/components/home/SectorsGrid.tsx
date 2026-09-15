@@ -19,7 +19,8 @@ export default function SectorsGrid() {
       rowRefs.current.forEach((row, i) => {
         if (!row) return;
         const rect = row.getBoundingClientRect();
-        const dist = Math.abs(rect.top + rect.height / 2 - target);
+        // Calculate distance from top of row to the target (center-down)
+        const dist = Math.abs(rect.top - target);
         if (dist < bestDist) { bestDist = dist; best = i; }
       });
       setActiveSector((prev) => prev !== best ? best : prev);

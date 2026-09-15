@@ -126,7 +126,10 @@ lineHeight: 1.1}}>
                         src={leader.image}
                         alt={leader.name}
                         fill
-                        style={{ objectFit: 'cover' }}
+                        style={{ 
+                          objectFit: 'cover',
+                          objectPosition: leader.name === 'Sujith' ? 'center 30%' : (leader.name === 'Biju' ? 'center top' : 'center center')
+                        }}
                         sizes="(max-width: 768px) 100vw, 320px"
                       />
                     ) : (

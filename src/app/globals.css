@@ -794,6 +794,9 @@ html, body {
 /* Simple grid hidden on desktop */
 .values-mobile-grid { display: none; }
 
+/* Hide mobile-only sticky content on desktop */
+.mobile-only-sticky-content { display: none; }
+
 /* ── LeadershipCta grid — desktop defaults ── */
 .leadership-grid {
   display: grid;
@@ -814,6 +817,9 @@ html, body {
   /* SectorsGrid: full-width list, hide sticky panel */
   .sectors-section {
     padding-bottom: 2rem !important;
+  }
+  .mobile-only-sticky-content {
+    display: block !important;
   }
   .howwework-section {
     padding-top: 2rem !important;
