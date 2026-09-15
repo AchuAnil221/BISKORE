@@ -343,7 +343,6 @@ export default function Header() {
                       fontSize: '0.95rem',
                       fontWeight: sectorActive ? 600 : 400,
                       color: sectorActive ? '#0D0D0D' : '#444',
-                      borderBottom: '1px solid rgba(0,0,0,0.07)',
                       background: 'none',
                       border: 'none',
                       borderBottom: '1px solid rgba(0,0,0,0.07)',
