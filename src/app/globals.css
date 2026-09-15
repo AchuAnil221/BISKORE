@@ -39,14 +39,17 @@
   /* Typography */
   --font-outfit: 'Outfit', sans-serif;
 
-  /* Spacing Scale */
-  --space-xs:   0.5rem;
-  --space-sm:   1rem;
-  --space-md:   1.5rem;
-  --space-lg:   2.5rem;
-  --space-xl:   4rem;
-  --space-2xl:  6rem;
-  --space-3xl:  8rem;
+  /* Spacing Scale (8px system) */
+  --space-8:   0.5rem;    /* 8px */
+  --space-16:  1rem;      /* 16px */
+  --space-24:  1.5rem;    /* 24px */
+  --space-32:  2rem;      /* 32px */
+  --space-48:  3rem;      /* 48px */
+  --space-64:  4rem;      /* 64px */
+  --space-80:  5rem;      /* 80px */
+  --space-100: 6.25rem;   /* 100px */
+  --space-120: 7.5rem;    /* 120px */
+  --space-160: 10rem;     /* 160px */
 
   /* Border Radius */
   --radius-sm:  4px;
@@ -124,14 +127,14 @@ button {
 }
 
 .text-hero {
-  font-size: clamp(1rem, 2vw, 1.35rem);
-  font-weight: 300;
-  letter-spacing: 0.08em;
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  font-weight: 400;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
 .text-h1 {
-  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.015em;
@@ -139,16 +142,37 @@ button {
 }
 
 .text-h2 {
-  font-size: clamp(1.6rem, 3vw, 2.5rem);
-  font-weight: 700;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 600;
   line-height: 1.2;
   color: var(--text-primary);
 }
 
 .text-h3 {
-  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 600;
   line-height: 1.3;
+  color: var(--text-primary);
+}
+
+.text-h4 {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+
+.text-h5 {
+  font-size: clamp(1.125rem, 1.5vw, 1.25rem);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+
+.text-h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
   color: var(--text-primary);
 }
 
@@ -161,17 +185,24 @@ button {
 }
 
 .text-body {
-  font-size: 1rem;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.text-body-lg {
+  font-size: clamp(1.125rem, 1.5vw, 1.25rem);
   font-weight: 400;
   line-height: 1.75;
   color: var(--text-secondary);
 }
 
-.text-body-lg {
-  font-size: 1.125rem;
+.text-small {
+  font-size: 0.875rem;
   font-weight: 400;
-  line-height: 1.75;
-  color: var(--text-secondary);
+  line-height: 1.6;
+  color: var(--text-muted);
 }
 
 /* On-dark overrides (used inside dark hero/footer sections) */
@@ -299,27 +330,37 @@ button {
 }
 
 /* ── Section Layout ────────────────────────────────────────── */
+.section-hero {
+  padding: var(--space-160) 0;
+  position: relative;
+}
+
+.section-lg {
+  padding: var(--space-120) 0;
+  position: relative;
+}
+
 .section {
-  padding: var(--space-3xl) 0;
+  padding: var(--space-80) 0;
   position: relative;
 }
 
 .section-sm {
-  padding: var(--space-2xl) 0;
+  padding: var(--space-64) 0;
 }
 
 .container {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 var(--space-lg);
+  padding: 0 var(--space-32);
 }
 
 .container-wide {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 var(--space-lg);
+  padding: 0 var(--space-32);
 }
 
 /* ── Decorative Elements ───────────────────────────────────── */
@@ -471,22 +512,26 @@ html, body {
 
 /* ── Responsive ────────────────────────────────────────────── */
 @media (max-width: 1024px) {
-  .container { padding: 0 var(--space-md); }
+  .container, .container-wide { padding: 0 var(--space-24); }
+  .section-hero { padding: var(--space-120) 0; }
+  .section-lg { padding: var(--space-100) 0; }
+  .section { padding: var(--space-64) 0; }
+  .section-sm { padding: var(--space-48) 0; }
 }
 
 @media (max-width: 768px) {
-  :root {
-    --space-2xl: 4rem;
-    --space-3xl: 5rem;
-  }
-  .container { padding: 0 var(--space-sm); }
+  .container, .container-wide { padding: 0 var(--space-16); }
+  .section-hero { padding: var(--space-100) 0; }
+  .section-lg { padding: var(--space-80) 0; }
+  .section { padding: var(--space-64) 0; }
+  .section-sm { padding: var(--space-48) 0; }
 }
 
 @media (max-width: 480px) {
-  :root {
-    --space-2xl: 3rem;
-    --space-3xl: 4rem;
-  }
+  .section-hero { padding: var(--space-80) 0; }
+  .section-lg { padding: var(--space-64) 0; }
+  .section { padding: var(--space-48) 0; }
+  .section-sm { padding: var(--space-32) 0; }
 }
 
 /* ── CSS Hover Utilities (Light Theme — Server Components) ──── */
@@ -530,6 +575,8 @@ html, body {
 .hover-next-nav:hover { border-color: rgba(6,44,34,0.4) !important; background: var(--surface-bg-alt) !important; }
 .hover-quality:hover { border-color: rgba(255,183,29,0.3) !important; background: rgba(255,183,29,0.04) !important; transform: translateX(6px) !important; }
 .hover-border-left:hover { border-left-color: var(--color-gold-vivid) !important; background: var(--surface-bg-alt) !important; }
+.hover-founder-image { transition: transform 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94) !important; }
+.hover-founder-image:hover { transform: translateY(-8px) scale(1.008) !important; box-shadow: 0 24px 60px rgba(0,0,0,0.2) !important; z-index: 10; }
 
 /* ══════════════════════════════════════════════════════════════
    SCROLL ANIMATIONS
@@ -667,4 +714,223 @@ html, body {
   background: #FFF8E8 !important;
   border-color: rgba(184, 134, 11, 0.25) !important;
   transform: translateX(4px);
+}
+
+/* ── GroupSnapshot Grid — desktop defaults ── */
+.snapshot-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+}
+.snapshot-col-left {
+  grid-column: 1 / 7;
+  padding-bottom: 2rem;
+}
+.snapshot-col-right {
+  grid-column: 8 / 13;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ── GroupSnapshot Grid — mobile only (no desktop changes) ── */
+/* ── Forms ─────────────────────────────────────────────────── */
+.contact-grid-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 768px) {
+  .hero-overlap-section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  .mobile-squish {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  .mobile-hide {
+    display: none !important;
+  }
+  .mobile-card-squish {
+    padding: 1.5rem !important;
+  }
+
+  .contact-grid-row {
+    grid-template-columns: 1fr;
+  }
+
+  .snapshot-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .snapshot-col-left {
+    grid-column: 1 / -1;
+    padding-bottom: 0;
+  }
+  .snapshot-col-right {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+    gap: 1.5rem;
+  }
+}
+
+/* ── SectorsGrid — desktop defaults ── */
+.sectors-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* Mobile sector images: hidden on desktop, shown on mobile */
+.sector-mobile-image {
+  display: none;
+}
+
+/* ── Values cards visibility ── */
+/* Animated version shown on desktop */
+.values-scroll-desktop { display: block; }
+/* Simple grid hidden on desktop */
+.values-mobile-grid { display: none; }
+
+/* ── LeadershipCta grid — desktop defaults ── */
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+.leadership-col-left {
+  grid-column: 1 / 7;
+}
+.leadership-col-right {
+  grid-column: 8 / 13;
+}
+
+/* ── Mobile-only overrides (≤ 767px) ── */
+@media (max-width: 767px) {
+
+  /* SectorsGrid: full-width list, hide sticky panel */
+  .sectors-section {
+    padding-bottom: 2rem !important;
+  }
+  .howwework-section {
+    padding-top: 2rem !important;
+  }
+  .vision-section {
+    padding-bottom: 2rem !important;
+  }
+  .leadership-section {
+    padding-top: 2rem !important;
+  }
+  .sectors-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .sectors-list {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+  .sectors-sticky-panel {
+    display: none !important;
+  }
+  /* Show inline images on mobile, reduce row min-height */
+  .sector-mobile-image {
+    display: block !important;
+  }
+
+  /* LeadershipCta: stack photo below text */
+  .leadership-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .leadership-col-left {
+    grid-column: 1 / -1;
+  }
+  .leadership-col-right {
+    display: none !important;
+  }
+
+  /* ScrollSplitCard values: reduce height and allow scroll */
+  .h-\[300vh\] {
+    height: 250vh;
+  }
+  .h-\[400px\] {
+    height: 260px !important;
+  }
+  /* Values: hide animated desktop version, show simple grid */
+  .values-scroll-desktop {
+    display: none !important;
+  }
+  .values-mobile-grid {
+    display: block !important;
+  }
+}
+
+
+/* ── About page hero — fix header overlap on mobile ── */
+@media (max-width: 767px) {
+  .about-hero {
+    padding-top: calc(75px + 3rem) !important;
+    min-height: auto !important;
+  }
+}
+
+/* ── Sectors gold accent bar — hidden on mobile ── */
+@media (max-width: 767px) {
+  .sector-accent-bar {
+    display: none !important;
+  }
+}
+
+/* ── Reduce all inter-section white space on mobile ── */
+@media (max-width: 767px) {
+  /* WhyBiskore section container padding */
+  .whybiskore-section .container {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  /* Strengths grid bottom margin */
+  .whybiskore-section .container > div:first-child {
+    margin-bottom: 2rem !important;
+  }
+  /* HowWeWork inner wrapper */
+  .howwework-section {
+    padding-bottom: 2rem !important;
+  }
+  /* VisionSection already handled — ensure top also tight */
+  .vision-section {
+    padding-top: 2rem !important;
+  }
+  /* LeadershipCta quote block: reduce huge top margin */
+  .leadership-quote {
+    margin-top: 2rem !important;
+    padding-top: 2rem !important;
+  }
+  /* LeadershipCta bottom */
+  .leadership-section {
+    padding-bottom: 2rem !important;
+  }
+  
+  /* Center align sector rows on mobile since yellow line is removed */
+  .sector-row {
+    padding-left: 0 !important;
+    text-align: center;
+    align-items: center;
+  }
+  .sector-row p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sector-row a {
+    justify-content: center;
+  }
+}
+
+/* ── Prevent horizontal scroll on mobile (fixes header shifting) ── */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+  }
 }

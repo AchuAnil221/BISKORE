@@ -21,13 +21,14 @@ export default function Header() {
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
+      if (mobileOpen) return;
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
         setSectorsOpen(false);
       }
     };
     document.addEventListener('mousedown', handler);
     return () => document.removeEventListener('mousedown', handler);
-  }, []);
+  }, [mobileOpen]);
 
   useEffect(() => {
     setMobileOpen(false);
@@ -39,8 +40,8 @@ export default function Header() {
 
   // Hero is now light colored, so we always use dark text
   const navTextColor = '#1A1A1A';
-  const navActiveColor = '#FFB71D';
-  const navHoverColor = '#FFB71D';
+  const navActiveColor = '#0D0D0D';
+  const navHoverColor = '#0D0D0D';
 
   return (
     <>
@@ -75,7 +76,7 @@ export default function Header() {
           >
             {/* Logo */}
             <BiskoreLogo 
-              size="md" 
+              size="lg" 
               src="/images/biskore_logo_2.png" 
             />
 
@@ -170,6 +171,7 @@ export default function Header() {
                               key={child.href}
                               href={child.href}
                               role="menuitem"
+                              onClick={() => setSectorsOpen(false)}
                               style={{
                                 display: 'flex',
                                 alignItems: 'center',
@@ -177,17 +179,18 @@ export default function Header() {
                                 padding: '0.65rem 1rem',
                                 borderRadius: '10px',
                                 fontSize: '0.875rem',
-                                fontWeight: 500,
-                                color: isActive(child.href) ? '#062C22' : '#3D3D3D',
+                                color: isActive(child.href) ? '#FFFFFF' : '#3D3D3D',
                                 transition: 'all 200ms',
                                 background: isActive(child.href)
-                                  ? 'rgba(6, 44, 34, 0.07)'
+                                  ? navActiveColor
                                   : 'transparent',
+                                fontWeight: isActive(child.href) ? 600 : 500,
                               }}
                               onMouseEnter={(e) => {
-                                (e.currentTarget as HTMLElement).style.background =
-                                  'rgba(6, 44, 34, 0.07)';
-                                (e.currentTarget as HTMLElement).style.color = '#062C22';
+                                if (!isActive(child.href)) {
+                                  (e.currentTarget as HTMLElement).style.background = 'rgba(0, 0, 0, 0.05)';
+                                  (e.currentTarget as HTMLElement).style.color = '#0D0D0D';
+                                }
                               }}
                               onMouseLeave={(e) => {
                                 if (!isActive(child.href)) {
@@ -196,16 +199,6 @@ export default function Header() {
                                 }
                               }}
                             >
-                              <span
-                                style={{
-                                  width: 6,
-                                  height: 6,
-                                  borderRadius: '50%',
-                                  background: '#FFB71D',
-                                  flexShrink: 0,
-                                  opacity: isActive(child.href) ? 1 : 0.5,
-                                }}
-                              />
                               {child.label}
                             </Link>
                           ))}
@@ -222,7 +215,7 @@ export default function Header() {
                     style={{
                       padding: '0.5rem 1rem',
                       fontSize: '0.875rem',
-                      fontWeight: 600,
+                      fontWeight: isActive(link.href) ? 800 : 600,
                       letterSpacing: '0.02em',
                       color: isActive(link.href) ? navActiveColor : navTextColor,
                       transition: 'color 200ms',
@@ -246,8 +239,8 @@ export default function Header() {
                           left: '50%',
                           transform: 'translateX(-50%)',
                           width: '60%',
-                          height: 2,
-                          background: '#FFB71D',
+                          height: 3,
+                          background: '#0D0D0D',
                           borderRadius: '9999px',
                         }}
                       />
@@ -293,7 +286,7 @@ export default function Header() {
                     display: 'block',
                     width: 24,
                     height: 2,
-                    background: scrolled ? '#062C22' : '#FFB71D',
+                    background: scrolled ? '#062C22' : '#0D0D0D',
                     borderRadius: '9999px',
                     transition: 'all 300ms',
                     transform:
@@ -312,7 +305,7 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Mobile Menu — Light */}
+      {/* Mobile Menu */}
       <div
         style={{
           position: 'fixed',
@@ -323,70 +316,121 @@ export default function Header() {
           WebkitBackdropFilter: 'blur(20px)',
           display: mobileOpen ? 'flex' : 'none',
           flexDirection: 'column',
-          padding: '6rem 2rem 2rem',
+          padding: '5rem 1.5rem 2rem',
           overflowY: 'auto',
         }}
         aria-hidden={!mobileOpen}
       >
         <nav
-          style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}
+          style={{ display: 'flex', flexDirection: 'column' }}
           aria-label="Mobile navigation"
         >
           {NAV_LINKS.map((link) => {
             if ('children' in link && link.children) {
+              const sectorActive = isActive(link.href);
               return (
                 <div key={link.href}>
-                  <Link
-                    href={link.href}
+                  {/* Sectors accordion toggle — no navigation */}
+                  <button
+                    onClick={() => setSectorsOpen(!sectorsOpen)}
+                    aria-expanded={sectorsOpen}
                     style={{
-                      display: 'block',
-                      padding: '1rem 0',
-                      fontSize: '1.5rem',
-                      fontWeight: 700,
-                      color: '#062C22',
-                      borderBottom: '1px solid rgba(0,0,0,0.06)',
+                      width: '100%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      padding: '0.85rem 0',
+                      fontSize: '0.95rem',
+                      fontWeight: sectorActive ? 600 : 400,
+                      color: sectorActive ? '#0D0D0D' : '#444',
+                      borderBottom: '1px solid rgba(0,0,0,0.07)',
+                      background: 'none',
+                      border: 'none',
+                      borderBottom: '1px solid rgba(0,0,0,0.07)',
+                      cursor: 'pointer',
+                      fontFamily: 'inherit',
+                      textAlign: 'left',
                     }}
                   >
-                    {link.label}
-                  </Link>
-                  <div style={{ paddingLeft: '1rem', paddingTop: '0.5rem', paddingBottom: '0.5rem' }}>
-                    {link.children.map((child) => (
-                      <Link
-                        key={child.href}
-                        href={child.href}
-                        style={{
-                          display: 'block',
-                          padding: '0.6rem 0',
-                          fontSize: '1.1rem',
-                          fontWeight: 500,
-                          color: '#3D3D3D',
-                        }}
-                      >
-                        → {child.label}
-                      </Link>
-                    ))}
-                  </div>
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      {sectorActive && (
+                        <span style={{ width: 4, height: 4, borderRadius: '50%', background: '#FFB71D', display: 'inline-block' }} />
+                      )}
+                      {link.label}
+                    </span>
+                    <svg
+                      width="14" height="14" viewBox="0 0 24 24" fill="none"
+                      style={{ transform: sectorsOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 250ms', flexShrink: 0, color: '#999' }}
+                    >
+                      <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </button>
+
+                  {/* Sectors dropdown list */}
+                  {sectorsOpen && (
+                    <div style={{ paddingLeft: '1rem', paddingBottom: '0.25rem' }}>
+                      {link.children.map((child) => {
+                        const childActive = isActive(child.href);
+                        return (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            onClick={() => setMobileOpen(false)}
+                            style={{
+                              display: 'flex',
+                              alignItems: 'center',
+                              gap: '0.5rem',
+                              padding: '0.65rem 0',
+                              fontSize: '0.875rem',
+                              fontWeight: childActive ? 600 : 400,
+                              color: childActive ? '#0D0D0D' : '#555',
+                              borderBottom: '1px solid rgba(0,0,0,0.05)',
+                            }}
+                          >
+                            {childActive && (
+                              <span style={{ width: 4, height: 4, borderRadius: '50%', background: '#FFB71D', display: 'inline-block', flexShrink: 0 }} />
+                            )}
+                            {child.label}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  )}
                 </div>
               );
             }
+
+            const active = isActive(link.href);
             return (
               <Link
                 key={link.href}
                 href={link.href}
+                onClick={() => setMobileOpen(false)}
                 style={{
-                  display: 'block',
-                  padding: '1rem 0',
-                  fontSize: '1.5rem',
-                  fontWeight: 700,
-                  color: isActive(link.href) ? '#FFB71D' : '#1A1A1A',
-                  borderBottom: '1px solid rgba(0,0,0,0.06)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  padding: '0.85rem 0',
+                  fontSize: '0.95rem',
+                  fontWeight: active ? 600 : 400,
+                  color: active ? '#0D0D0D' : '#444',
+                  borderBottom: '1px solid rgba(0,0,0,0.07)',
                 }}
               >
+                {active && (
+                  <span style={{ width: 4, height: 4, borderRadius: '50%', background: '#FFB71D', display: 'inline-block', flexShrink: 0 }} />
+                )}
                 {link.label}
               </Link>
             );
           })}
-          <Link href="/contact" className="btn-primary" style={{ marginTop: '2rem', justifyContent: 'center' }}>
+
+          <Link
+            href="/contact"
+            onClick={() => setMobileOpen(false)}
+            className="btn-primary"
+            style={{ marginTop: '1.75rem', justifyContent: 'center', fontSize: '0.8rem' }}
+          >
             <span>Get in Touch</span>
           </Link>
         </nav>

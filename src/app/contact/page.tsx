@@ -46,37 +46,32 @@ export default function ContactPage() {
       {/* Hero — dark green */}
       <section
         style={{
-          paddingTop: '10rem',
-          paddingBottom: '5rem',
-          background: 'linear-gradient(135deg, #062C22 0%, #0A3D30 100%)',
+          paddingTop: '11rem',
+          paddingBottom: '7rem',
+          background: 'linear-gradient(180deg, #F8F7F4 0%, #FDF3DB 40%, #E8DFCB 100%)',
           position: 'relative',
           overflow: 'hidden',
         }}
       >
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            backgroundImage:
-              'linear-gradient(rgba(255,183,29,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,183,29,0.05) 1px, transparent 1px)',
-            backgroundSize: '60px 60px',
-          }}
-        />
-        <div className="container" style={{ position: 'relative' }}>
+        <div className="container" style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
           <ScrollReveal>
-            <div className="section-badge">
-              <span className="gold-line" />
+            <div className="section-badge" style={{ justifyContent: 'center' }}>
               <span style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#FFB71D' }}>
-                Contact
+                Contact Us
               </span>
             </div>
-            <h1 className="text-display" style={{ marginTop: '0.75rem', maxWidth: 700, color: '#FFFFFF' }}>
+            <h1 className="text-display" style={{marginTop: '0.75rem', maxWidth: 800, margin: '0.75rem auto 0', color: '#0D0D0D', 
+fontSize: 'clamp(2rem, 5vw, 3.5rem)', 
+fontWeight: 500, 
+letterSpacing: '-0.02em', 
+lineHeight: 1.15}}>
               Let&apos;s{' '}
-              <span style={{ background: 'linear-gradient(135deg,#FFB71D,#F5D399)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+              <span style={{ color: '#0D0D0D' }}>
                 connect
               </span>
             </h1>
-            <p style={{ marginTop: '1.5rem', maxWidth: 560, color: 'rgba(255,255,255,0.72)', fontSize: '1.05rem', lineHeight: 1.75 }}>
+            <p style={{marginTop: '1.5rem', maxWidth: 640, margin: '1.5rem auto 0', color: '#555555', fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', lineHeight: 1.7, 
+fontWeight: 400}}>
               We welcome enquiries from trade partners, farmers, distributors, logistics clients,
               brand partners, and investors interested in any of Biskore&apos;s five business sectors.
             </p>
@@ -87,13 +82,12 @@ export default function ContactPage() {
       {/* Contact Content — white */}
       <section className="section" style={{ background: '#FFFFFF' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '4rem', alignItems: 'start' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '4rem', alignItems: 'stretch' }}>
             {/* Left — Info */}
-            <ScrollReveal direction="left">
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+            <ScrollReveal direction="left" className="h-full">
+              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '3rem', background: '#F8F7F4', border: '1px solid rgba(0,0,0,0.07)', height: '100%' }}>
                 {/* Address */}
                 {[
-                  { label: 'Office Address', content: <address style={{ fontStyle: 'normal', fontSize: '0.9rem', lineHeight: 1.85, color: '#555' }}>{SITE.address}</address> },
                   {
                     label: 'Phone', content: (
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
@@ -108,9 +102,10 @@ export default function ContactPage() {
                   },
                   { label: 'Email', content: <a href={`mailto:${SITE.email}`} style={{ fontSize: '1rem', fontWeight: 600, color: '#062C22' }} onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = '0.7')} onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = '1')}>{SITE.email}</a> },
                   { label: 'Website', content: <a href="https://www.biskore.com" target="_blank" rel="noopener noreferrer" style={{ fontSize: '1rem', fontWeight: 600, color: '#062C22' }} onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = '0.7')} onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = '1')}>www.biskore.com</a> },
+                  { label: 'Office Address', content: <address style={{ fontStyle: 'normal', fontSize: '0.9rem', lineHeight: 1.85, color: '#555' }}>{SITE.address}</address> },
                 ].map(({ label, content }) => (
-                  <div key={label} style={{ padding: '1.75rem', border: '1px solid rgba(0,0,0,0.08)', background: '#F8F7F4' }}>
-                    <p style={{ fontSize: '0.7rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#B8860B', marginBottom: '0.75rem' }}>
+                  <div key={label}>
+                    <p style={{ fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', fontWeight: 400, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#B8860B', marginBottom: '0.75rem' }}>
                       {label}
                     </p>
                     {content}
@@ -120,30 +115,40 @@ export default function ContactPage() {
             </ScrollReveal>
 
             {/* Right — Form */}
-            <ScrollReveal direction="right">
+            <ScrollReveal direction="right" className="h-full">
               <div
                 style={{
                   padding: '3rem',
                   background: '#F8F7F4',
                   border: '1px solid rgba(0,0,0,0.07)',
+                  height: '100%'
                 }}
               >
-                <h2 className="text-h2" style={{ marginBottom: '0.5rem' }}>
+                <h2 className="text-h2" style={{marginBottom: '0.5rem', 
+fontSize: 'clamp(2rem, 5vw, 4rem)', 
+fontWeight: 300, 
+letterSpacing: '-0.03em', 
+lineHeight: 1.1}}>
                   Send us a <span className="gradient-text">message</span>
                 </h2>
-                <p style={{ marginBottom: '2.5rem', color: '#666', fontSize: '0.95rem' }}>
+                <p style={{marginBottom: '2.5rem', color: '#666', fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', 
+fontWeight: 400, 
+lineHeight: 1.7}}>
                   Fill in your details and we&apos;ll get back to you shortly.
                 </p>
 
                 {status === 'success' ? (
                   <div style={{ padding: '2rem', background: 'rgba(6,44,34,0.06)', border: '1px solid rgba(6,44,34,0.15)', textAlign: 'center' }}>
                     <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>✅</div>
-                    <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#062C22', marginBottom: '0.5rem' }}>Message sent!</h3>
-                    <p style={{ color: '#666', fontSize: '0.9rem' }}>Thank you for reaching out. We&apos;ll get back to you soon.</p>
+                    <h3 style={{fontSize: '1.25rem', fontWeight: 500, color: '#062C22', marginBottom: '0.5rem', 
+letterSpacing: '-0.02em'}}>Message sent!</h3>
+                    <p style={{color: '#666', fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', 
+fontWeight: 400, 
+lineHeight: 1.7}}>Thank you for reaching out. We&apos;ll get back to you soon.</p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
+                    <div className="contact-grid-row" style={{ gap: '1.25rem' }}>
                       {[
                         { id: 'contact-name', label: 'Full Name *', type: 'text', placeholder: 'Your name', field: 'name' as const, required: true },
                         { id: 'contact-email', label: 'Email *', type: 'email', placeholder: 'your@email.com', field: 'email' as const, required: true },
@@ -167,7 +172,7 @@ export default function ContactPage() {
                       ))}
                     </div>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
+                    <div className="contact-grid-row" style={{ gap: '1.25rem' }}>
                       <div>
                         <label style={{ display: 'block', fontSize: '0.75rem', color: '#B8860B', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Phone</label>
                         <input
@@ -219,7 +224,9 @@ export default function ContactPage() {
                     </div>
 
                     {status === 'error' && (
-                      <p style={{ fontSize: '0.85rem', color: '#CC0000' }}>
+                      <p style={{fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', color: '#CC0000', 
+fontWeight: 400, 
+lineHeight: 1.7}}>
                         Something went wrong. Please try again or email us directly.
                       </p>
                     )}

@@ -10,10 +10,10 @@ export default function SectorsGrid() {
   const [activeSector, setActiveSector] = useState(0);
   const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  // Scroll-spy: activate whichever row center is closest to 45% of viewport
+  // Scroll-spy: activate whichever row center is closest to 50% of viewport
   useEffect(() => {
     const handleScroll = () => {
-      const target = window.innerHeight * 0.45;
+      const target = window.innerHeight * 0.5;
       let best = 0;
       let bestDist = Infinity;
       rowRefs.current.forEach((row, i) => {
@@ -36,11 +36,11 @@ export default function SectorsGrid() {
         paddingTop: '8rem',
         paddingBottom: '8rem',
       }}
-      className="hero-overlap-section"
+      className="hero-overlap-section sectors-section"
     >
       <div className="container">
         {/* Heading & Top CTA */}
-        <div style={{ marginBottom: '4rem', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-end', gap: '2rem' }}>
+        <div style={{ marginBottom: '4rem', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-start', gap: '2rem' }}>
           <RevealLines
             as="h2"
             lines={['Five sectors.', 'One accountable group.']}
@@ -55,34 +55,24 @@ export default function SectorsGrid() {
               flex: '1 1 auto',
             }}
           />
-          <ScrollReveal delay={200} className="mb-2 md:mb-3">
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '0.75rem' }}>
-              <p style={{ fontSize: '0.85rem', color: '#888', margin: 0 }}>
+          <ScrollReveal delay={200}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.75rem' }}>
+              <p style={{ fontSize: '0.85rem', color: '#888', margin: 0, textAlign: 'right' }}>
                 Each sector operates under one quality standard.
               </p>
-              <Link href="/sectors" style={{
-                display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-                fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.12em',
-                textTransform: 'uppercase', color: '#0D0D0D',
-                borderBottom: '1px solid #0D0D0D', paddingBottom: '2px',
-              }} className="hover-gold">
-                All Sectors
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-                  <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </Link>
             </div>
           </ScrollReveal>
         </div>
 
         {/* Two-column: LEFT tall scrolling list, RIGHT sticky image panel */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'start' }}>
+        <div className="sectors-grid">
 
           {/* LEFT — each row is ~40vh tall so page scrolls through each sector */}
-          <div style={{ display: 'flex', flexDirection: 'column', paddingTop: '25vh', paddingBottom: '35vh' }}>
+          <div className="sectors-list" style={{ display: 'flex', flexDirection: 'column', gap: '2rem', paddingTop: '30vh', paddingBottom: '30vh' }}>
             {SECTORS.map((sector, i) => (
               <div
                 key={sector.id}
+                className="sector-row"
                 ref={(el) => { rowRefs.current[i] = el; }}
                 style={{
                   minHeight: '40vh',
@@ -94,7 +84,7 @@ export default function SectorsGrid() {
                 }}
               >
                 {/* Gold left accent bar — grows on active */}
-                <div style={{
+                <div className="sector-accent-bar" style={{
                   position: 'absolute',
                   left: 0,
                   top: '50%',
@@ -114,17 +104,22 @@ export default function SectorsGrid() {
                 }} />
 
 
-                <h3 style={{
-                  fontSize: 'clamp(2rem, 3.5vw, 3rem)',
-                  fontWeight: 300,
-                  letterSpacing: '-0.03em',
-                  lineHeight: 1.1,
-                  color: activeSector === i ? '#0D0D0D' : '#D0D0D0',
-                  transition: 'color 500ms ease',
-                  marginBottom: '1.25rem',
-                }}>
-                  {sector.name}
-                </h3>
+                <Link
+                  href={sector.href}
+                  style={{ textDecoration: 'none', display: 'block' }}
+                >
+                  <h3 style={{
+                    fontSize: 'clamp(2rem, 3.5vw, 3rem)',
+                    fontWeight: 300,
+                    letterSpacing: '-0.03em',
+                    lineHeight: 1.1,
+                    color: activeSector === i ? '#0D0D0D' : '#D0D0D0',
+                    transition: 'color 500ms ease',
+                    marginBottom: '1.25rem',
+                  }}>
+                    {sector.name}
+                  </h3>
+                </Link>
 
                 {/* Tagline + link expand on active using CSS Grid for smooth auto-height animation */}
                 <div style={{
@@ -167,6 +162,34 @@ export default function SectorsGrid() {
                           <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                       </Link>
+
+                      {/* Mobile-only image — sits below text, hidden on desktop */}
+                      <div className="sector-mobile-image" style={{
+                        marginTop: '1.5rem',
+                        borderRadius: '12px',
+                        overflow: 'hidden',
+                        width: '100%',
+                        height: '52vw',
+                        maxHeight: 260,
+                        position: 'relative',
+                      }}>
+                        <img
+                          src={sector.image}
+                          alt={sector.name}
+                          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        />
+                        {/* Overlay label */}
+                        <div style={{
+                          position: 'absolute',
+                          bottom: 0, left: 0, right: 0,
+                          padding: '1rem',
+                          background: 'linear-gradient(transparent, rgba(0,0,0,0.55))',
+                        }}>
+                          <p style={{ color: '#fff', fontSize: '0.75rem', fontWeight: 500, margin: 0, opacity: 0.9 }}>
+                            {sector.tagline}
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -177,7 +200,7 @@ export default function SectorsGrid() {
           </div>
 
           {/* RIGHT — sticky image panel, vertically centered */}
-          <div
+          <div className="sectors-sticky-panel"
             style={{
               position: 'sticky',
               top: 0,

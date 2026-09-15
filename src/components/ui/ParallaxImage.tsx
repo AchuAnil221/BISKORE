@@ -12,6 +12,7 @@ interface ParallaxImageProps {
   sizes?: string;
   priority?: boolean;
   aspectRatio?: string; // e.g. '4/3'
+  objectPosition?: string;
   children?: ReactNode;
 }
 
@@ -28,6 +29,7 @@ export default function ParallaxImage({
   sizes = '(max-width: 900px) 100vw, 50vw',
   priority = false,
   aspectRatio = '4/3',
+  objectPosition = 'center',
   children,
 }: ParallaxImageProps) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -79,7 +81,7 @@ export default function ParallaxImage({
           fill
           priority={priority}
           sizes={sizes}
-          style={{ objectFit: 'cover', borderRadius: 0 }}
+          style={{ objectFit: 'cover', objectPosition, borderRadius: 0 }}
         />
       </div>
       {children}

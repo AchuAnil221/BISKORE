@@ -1,15 +1,19 @@
 'use client';
 import { useState, useEffect } from 'react';
 
+const DARK = '#062C22';
+
 export default function AnimatedBiskoreName() {
   const [expanded, setExpanded] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setExpanded((prev) => !prev);
-    }, 3500);
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
+
+  const transition = 'max-width 0.5s ease-in-out, opacity 0.45s ease-in-out, margin 0.5s ease-in-out';
 
   return (
     <h2
@@ -20,45 +24,58 @@ export default function AnimatedBiskoreName() {
         display: 'flex',
         alignItems: 'center',
         whiteSpace: 'nowrap',
+        fontWeight: 900,
+        color: DARK,
       }}
     >
-      <span className="gradient-text" style={{ transition: 'color 0.8s' }}>
-        {expanded ? 'BI' : 'Bi'}
-      </span>
-      
-      {/* Expanded middle */}
+      {/* "BI" — always visible */}
+      <span>BI</span>
+
+      {/* "-S" — slides in when expanded */}
       <span
         style={{
-          display: 'inline-flex',
-          maxWidth: expanded ? '150px' : '0px',
+          display: 'inline-block',
+          maxWidth: expanded ? '60px' : '0px',
           opacity: expanded ? 1 : 0,
           overflow: 'hidden',
-          transition: 'max-width 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.8s ease',
-          alignItems: 'center',
-          verticalAlign: 'bottom',
+          transition,
+          marginRight: expanded ? '0.15em' : '0',
         }}
       >
-        <span className="gradient-text" style={{ whiteSpace: 'nowrap' }}>-S</span>
-        <span style={{ margin: '0 0.3em', color: '#0D0D0D', whiteSpace: 'nowrap' }}>+</span>
+        -S
       </span>
 
-      {/* Shrunk middle */}
+      {/* "S" — visible only when collapsed (bridges BI→SKORE) */}
       <span
         style={{
-          display: 'inline-flex',
-          maxWidth: expanded ? '0px' : '50px',
+          display: 'inline-block',
+          maxWidth: expanded ? '0px' : '40px',
           opacity: expanded ? 0 : 1,
           overflow: 'hidden',
-          transition: 'max-width 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.8s ease',
-          verticalAlign: 'bottom',
+          transition,
         }}
       >
-        <span className="gradient-text">s</span>
+        S
       </span>
 
-      <span className="gradient-text" style={{ transition: 'color 0.8s' }}>
-        {expanded ? 'Kore' : 'kore'}
+      {/* "+" — slides in when expanded */}
+      <span
+        style={{
+          display: 'inline-block',
+          maxWidth: expanded ? '40px' : '0px',
+          opacity: expanded ? 1 : 0,
+          overflow: 'hidden',
+          transition,
+          margin: expanded ? '0 0.25em' : '0',
+          fontWeight: 300,
+          color: '#0D0D0D',
+        }}
+      >
+        +
       </span>
+
+      {/* "KORE" — always visible */}
+      <span>KORE</span>
     </h2>
   );
 }

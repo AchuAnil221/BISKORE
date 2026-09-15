@@ -54,6 +54,10 @@ export default function RevealText({
       style={{
         overflow: 'hidden',
         display: 'block',
+        paddingTop: '0.2em',
+        marginTop: '-0.2em',
+        paddingBottom: '0.2em',
+        marginBottom: '-0.2em',
         ...style,
       }}
     >
@@ -123,6 +127,10 @@ export function RevealLines({
           style={{
             display: 'block',
             overflow: 'hidden',
+            paddingTop: '0.2em',
+            marginTop: '-0.2em',
+            paddingBottom: '0.2em',
+            marginBottom: '-0.2em',
           }}
         >
           <span

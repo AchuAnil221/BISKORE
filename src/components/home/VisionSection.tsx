@@ -6,11 +6,11 @@ import { VISION, MISSION_PER_SECTOR, FUTURE_OUTLOOK } from '@/lib/constants';
 
 /* Per-card brand palette — lighter defaults, darker on hover */
 const CARD_COLORS = [
-  { bg: '#5BA87A', hover: '#2A6147' },  // Fresh Produce — sage green
-  { bg: '#D4AA28', hover: '#8A6A08' },  // Trade — warm gold
-  { bg: '#6E6E68', hover: '#2E2E2A' },  // Koblaq — medium stone
-  { bg: '#C49030', hover: '#6E4C0A' },  // Tastecore — amber
-  { bg: '#1A7058', hover: '#073D30' },  // Logistics — teal green
+  { bg: '#5BA87A', hover: '#4A9769' },  // Fresh Produce
+  { bg: '#D4AA28', hover: '#C49A18' },  // Trade
+  { bg: '#6E6E68', hover: '#5E5E58' },  // Koblaq
+  { bg: '#C49030', hover: '#B48020' },  // Tastecore
+  { bg: '#1A7058', hover: '#0A6048' },  // Logistics
 ];
 
 /* Shared animation style string injected once at module level */
@@ -25,7 +25,7 @@ export default function VisionSection() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   return (
-    <section className="hero-overlap-section" style={{ paddingTop: '4rem', paddingBottom: '8rem', position: 'relative', overflow: 'hidden' }}>
+    <section className="hero-overlap-section vision-section" style={{ paddingTop: '4rem', paddingBottom: '8rem', position: 'relative', overflow: 'hidden' }}>
       {/* Inject keyframe once globally */}
       <style>{MARCH_KEYFRAMES}</style>
 
@@ -45,7 +45,7 @@ export default function VisionSection() {
                 marginTop: '1.5rem',
               }}
             >
-              Where we&apos;re headed
+              The Path Forward
             </RevealText>
             <p style={{
               marginTop: '2rem',
@@ -75,7 +75,7 @@ export default function VisionSection() {
               ? {
                   strokeDasharray: '7 3',
                   strokeDashoffset: 300,
-                  animation: 'svgMarchAnim 25s linear infinite',
+                  animation: 'svgMarchAnim 45s linear infinite',
                 }
               : {
                   strokeDasharray: undefined,
@@ -140,7 +140,7 @@ export default function VisionSection() {
                       bottom: '-10px',
                       pointerEvents: 'none',
                       color: isHovered ? 'rgba(255,255,255,0.85)' : 'rgba(255,255,255,0.25)',
-                      transform: isHovered ? 'scale(1.2) rotate(10deg)' : 'scale(1) rotate(0deg)',
+                      transform: isHovered ? 'translateY(-6px) scale(1.05) rotate(3deg)' : 'translateY(0) scale(1) rotate(0deg)',
                       transformOrigin: 'bottom right',
                       transition: 'color 600ms ease, transform 700ms cubic-bezier(0.16, 1, 0.3, 1)',
                     }}
@@ -256,7 +256,7 @@ export default function VisionSection() {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: '1rem' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: '0.75rem' }}>
           {FUTURE_OUTLOOK.map((item, i) => (
             <ScrollReveal
               key={i}
@@ -268,12 +268,12 @@ export default function VisionSection() {
                 style={{
                   display: 'flex',
                   alignItems: 'flex-start',
-                  gap: '1.25rem',
-                  padding: '1.5rem 2rem',
-                  border: '1px solid rgba(0,0,0,0.05)',
+                  gap: '1rem',
+                  padding: '1rem 1.25rem',
+                  border: '1px solid rgba(0,0,0,0.08)',
                   borderRadius: '12px',
                   background: '#FFFFFF',
-                  boxShadow: '0 4px 24px rgba(0,0,0,0.04)',
+                  boxShadow: '0 4px 24px rgba(0,0,0,0.08)',
                   transition: 'all 300ms',
                   height: '100%',
                 }}

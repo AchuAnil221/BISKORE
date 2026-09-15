@@ -22,20 +22,9 @@ export default function GroupSnapshot() {
 
       <div className="container">
 
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(12, 1fr)',
-            gap: '2rem',
-          }}
-        >
+        <div className="snapshot-grid">
           {/* LEFT — sticky headline */}
-          <div
-            style={{
-              gridColumn: '1 / 7',
-              paddingBottom: '2rem',
-            }}
-          >
+          <div className="snapshot-col-left">
             <RevealLines
               as="h2"
               lines={GROUP_SNAPSHOT.heading.split('. ').map((s, i, arr) => i === arr.length - 1 ? s : s + '.')}
@@ -74,14 +63,7 @@ export default function GroupSnapshot() {
           </div>
 
           {/* RIGHT — scrolling content */}
-          <div
-            style={{
-              gridColumn: '8 / 13',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-            }}
-          >
+          <div className="snapshot-col-right">
             {/* Body text */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               <RevealText

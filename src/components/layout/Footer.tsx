@@ -1,14 +1,34 @@
+'use client';
+
+import { useRef } from 'react';
+import { usePathname } from 'next/navigation';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import BiskoreLogo from '@/components/ui/BiskoreLogo';
 import { SITE, NAV_LINKS, SECTORS } from '@/lib/constants';
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const footerRef = useRef<HTMLElement>(null);
+  const pathname = usePathname();
+  const isHome = pathname === '/';
+
+  const { scrollYProgress } = useScroll({
+    target: footerRef,
+    offset: ["start end", "end end"]
+  });
+
+  const scaleAnim = useTransform(scrollYProgress, [0, 1], [0.97, 1]);
+  
+  // Only apply scale animation on home page, no fade anywhere
+  const scale = isHome ? scaleAnim : 1;
 
   return (
-    <footer
+    <motion.footer
+      ref={footerRef}
       style={{
-        background: '#062C22',
+        scale,
+        background: '#0D0D0D',
         borderTop: '1px solid rgba(255, 183, 29, 0.15)',
         paddingTop: '5rem',
         paddingBottom: '2rem',
@@ -27,7 +47,7 @@ export default function Footer() {
         >
           {/* Brand Column */}
           <div>
-            <BiskoreLogo size="2xl" src="/images/logo_hero_transparent.png" />
+            <BiskoreLogo size="3xl" src="/images/logo_footer_v4.png" />
             <p
               style={{
                 marginTop: '1.25rem',
@@ -40,25 +60,7 @@ export default function Footer() {
               An Integrated House of Trade, Brand &amp; Logistics. Five sectors.
               One consistent standard of quality.
             </p>
-            <div style={{ marginTop: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              <a
-                href={`mailto:${SITE.email}`}
-                className="hover-gold"
-                style={{ fontSize: '0.85rem', color: 'rgba(255,183,29,0.85)', transition: 'color 200ms' }}
-              >
-                {SITE.email}
-              </a>
-              {SITE.phone.map((p) => (
-                <a
-                  key={p}
-                  href={`tel:${p.replace(/\s/g, '')}`}
-                  className="hover-gold"
-                  style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', transition: 'color 200ms' }}
-                >
-                  {p}
-                </a>
-              ))}
-            </div>
+
           </div>
 
           {/* Navigation Column */}
@@ -116,6 +118,25 @@ export default function Footer() {
             >
               {SITE.address}
             </address>
+            <div style={{ marginTop: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+              <a
+                href={`mailto:${SITE.email}`}
+                className="hover-gold"
+                style={{ fontSize: '0.85rem', color: 'rgba(255,183,29,0.85)', transition: 'color 200ms' }}
+              >
+                {SITE.email}
+              </a>
+              {SITE.phone.map((p) => (
+                <a
+                  key={p}
+                  href={`tel:${p.replace(/\s/g, '')}`}
+                  className="hover-gold"
+                  style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', transition: 'color 200ms' }}
+                >
+                  {p}
+                </a>
+              ))}
+            </div>
             <Link
               href="/contact"
               className="btn-outline-light"
@@ -154,6 +175,6 @@ export default function Footer() {
           </p>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 }

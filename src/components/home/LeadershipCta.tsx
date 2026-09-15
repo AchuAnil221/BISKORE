@@ -1,17 +1,16 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { RevealLines } from '@/components/ui/RevealText';
 import ScrollReveal from '@/components/ui/ScrollReveal';
-import ParallaxImage from '@/components/ui/ParallaxImage';
 import { LEADERSHIP, SITE } from '@/lib/constants';
 
 export default function LeadershipCta() {
   const [activeFounder, setActiveFounder] = useState(0);
 
   return (
-    <>
     <section
       style={{
         position: 'relative',
@@ -19,20 +18,13 @@ export default function LeadershipCta() {
         paddingBottom: '8rem',
         overflow: 'hidden',
       }}
-      className="hero-overlap-section"
+      className="hero-overlap-section leadership-section"
     >
 
       <div className="container">
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(12, 1fr)',
-            gap: '2rem',
-            alignItems: 'start',
-          }}
-        >
+        <div className="leadership-grid">
           {/* LEFT — Founder list */ }
-          <div style={{ gridColumn: '1 / 7' }}>
+          <div className="leadership-col-left">
             <RevealLines
               as="h2"
               lines={['Founded by', 'Biju & Sujith.']}
@@ -63,7 +55,7 @@ export default function LeadershipCta() {
             </div>
 
             {/* Founder rows — hover activates image cross-fade */}
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <div className="mobile-hide" style={{ display: 'flex', flexDirection: 'column' }}>
               {LEADERSHIP.map((leader, i) => (
                 <div
                   key={leader.name}
@@ -146,8 +138,8 @@ export default function LeadershipCta() {
 
           {/* RIGHT — Sticky cross-fade images */}
           <div
+            className="leadership-col-right mobile-hide"
             style={{
-              gridColumn: '8 / 13',
               position: 'sticky',
               top: '15vh',
               height: '70vh',
@@ -180,14 +172,15 @@ export default function LeadershipCta() {
                   }
                 >
                   {'image' in leader && leader.image ? (
-                    <ParallaxImage
-                      src={leader.image}
-                      alt={leader.name}
-                      speed={0.18}
-                      aspectRatio="unset"
-                      style={{ width: '100%', height: '100%', aspectRatio: 'unset' }}
-                      sizes="40vw"
-                    />
+                    <div className="hover-founder-image" style={{ width: '100%', height: '100%', position: 'relative' }}>
+                      <Image
+                        src={leader.image}
+                        alt={leader.name}
+                        fill
+                        style={{ objectFit: 'cover', objectPosition: 'center top' }}
+                        sizes="40vw"
+                      />
+                    </div>
                   ) : (
                     <div style={{ textAlign: 'center' }}>
                       <div style={{
@@ -212,62 +205,35 @@ export default function LeadershipCta() {
                 </div>
               ))}
 
-              {/* Gold accent frame */}
-              <div style={{
-                position: 'absolute',
-                top: 16,
-                right: -16,
-                bottom: -16,
-                left: 16,
-                border: '1px solid rgba(255,183,29,0.3)',
-                pointerEvents: 'none',
-                zIndex: -1,
-              }} />
+
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-      {/* ── FOUNDER QUOTE BLOCK ── */}
-      <section style={{ paddingTop: '6rem', paddingBottom: '8rem', background: '#062C22' }}>
-        <div className="container">
-          <ScrollReveal>
-            <div
-              style={{ display: 'flex', alignItems: 'flex-start', gap: '3rem' }}
-            >
-              <blockquote
-                className="quote-reveal is-visible"
-                style={{ flex: 1, margin: 0, opacity: 1, transform: 'none' }}
-              >
-                <p
-                  style={{
-                    fontSize: 'clamp(1.5rem, 3.5vw, 3rem)',
-                    fontWeight: 300,
-                    lineHeight: 1.25,
-                    letterSpacing: '-0.02em',
-                    color: 'rgba(255, 255, 255, 0.95)',
-                    fontStyle: 'italic',
-                  }}
+          {/* ── FOUNDER QUOTE BLOCK ── */}
+          <div className="leadership-quote" style={{ gridColumn: '1 / 13', marginTop: '6rem', paddingTop: '4rem', borderTop: '1px solid rgba(0,0,0,0.07)' }}>
+            <ScrollReveal>
+              <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+                <blockquote
+                  className="quote-reveal is-visible"
+                  style={{ margin: 0, opacity: 1, transform: 'none', width: '100%' }}
                 >
-                  &ldquo;We believe consistent quality isn&apos;t a feature — it&apos;s a promise that holds every business we touch to a single standard.&rdquo;
-                </p>
-                <footer
-                  style={{
-                    marginTop: '1.5rem',
-                    fontSize: '0.75rem',
-                    letterSpacing: '0.12em',
-                    textTransform: 'uppercase',
-                    color: 'rgba(255, 255, 255, 0.55)',
-                  }}
-                >
-                  Biju &amp; Sujith — Co-Founders, Biskore Dynamics LLP
-                </footer>
-              </blockquote>
-            </div>
-          </ScrollReveal>
+                  <p
+                    style={{
+                      fontSize: 'clamp(1.5rem, 3.5vw, 3rem)',
+                      fontWeight: 300,
+                      lineHeight: 1.25,
+                      letterSpacing: '-0.02em',
+                      color: 'rgba(0, 0, 0, 0.85)',
+                      fontStyle: 'italic',
+                    }}
+                  >
+                    &ldquo;We believe consistent quality isn&apos;t a feature — it&apos;s a promise that holds every business we touch to a single standard.&rdquo;
+                  </p>
+                </blockquote>
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
-      </section>
-    </>
+    </section>
   );
 }

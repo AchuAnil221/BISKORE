@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 interface BiskoreLogoProps {
-  size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+  size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl';
   variant?: 'full' | 'icon';
   className?: string;
   src?: string;
@@ -14,6 +14,7 @@ const sizes = {
   lg: { height: 65, width: 104 },
   xl: { height: 90, width: 144 },
   '2xl': { height: 140, width: 224 },
+  '3xl': { height: 200, width: 320 },
 };
 
 export default function BiskoreLogo({

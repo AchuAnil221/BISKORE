@@ -35,26 +35,24 @@ export function ScrollSplitCard({
     offset: ["start start", "end end"],
   });
 
-  const scale = useTransform(scrollYProgress, [0, 0.4], [1, 0.9]);
-  const rotateY = useTransform(scrollYProgress, [0.4, 0.8], [0, 180]);
+  const scale = useTransform(scrollYProgress, [0, 0.35], [1, 0.9]);
+  const rotateY = useTransform(scrollYProgress, [0.35, 0.9], [0, 180]);
 
   const borderOpacity = useTransform(scrollYProgress, [0, 0.2], [0, 0.2]);
-  const shadowOpacity = useTransform(scrollYProgress, [0, 0.2], [0, 0.4]);
-  const boxShadow = useMotionTemplate`inset 0 1px 1px rgba(255, 255, 255, ${borderOpacity}), inset 0 -24px 48px rgba(0, 0, 0, ${shadowOpacity}), 0 25px 50px -12px rgba(0, 0, 0, ${shadowOpacity})`;
 
   // Positions and rotations for up to 5 cards
   const getX = (i: number, total: number) => {
     const center = (total - 1) / 2;
     const diff = i - center;
-    // Stage 1 to 2: Separate further (-32 per step), then overlap closer (-16 per step)
-    return useTransform(scrollYProgress, [0, 0.4, 0.8], [0, diff * 32, diff * 16]);
+    // Stage 1 to 2: Separate further, then hold that separation so they don't touch
+    return useTransform(scrollYProgress, [0, 0.35, 0.9], [0, diff * 64, diff * 56]);
   };
 
   const getRotateZ = (i: number, total: number) => {
     const center = (total - 1) / 2;
     const diff = i - center;
     // Stage 2 to 3: slight fan out
-    return useTransform(scrollYProgress, [0.4, 0.8], [0, diff * -6]);
+    return useTransform(scrollYProgress, [0.35, 0.9], [0, diff * -6]);
   };
 
   const getBorderRadius = (i: number, total: number) => {
@@ -66,11 +64,11 @@ export function ScrollSplitCard({
   return (
     <div
       ref={containerRef}
-      className={cn("relative h-[500vh] w-full", className)}
+      className={cn("relative h-[300vh] w-full", className)}
     >
-      <div className="sticky top-0 flex flex-col h-screen w-full items-center justify-center overflow-hidden [perspective:1200px] pt-12">
+      <div className="sticky top-[85px] flex flex-col h-[calc(100vh-85px)] w-full items-center justify-center overflow-hidden [perspective:1200px]">
         {titleNode && (
-          <div className="relative z-10 mb-8 w-full">
+          <div className="relative z-10 w-full" style={{ marginBottom: '5rem' }}>
             {titleNode}
           </div>
         )}
@@ -97,7 +95,6 @@ export function ScrollSplitCard({
                 style={{
                   zIndex: 2, // Ensure front stays above initially
                   borderRadius: getBorderRadius(i, cards.length),
-                  boxShadow,
                 }}
               >
                 <div
@@ -116,8 +113,7 @@ export function ScrollSplitCard({
               <motion.div
                 className={cn(
                   "absolute inset-0 overflow-hidden flex flex-col justify-center items-center text-center px-4 py-6 [backface-visibility:hidden] will-change-transform",
-                  "border border-white/5 bg-gradient-to-br from-white/10 to-transparent",
-                  "shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),inset_0_-24px_48px_rgba(0,0,0,0.2)]"
+                  "border border-white/5 bg-gradient-to-br from-white/10 to-transparent"
                 )}
                 style={{
                   backgroundColor: card.bgColor,
@@ -125,17 +121,9 @@ export function ScrollSplitCard({
                   transform: "rotateY(180deg)",
                   zIndex: 1, // Ensure back is behind before flip
                   borderRadius: getBorderRadius(i, cards.length),
-                  boxShadow,
                 }}
               >
-                {/* Grainy Noise Overlay */}
-                <div
-                  className="pointer-events-none absolute inset-0 opacity-20 mix-blend-overlay"
-                  style={{
-                    backgroundImage: `url("https://framerusercontent.com/images/6mcf62RlDfRfU61Yg5vb2pefpi4.png?width=256&height=256")`,
-                    backgroundRepeat: "repeat",
-                  }}
-                />
+
 
                 {card.icon && <div className="relative z-10 mb-4">{card.icon}</div>}
                 <h3 className="relative z-10 mb-3 text-xl font-bold leading-tight max-w-[85%]">
