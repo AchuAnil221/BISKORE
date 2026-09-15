@@ -210,31 +210,7 @@ export default function LeadershipCta() {
             </div>
           </div>
         </div>
-          {/* ── FOUNDER QUOTE BLOCK ── */}
-          <div className="leadership-quote" style={{ gridColumn: '1 / 13', marginTop: '6rem', paddingTop: '4rem', borderTop: '1px solid rgba(0,0,0,0.07)' }}>
-            <ScrollReveal>
-              <div style={{ display: 'flex', alignItems: 'flex-start' }}>
-                <blockquote
-                  className="quote-reveal is-visible"
-                  style={{ margin: 0, opacity: 1, transform: 'none', width: '100%' }}
-                >
-                  <p
-                    style={{
-                      fontSize: 'clamp(1.5rem, 3.5vw, 3rem)',
-                      fontWeight: 300,
-                      lineHeight: 1.25,
-                      letterSpacing: '-0.02em',
-                      color: 'rgba(0, 0, 0, 0.85)',
-                      fontStyle: 'italic',
-                    }}
-                  >
-                    &ldquo;We believe consistent quality isn&apos;t a feature — it&apos;s a promise that holds every business we touch to a single standard.&rdquo;
-                  </p>
-                </blockquote>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
+      </div>
     </section>
   );
 }

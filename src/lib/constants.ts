@@ -276,11 +276,12 @@ export const STRENGTHS = [
 
 // ─── CORE VALUES ─────────────────────────────────────────────
 export const VALUES = [
-  { value: "Quality", detail: "High standard across all five sectors" },
-  { value: "Integrity", detail: "Honest and transparent in every dealing" },
-  { value: "Reliability", detail: "Dependable for every partner and customer" },
-  { value: "Accountability", detail: "One standard across all verticals" },
-  { value: "Growth", detail: "Agile and open to new opportunities" },
+  { value: "Integrity", detail: "Honest, consistent, and transparent across every transaction." },
+  { value: "Quality", detail: "High standards across every product, service, and process." },
+  { value: "Reliability", detail: "Dependable for every partner, supplier, and customer." },
+  { value: "Customer Focus", detail: "Building what the market needs, not just what is convenient." },
+  { value: "Accountability", detail: "One accountable standard across all five sectors." },
+  { value: "Agility", detail: "Adapting quickly to new markets, categories, and opportunities." },
 ] as const;
 
 // ─── HOW WE WORK ─────────────────────────────────────────────

@@ -5,6 +5,7 @@ import { useEffect, useRef, ReactNode } from 'react';
 interface ScrollRevealProps {
   children: ReactNode;
   className?: string;
+  style?: React.CSSProperties;
   direction?: 'up' | 'left' | 'right';
   delay?: number;
   threshold?: number;
@@ -13,6 +14,7 @@ interface ScrollRevealProps {
 export default function ScrollReveal({
   children,
   className = '',
+  style = {},
   direction = 'up',
   delay = 0,
   threshold = 0.15,
@@ -50,6 +52,7 @@ export default function ScrollReveal({
     <div
       ref={ref}
       className={`${dirClass} ${delayClass} ${className}`}
+      style={style}
     >
       {children}
     </div>
