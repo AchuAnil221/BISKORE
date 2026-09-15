@@ -275,7 +275,30 @@ export default function StoryHeroAnimation() {
           {/* Base Road */}
           <path d="M 0 690 C 200 700, 400 770, 800 770 C 1100 770, 1300 770, 1450 770 L 1450 790 C 1300 790, 1100 790, 800 790 C 400 790, 200 710, 0 710 Z" fill="url(#roadGrad)" />
           {/* Dashed Centerline */}
-          <path d="M 0 700 C 200 705, 400 780, 800 780 C 1100 780, 1300 780, 1450 780" stroke="#FFC107" strokeWidth="2" strokeDasharray="10 10" fill="none" opacity="0.8" />
+          <path d="M 0 700 C 200 705, 400 780, 800 780 C 1100 780, 1300 780, 1450 780" stroke="#D4AF37" strokeWidth="2" strokeDasharray="10 10" fill="none" opacity="0.8" />
+          
+          {/* Road Guardrails */}
+          <path d="M 0 685 C 200 695, 400 765, 800 765 C 1100 765, 1300 765, 1450 765" fill="none" stroke="#B0BEC5" strokeWidth="4" opacity="0.8" />
+          <path d="M 0 688 C 200 698, 400 768, 800 768 C 1100 768, 1300 768, 1450 768" fill="none" stroke="#78909C" strokeWidth="1" opacity="0.5" />
+          <path d="M 0 715 C 200 715, 400 795, 800 795 C 1100 795, 1300 795, 1450 795" fill="none" stroke="#B0BEC5" strokeWidth="4" opacity="0.5" />
+
+          {/* Streetlights */}
+          {[
+            { x: 100, y: 692, scale: 0.7 },
+            { x: 350, y: 720, scale: 0.8 },
+            { x: 600, y: 760, scale: 0.9 },
+            { x: 900, y: 765, scale: 0.95 },
+            { x: 1200, y: 768, scale: 1 },
+            { x: 1400, y: 769, scale: 1 },
+          ].map((pos, i) => (
+            <g key={`light-${i}`} transform={`translate(${pos.x}, ${pos.y}) scale(${pos.scale})`}>
+              <line x1="0" y1="0" x2="0" y2="-60" stroke="#555" strokeWidth="3" />
+              <path d="M 0 -60 Q 15 -60 25 -50" fill="none" stroke="#555" strokeWidth="2" />
+              <circle cx="25" cy="-50" r="3" fill="#FFF9C4" />
+              <circle cx="25" cy="-50" r="8" fill="#FFF9C4" opacity="0.3" filter="blur(2px)" />
+              <polygon points="23,-52 27,-52 29,-48 21,-48" fill="#333" />
+            </g>
+          ))}
 
           {/* Secondary Truck (Smaller/Slower) - Drives on offset-path */}
           <g className="anim-truck-2" filter="url(#dropShadow)">
@@ -349,6 +372,38 @@ export default function StoryHeroAnimation() {
               <path d="M -10 120 L 350 120 L 350 130 L -10 130 Z" fill="#757575" />
               {/* Painted safety lines on the dock */}
               <line x1="30" y1="95" x2="310" y2="95" stroke="#FFC107" strokeWidth="2" strokeDasharray="15 10" />
+            </g>
+
+            {/* Ocean / Water */}
+            <g opacity="0.8">
+              <path d="M 350 120 L 600 120 L 600 350 L 0 350 Z" fill="#4FC3F7" />
+              <path d="M 350 130 L 600 130 L 600 350 L 0 350 Z" fill="#29B6F6" opacity="0.8" />
+              <path d="M 370 145 Q 385 140 400 145 T 430 145" fill="none" stroke="#E1F5FE" strokeWidth="2" opacity="0.5" />
+              <path d="M 450 170 Q 465 165 480 170 T 510 170" fill="none" stroke="#E1F5FE" strokeWidth="2" opacity="0.5" />
+            </g>
+
+            {/* Cargo Ship */}
+            <g transform="translate(370, 110)">
+              {/* Ship Hull */}
+              <path d="M 0 0 L 150 0 L 170 30 L -20 30 Z" fill="#B71C1C" />
+              <path d="M 0 0 L 150 0 L 145 -40 L -15 -40 Z" fill="#263238" />
+              {/* Ship Cabin */}
+              <rect x="110" y="-80" width="40" height="40" fill="#ECEFF1" />
+              <rect x="115" y="-100" width="25" height="20" fill="#CFD8DC" />
+              <rect x="122" y="-120" width="8" height="20" fill="#D32F2F" /> {/* Smokestack */}
+              <line x1="126" y1="-125" x2="126" y2="-120" stroke="#555" strokeWidth="3" opacity="0.6" />
+              {/* Ship Windows */}
+              <rect x="115" y="-70" width="6" height="6" fill="#81D4FA" />
+              <rect x="127" y="-70" width="6" height="6" fill="#81D4FA" />
+              <rect x="139" y="-70" width="6" height="6" fill="#81D4FA" />
+              {/* Cargo on Ship */}
+              <rect x="-5" y="-60" width="30" height="20" fill="#2C5A4C" />
+              <rect x="30" y="-60" width="30" height="20" fill="#D2AC63" />
+              <rect x="65" y="-60" width="30" height="20" fill="#738C9B" />
+              <rect x="-5" y="-80" width="30" height="20" fill="#A56A5B" />
+              <rect x="30" y="-80" width="30" height="20" fill="#2C5A4C" />
+              <rect x="65" y="-80" width="30" height="20" fill="#194437" />
+              <rect x="10" y="-100" width="30" height="20" fill="#526977" />
             </g>
 
             {/* Detailed Gantry Crane (Truss Structure) */}

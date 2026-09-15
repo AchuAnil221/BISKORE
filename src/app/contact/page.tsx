@@ -56,7 +56,7 @@ export default function ContactPage() {
         <div className="container" style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
           <ScrollReveal>
             <div className="section-badge" style={{ justifyContent: 'center' }}>
-              <span style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#FFB71D' }}>
+              <span style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#D4AF37' }}>
                 Contact Us
               </span>
             </div>
@@ -119,7 +119,7 @@ fontWeight: 400}}>
               <div
                 style={{
                   padding: '3rem',
-                  background: '#F8F7F4',
+                  background: '#F4D35E',
                   border: '1px solid rgba(0,0,0,0.07)',
                   height: '100%'
                 }}
@@ -129,9 +129,9 @@ fontSize: 'clamp(2rem, 5vw, 4rem)',
 fontWeight: 300, 
 letterSpacing: '-0.03em', 
 lineHeight: 1.1}}>
-                  Send us a <span className="gradient-text">message</span>
+                  Send us a <span style={{ color: '#062C22', fontWeight: 500 }}>message</span>
                 </h2>
-                <p style={{marginBottom: '2.5rem', color: '#666', fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', 
+                <p style={{marginBottom: '2.5rem', color: '#222', fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', 
 fontWeight: 400, 
 lineHeight: 1.7}}>
                   Fill in your details and we&apos;ll get back to you shortly.
@@ -142,7 +142,7 @@ lineHeight: 1.7}}>
                     <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>✅</div>
                     <h3 style={{fontSize: '1.25rem', fontWeight: 500, color: '#062C22', marginBottom: '0.5rem', 
 letterSpacing: '-0.02em'}}>Message sent!</h3>
-                    <p style={{color: '#666', fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', 
+                    <p style={{color: '#333', fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', 
 fontWeight: 400, 
 lineHeight: 1.7}}>Thank you for reaching out. We&apos;ll get back to you soon.</p>
                   </div>
@@ -154,7 +154,7 @@ lineHeight: 1.7}}>Thank you for reaching out. We&apos;ll get back to you soon.</
                         { id: 'contact-email', label: 'Email *', type: 'email', placeholder: 'your@email.com', field: 'email' as const, required: true },
                       ].map(({ id, label, type, placeholder, field, required }) => (
                         <div key={id}>
-                          <label style={{ display: 'block', fontSize: '0.75rem', color: '#B8860B', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+                          <label style={{ display: 'block', fontSize: '0.75rem', color: '#062C22', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.5rem', fontWeight: 600 }}>
                             {label}
                           </label>
                           <input
@@ -174,7 +174,7 @@ lineHeight: 1.7}}>Thank you for reaching out. We&apos;ll get back to you soon.</
 
                     <div className="contact-grid-row" style={{ gap: '1.25rem' }}>
                       <div>
-                        <label style={{ display: 'block', fontSize: '0.75rem', color: '#B8860B', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Phone</label>
+                        <label style={{ display: 'block', fontSize: '0.75rem', color: '#062C22', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.5rem', fontWeight: 600 }}>Phone</label>
                         <input
                           id="contact-phone"
                           type="tel"
@@ -187,7 +187,7 @@ lineHeight: 1.7}}>Thank you for reaching out. We&apos;ll get back to you soon.</
                         />
                       </div>
                       <div>
-                        <label style={{ display: 'block', fontSize: '0.75rem', color: '#B8860B', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Subject</label>
+                        <label style={{ display: 'block', fontSize: '0.75rem', color: '#062C22', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.5rem', fontWeight: 600 }}>Subject</label>
                         <select
                           id="contact-subject"
                           value={form.subject}
@@ -209,7 +209,7 @@ lineHeight: 1.7}}>Thank you for reaching out. We&apos;ll get back to you soon.</
                     </div>
 
                     <div>
-                      <label style={{ display: 'block', fontSize: '0.75rem', color: '#B8860B', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Message *</label>
+                      <label style={{ display: 'block', fontSize: '0.75rem', color: '#062C22', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.5rem', fontWeight: 600 }}>Message *</label>
                       <textarea
                         id="contact-message"
                         required

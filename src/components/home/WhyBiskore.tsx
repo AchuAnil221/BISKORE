@@ -7,7 +7,7 @@ import { STRENGTHS, VALUES } from '@/lib/constants';
 
 export default function WhyBiskore() {
   return (
-    <section className="hero-overlap-section whybiskore-section" style={{ position: 'relative', paddingTop: '4rem', paddingBottom: '8rem' }}>
+    <section className="hero-overlap-section whybiskore-section" style={{ position: 'relative', paddingTop: '0rem', paddingBottom: '8rem' }}>
       <div className="container">
         {/* Strengths */}
         <div style={{ marginBottom: '4rem' }}>
@@ -112,7 +112,7 @@ export default function WhyBiskore() {
               What we stand for
             </h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.4rem' }}>
             {VALUES.map((v, i) => {
               const bgColors = ['#062C22', '#D8D2C4', '#FFB71D', '#5BA87A', '#111111', '#1A4A6E'];
               const textColors = ['#FFFFFF', '#0D0D0D', '#0D0D0D', '#FFFFFF', '#FFFFFF', '#FFFFFF'];

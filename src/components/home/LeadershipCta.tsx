@@ -14,7 +14,7 @@ export default function LeadershipCta() {
     <section
       style={{
         position: 'relative',
-        paddingTop: '8rem',
+        paddingTop: '4rem',
         paddingBottom: '8rem',
         overflow: 'hidden',
       }}
@@ -27,7 +27,7 @@ export default function LeadershipCta() {
           <div className="leadership-col-left">
             <RevealLines
               as="h2"
-              lines={['Founded by', 'Biju & Sujith.']}
+              lines={['Driven by', 'partnership.']}
               duration={1000}
               stagger={130}
               style={{
@@ -196,11 +196,11 @@ export default function LeadershipCta() {
                         justifyContent: 'center',
                         margin: '0 auto 1.5rem',
                       }}>
-                        <span style={{ fontSize: '3rem', fontWeight: 900, color: '#FFB71D' }}>
+                        <span style={{ fontSize: '3rem', fontWeight: 900, color: '#D4AF37' }}>
                           {leader.initial}
                         </span>
                       </div>
-                      <p style={{ color: '#FFB71D', fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+                      <p style={{ color: '#D4AF37', fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
                         {leader.role}
                       </p>
                     </div>

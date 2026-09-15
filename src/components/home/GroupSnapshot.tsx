@@ -12,7 +12,7 @@ export default function GroupSnapshot() {
     <section
       style={{
         position: 'relative',
-        paddingTop: '8rem',
+        paddingTop: '4rem',
         paddingBottom: '8rem',
         overflow: 'hidden',
       }}
@@ -51,7 +51,7 @@ export default function GroupSnapshot() {
             >
               {GROUP_SNAPSHOT.stats.map(({ value, label }) => (
                 <div key={label} style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  <span style={{ fontSize: 'clamp(1.8rem, 3vw, 2.75rem)', fontWeight: 800, color: '#FFB71D', lineHeight: 1, letterSpacing: '-0.02em', whiteSpace: 'nowrap' }}>
+                  <span style={{ fontSize: 'clamp(1.8rem, 3vw, 2.75rem)', fontWeight: 800, color: '#D4AF37', lineHeight: 1, letterSpacing: '-0.02em', whiteSpace: 'nowrap' }}>
                     {value}
                   </span>
                   <span style={{ fontSize: '0.7rem', color: '#888', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600 }}>

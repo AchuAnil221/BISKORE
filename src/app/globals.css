@@ -213,20 +213,14 @@ button {
 .on-dark .text-h3,
 .on-dark .text-display { color: #FFFFFF; }
 
-/* ── Gradient Text ─────────────────────────────────────────── */
+/* ── Gradient Text (Now Solid Gold) ─────────────────────── */
 .gradient-text {
-  background: linear-gradient(135deg, var(--color-gold-vivid) 0%, var(--color-cream) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #D4AF37;
 }
 
-/* On dark bg gradient text stays vivid */
+/* On dark bg gradient text stays solid gold */
 .on-dark .gradient-text {
-  background: linear-gradient(135deg, #FFB71D 0%, #F5D399 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #D4AF37;
 }
 
 /* ── Buttons ───────────────────────────────────────────────── */

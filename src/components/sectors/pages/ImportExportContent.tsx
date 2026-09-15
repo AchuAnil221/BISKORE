@@ -615,7 +615,7 @@ export default function ImportExportContent({ sector }: SectorProps) {
                   <polyline points="9 22 9 12 15 12 15 22" />
                 </svg>
               </div>
-              <h3 style={{ fontSize: '1.3rem', fontWeight: 300, color: '#FFB71D', marginBottom: '0.5rem' }}>BUYER</h3>
+              <h3 style={{ fontSize: '1.3rem', fontWeight: 300, color: '#D4AF37', marginBottom: '0.5rem' }}>BUYER</h3>
               <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)' }}>Doorstep delivery to distributors and retailers</p>
             </motion.div>
           </div>

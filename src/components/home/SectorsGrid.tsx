@@ -34,7 +34,7 @@ export default function SectorsGrid() {
     <section
       style={{
         position: 'relative',
-        paddingTop: '8rem',
+        paddingTop: '4rem',
         paddingBottom: '8rem',
       }}
       className="hero-overlap-section sectors-section"
