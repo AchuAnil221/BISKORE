@@ -176,22 +176,18 @@ export default function ImportExportContent({ sector }: SectorProps) {
                 </span>
               </div>
 
-              <svg viewBox="180 0 300 200" style={{ width: '100%', height: 'auto', overflow: 'visible', maxWidth: '400px' }}>
-                {/* Simplified Continents Silhouette */}
-                {/* Europe */}
-                <path d="M220 40 Q260 30 280 60 Q260 80 230 75 Z" fill="rgba(255,255,255,0.08)" />
-                {/* East Asia */}
-                <path d="M360 50 Q430 40 450 90 Q420 140 370 110 Z" fill="rgba(255,255,255,0.08)" />
-                {/* India Silhouette highlighted */}
-                <path
-                  d="M305 110 L330 115 L325 155 L315 170 L305 145 Z"
-                  fill="rgba(33, 150, 243, 0.4)"
-                  stroke="#2196F3"
-                  strokeWidth="1.5"
-                />
+              <svg viewBox="0 0 400 300" style={{ width: '100%', height: 'auto', overflow: 'visible', maxWidth: '500px' }}>
+                {/* Globe Base */}
+                <circle cx="200" cy="150" r="110" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
+                
+                {/* Globe Graticules (Lat/Long lines for 3D effect) */}
+                <ellipse cx="200" cy="150" rx="110" ry="45" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="1" />
+                <ellipse cx="200" cy="150" rx="110" ry="85" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="1" />
+                <ellipse cx="200" cy="150" rx="45" ry="110" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="1" />
+                <ellipse cx="200" cy="150" rx="85" ry="110" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="1" />
 
                 {/* Pulsing Source Point 1: East Asia (Manufacturing Hub) */}
-                <g transform="translate(410, 80)">
+                <g transform="translate(285, 120)">
                   <motion.circle
                     r="8"
                     fill="#2196F3"
@@ -200,11 +196,11 @@ export default function ImportExportContent({ sector }: SectorProps) {
                     transition={{ duration: 2.5, repeat: Infinity }}
                   />
                   <circle cx="0" cy="0" r="5" fill="#64B5F6" />
-                  <text x="0" y="-10" textAnchor="middle" fill="#90CAF9" fontSize="9" fontWeight="700">East Asia</text>
+                  <text x="0" y="-12" textAnchor="middle" fill="#90CAF9" fontSize="10" fontWeight="700">East Asia</text>
                 </g>
 
                 {/* Pulsing Source Point 2: Europe */}
-                <g transform="translate(245, 55)">
+                <g transform="translate(135, 95)">
                   <motion.circle
                     r="8"
                     fill="#2196F3"
@@ -213,19 +209,19 @@ export default function ImportExportContent({ sector }: SectorProps) {
                     transition={{ duration: 2.5, repeat: Infinity, delay: 0.8 }}
                   />
                   <circle cx="0" cy="0" r="5" fill="#64B5F6" />
-                  <text x="0" y="-10" textAnchor="middle" fill="#90CAF9" fontSize="9" fontWeight="700">Europe</text>
+                  <text x="0" y="-12" textAnchor="middle" fill="#90CAF9" fontSize="10" fontWeight="700">Europe</text>
                 </g>
 
                 {/* Animated Route 1: East Asia -> India */}
                 <path
-                  d="M410 80 Q370 150 318 145"
+                  d="M285 120 Q290 180 235 210"
                   fill="none"
                   stroke="rgba(33, 150, 243, 0.3)"
                   strokeWidth="2"
                   strokeDasharray="4 4"
                 />
                 <motion.path
-                  d="M410 80 Q370 150 318 145"
+                  d="M285 120 Q290 180 235 210"
                   fill="none"
                   stroke="#00E5FF"
                   strokeWidth="2.5"
@@ -236,14 +232,14 @@ export default function ImportExportContent({ sector }: SectorProps) {
 
                 {/* Animated Route 2: Europe -> India */}
                 <path
-                  d="M245 55 Q260 110 315 140"
+                  d="M135 95 Q170 170 235 210"
                   fill="none"
                   stroke="rgba(33, 150, 243, 0.3)"
                   strokeWidth="2"
                   strokeDasharray="4 4"
                 />
                 <motion.path
-                  d="M245 55 Q260 110 315 140"
+                  d="M135 95 Q170 170 235 210"
                   fill="none"
                   stroke="#64B5F6"
                   strokeWidth="2.5"
@@ -253,7 +249,7 @@ export default function ImportExportContent({ sector }: SectorProps) {
                 />
 
                 {/* Destination Node: India (Target) */}
-                <g transform="translate(316, 145)">
+                <g transform="translate(235, 210)">
                   <motion.circle
                     r="12"
                     fill="#FFB71D"
@@ -261,7 +257,7 @@ export default function ImportExportContent({ sector }: SectorProps) {
                     transition={{ duration: 2, repeat: Infinity }}
                   />
                   <circle cx="0" cy="0" r="6" fill="#FFB71D" />
-                  <text x="0" y="20" textAnchor="middle" fill="#FFFFFF" fontSize="10" fontWeight="800">
+                  <text x="0" y="24" textAnchor="middle" fill="#FFFFFF" fontSize="11" fontWeight="800">
                     INDIA (BISKORE)
                   </text>
                 </g>
@@ -400,12 +396,9 @@ export default function ImportExportContent({ sector }: SectorProps) {
               overflow: 'hidden',
             }}
           >
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
-              <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#0D47A1' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.5rem' }}>
+              <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#0D0D0D' }}>
                 CARGO LIFECYCLE: FACTORY → SEA VOYAGE → CUSTOMS → TRUCK FLEET
-              </span>
-              <span style={{ fontSize: '0.8rem', fontWeight: 600, color: '#1565C0' }}>
-                End-to-End Custody
               </span>
             </div>
 

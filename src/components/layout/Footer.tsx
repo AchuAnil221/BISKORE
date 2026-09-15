@@ -28,7 +28,7 @@ export default function Footer() {
       ref={footerRef}
       style={{
         scale,
-        background: '#222222',
+        background: '#0D0D0D',
         borderTop: '1px solid rgba(255, 183, 29, 0.15)',
         paddingTop: '5rem',
         paddingBottom: '2rem',

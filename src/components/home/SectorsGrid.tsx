@@ -10,10 +10,10 @@ export default function SectorsGrid() {
   const [activeSector, setActiveSector] = useState(0);
   const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  // Scroll-spy: activate whichever row center is closest to 45% of viewport
+  // Scroll-spy: activate whichever row center is closest to 50% of viewport
   useEffect(() => {
     const handleScroll = () => {
-      const target = window.innerHeight * 0.45;
+      const target = window.innerHeight * 0.5;
       let best = 0;
       let bestDist = Infinity;
       rowRefs.current.forEach((row, i) => {
@@ -68,7 +68,7 @@ export default function SectorsGrid() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'start' }}>
 
           {/* LEFT — each row is ~40vh tall so page scrolls through each sector */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', paddingBottom: '4rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', paddingTop: '30vh', paddingBottom: '30vh' }}>
             {SECTORS.map((sector, i) => (
               <div
                 key={sector.id}

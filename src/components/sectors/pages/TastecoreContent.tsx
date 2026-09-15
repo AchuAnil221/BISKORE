@@ -167,7 +167,7 @@ export default function TastecoreContent({ sector }: SectorProps) {
                   fontWeight: 300,
                   letterSpacing: '-0.03em',
                   lineHeight: 1.12,
-                  color: '#BF360C',
+                  color: '#0D0D0D',
                   marginBottom: '1.75rem',
                 }}
               >
@@ -203,7 +203,7 @@ export default function TastecoreContent({ sector }: SectorProps) {
               transition={{ duration: 0.8 }}
               style={{
                 position: 'relative',
-                background: 'linear-gradient(135deg, #FFEBE5 0%, #FFF3E0 100%)',
+                background: 'linear-gradient(135deg, #FFEBEE 0%, #FFCDD2 100%)',
                 borderRadius: '24px',
                 padding: '3rem 2rem',
                 border: '1px solid rgba(230, 74, 25, 0.15)',
@@ -221,7 +221,7 @@ export default function TastecoreContent({ sector }: SectorProps) {
                   <motion.g
                     animate={{ rotate: 360 }}
                     transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
-                    style={{ originX: '0px', originY: '0px' }}
+                    style={{ transformOrigin: 'center' }}
                   >
                     <circle cx="0" cy="0" r="28" fill="#BF360C" opacity="0.15" />
                     <polygon points="0,-18 5,-5 18,-5 8,4 12,18 0,10 -12,18 -8,4 -18,-5 -5,-5" fill="#D84315" />
@@ -293,7 +293,7 @@ export default function TastecoreContent({ sector }: SectorProps) {
                 fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)',
                 fontWeight: 300,
                 letterSpacing: '-0.03em',
-                color: '#BF360C',
+                color: '#0D0D0D',
                 marginBottom: '1rem',
               }}
             >
@@ -358,7 +358,7 @@ export default function TastecoreContent({ sector }: SectorProps) {
                 fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)',
                 fontWeight: 300,
                 letterSpacing: '-0.03em',
-                color: '#BF360C',
+                color: '#0D0D0D',
                 marginBottom: '1rem',
               }}
             >
@@ -379,12 +379,9 @@ export default function TastecoreContent({ sector }: SectorProps) {
               marginBottom: '3.5rem',
             }}
           >
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
-              <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#BF360C' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.5rem' }}>
+              <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#0D0D0D' }}>
                 AUTOMATED PRODUCTION & PACKAGING PIPELINE
-              </span>
-              <span style={{ fontSize: '0.8rem', color: '#2E7D32', fontWeight: 600 }}>
-                Airtight Hygiene Protocol
               </span>
             </div>
 
@@ -464,7 +461,7 @@ export default function TastecoreContent({ sector }: SectorProps) {
                 fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)',
                 fontWeight: 300,
                 letterSpacing: '-0.03em',
-                color: '#BF360C',
+                color: '#0D0D0D',
                 marginBottom: '1rem',
               }}
             >
@@ -498,14 +495,13 @@ export default function TastecoreContent({ sector }: SectorProps) {
                   flexDirection: 'column',
                 }}
               >
-                <div style={{ width: 36, height: 3, background: card.color, marginBottom: '1.75rem' }} />
-                <h3 style={{ fontSize: '1.5rem', fontWeight: 300, color: '#212121', marginBottom: '0.5rem' }}>
+                <h3 style={{ fontSize: '1.5rem', fontWeight: 300, color: '#0D0D0D', marginBottom: '0.5rem' }}>
                   {card.title}
                 </h3>
-                <div style={{ fontSize: '0.95rem', fontWeight: 600, color: card.color, marginBottom: '1.25rem' }}>
+                <div style={{ fontSize: '0.95rem', fontWeight: 600, color: '#0D0D0D', marginBottom: '1.25rem' }}>
                   {card.subtitle}
                 </div>
-                <p style={{ fontSize: '1rem', color: '#555', lineHeight: 1.85, fontWeight: 300, flexGrow: 1 }}>
+                <p style={{ fontSize: '1rem', color: '#0D0D0D', lineHeight: 1.85, fontWeight: 300, flexGrow: 1 }}>
                   {card.desc}
                 </p>
               </motion.div>

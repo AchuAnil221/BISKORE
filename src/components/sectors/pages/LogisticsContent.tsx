@@ -15,7 +15,7 @@ interface SectorProps {
 }
 
 export default function LogisticsContent({ sector }: SectorProps) {
-  const [selectedService, setSelectedService] = useState<number>(0);
+  const [selectedService, setSelectedService] = useState<number | null>(null);
 
   // Section 02 Services (5 primary + 1 smaller sixth card)
   const services = [
@@ -180,21 +180,20 @@ export default function LogisticsContent({ sector }: SectorProps) {
               transition={{ duration: 0.8 }}
               style={{
                 position: 'relative',
-                background: 'linear-gradient(135deg, #FFFFFF 0%, #FFF5EA 100%)',
+                background: '#FFF0DF',
                 borderRadius: '24px',
                 padding: '2.5rem 2rem',
                 border: '1px solid rgba(255, 152, 0, 0.2)',
                 overflow: 'hidden',
               }}
             >
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem' }}>
-                <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', color: '#FF9800' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
+                <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', color: '#0D0D0D' }}>
                   CENTRAL DEPOT DEPARTURE
                 </span>
-                <span style={{ fontSize: '0.75rem', color: '#4CAF50', fontWeight: 600 }}>● Gate Status: Clear</span>
               </div>
 
-              <svg viewBox="0 0 500 280" style={{ width: '100%', height: 'auto', overflow: 'visible' }}>
+              <svg viewBox="0 0 500 280" style={{ width: '100%', height: 'auto', overflow: 'hidden', borderRadius: '0 0 24px 24px' }}>
                 {/* Night Sky Grid background */}
                 <path d="M0 50H500M0 100H500M0 150H500" stroke="rgba(0,0,0,0.05)" strokeWidth="1" />
 
@@ -225,7 +224,7 @@ export default function LogisticsContent({ sector }: SectorProps) {
                 {/* Animated Truck Starting from Depot onto the Highway */}
                 <g transform="translate(0, 185)">
                   <motion.g
-                    animate={{ x: [140, 480] }}
+                    animate={{ x: [140, 600] }}
                     transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
                   >
                     {/* Heavy Freight Container Trailer */}
@@ -288,11 +287,12 @@ export default function LogisticsContent({ sector }: SectorProps) {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
                 onMouseEnter={() => setSelectedService(i)}
+                onMouseLeave={() => setSelectedService(null)}
                 style={{
-                  background: selectedService === i ? '#FFF0DF' : '#FFFFFF',
+                  background: '#FFFFFF',
                   borderRadius: '20px',
                   padding: svc.isSmall ? '2rem' : '2.5rem 2rem',
-                  border: selectedService === i ? '1.5px solid #FF9800' : '1px solid rgba(255,255,255,0.06)',
+                  border: selectedService === i ? '1.5px solid #FF9800' : '1px solid rgba(0,0,0,0.08)',
                   transition: 'all 250ms ease',
                   cursor: 'pointer',
                   display: 'flex',
@@ -306,9 +306,6 @@ export default function LogisticsContent({ sector }: SectorProps) {
                       fontSize: '0.75rem',
                       fontWeight: 700,
                       color: '#FF9800',
-                      background: 'rgba(255, 152, 0, 0.15)',
-                      padding: '0.35rem 0.85rem',
-                      borderRadius: '100px',
                     }}
                   >
                     {svc.badge}
@@ -368,7 +365,7 @@ export default function LogisticsContent({ sector }: SectorProps) {
                   background: '#FFFFFF',
                   borderRadius: '16px',
                   padding: '2rem 1.5rem',
-                  border: '1px solid rgba(255,255,255,0.06)',
+                  border: '1px solid rgba(0,0,0,0.08)',
                 }}
               >
                 <div style={{ fontSize: '1.5rem', marginBottom: '0.75rem' }}>{stg.icon}</div>
@@ -388,7 +385,7 @@ export default function LogisticsContent({ sector }: SectorProps) {
       </section>
 
       {/* SECTION 04: The Network (Large Abstract India Map + Central Hub Routes Drawing Outward) */}
-      <section style={{ padding: '7rem 0', background: '#F8F7F4', borderTop: '1px solid rgba(255, 152, 0, 0.15)' }}>
+      <section style={{ padding: '7rem 0', background: '#D97706', borderTop: '1px solid rgba(255, 152, 0, 0.15)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 4.5rem' }}>
             
@@ -452,16 +449,16 @@ export default function LogisticsContent({ sector }: SectorProps) {
                   background: '#FFFFFF',
                   borderRadius: '20px',
                   padding: '2.75rem 2rem',
-                  border: '1px solid rgba(255,255,255,0.06)',
+                  border: '1px solid rgba(0,0,0,0.08)',
                   display: 'flex',
                   flexDirection: 'column',
                 }}
               >
                 <div style={{ marginBottom: '1.5rem' }}>{c.icon}</div>
-                <h3 style={{ fontSize: '1.35rem', fontWeight: 300, color: '#0D0D0D', marginBottom: '0.5rem', minHeight: '3.5rem' }}>
+                <h3 style={{ fontSize: '1.35rem', fontWeight: 300, color: '#0D0D0D', marginBottom: '0.5rem', minHeight: '4.5rem' }}>
                   {c.title}
                 </h3>
-                <div style={{ fontSize: '0.9rem', color: '#FF9800', fontWeight: 600, marginBottom: '1rem', minHeight: '2.5rem' }}>
+                <div style={{ fontSize: '0.9rem', color: '#FF9800', fontWeight: 600, marginBottom: '1rem', minHeight: '3rem' }}>
                   {c.subtitle}
                 </div>
                 <p style={{ fontSize: '0.95rem', color: '#555555', lineHeight: 1.85, fontWeight: 300, flexGrow: 1 }}>
@@ -474,7 +471,7 @@ export default function LogisticsContent({ sector }: SectorProps) {
           {/* Closing CTA */}
           <div
             style={{
-              background: 'linear-gradient(135deg, #FFF5EA 0%, #FFF0DF 100%)',
+              background: '#D97706',
               borderRadius: '24px',
               padding: '3.5rem',
               color: '#0D0D0D',

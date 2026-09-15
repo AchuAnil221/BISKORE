@@ -112,11 +112,9 @@ export default function ContactPage() {
         <div className="container" style={{ position: 'relative', textAlign: 'center' }}>
           <ScrollReveal>
             <div className="section-badge" style={{ justifyContent: 'center' }}>
-              <span className="gold-line" />
               <span style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#FFB71D' }}>
                 Contact Us
               </span>
-              <span className="gold-line" />
             </div>
             <h1 className="text-display" style={{marginTop: '0.75rem', maxWidth: 800, margin: '0.75rem auto 0', color: '#0D0D0D', 
 fontSize: 'clamp(2rem, 5vw, 3.5rem)', 

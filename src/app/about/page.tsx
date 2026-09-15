@@ -55,52 +55,6 @@ export default function AboutPage() {
           </ScrollReveal>
         </div>
       </section>
-      {/* Story Section */}
-      <section className="section" style={{ background: '#FFFFFF' }}>
-        <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '5rem', alignItems: 'center' }}>
-            <ScrollReveal direction="left">
-              <div style={{ position: 'relative', aspectRatio: '4/3', overflow: 'hidden' }}>
-                <Image
-                  src="/images/about_bright.jpg"
-                  alt="Biskore founders Biju and Sujith"
-                  fill
-                  style={{ objectFit: 'cover' }}
-                  sizes="(max-width: 900px) 100vw, 50vw"
-                />
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal direction="right">
-              <div className="section-badge">
-                <span className="gold-line" />
-                <span className="text-label">The Biskore Name</span>
-              </div>
-              <AnimatedBiskoreName />
-              <p style={{marginBottom: '1.25rem', color: '#555', lineHeight: 1.7, 
-fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', 
-fontWeight: 400}}>
-                The name Biskore combines <strong style={{ color: '#062C22' }}>BI-S</strong> — representing the two
-                founders, Biju and Sujith — with <strong style={{ color: '#062C22' }}>Kore/Core</strong>, symbolising
-                the central strength, unity, and foundation of the company.
-              </p>
-              <p style={{marginBottom: '1.25rem', color: '#555', lineHeight: 1.7, 
-fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', 
-fontWeight: 400}}>
-                What began as a farm-to-market fresh produce operation in Kasargod has grown into an integrated group
-                spanning international trade, two consumer brands, and a pan-India logistics fleet.
-              </p>
-              <p style={{color: '#555', lineHeight: 1.7, 
-fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', 
-fontWeight: 400}}>
-                Every vertical is built on the same principle: direct sourcing, consistent quality, and long-term
-                partnership with farmers, suppliers, and clients alike.
-              </p>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
       {/* Leadership */}
       <section className="section" style={{ background: '#F8F7F4', position: 'relative', overflow: 'hidden' }}>
         {/* Premium Decorative Geometric Shapes */}
@@ -129,9 +83,7 @@ fontWeight: 400}}>
           <ScrollReveal>
             <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
               <div className="section-badge" style={{ justifyContent: 'center' }}>
-                <span className="gold-line" />
                 <span className="text-label">Leadership</span>
-                <span className="gold-line" />
               </div>
               <h2 className="text-h2" style={{marginTop: '0.75rem', 
 fontSize: 'clamp(2rem, 5vw, 4rem)', 
@@ -197,15 +149,58 @@ fontWeight: 400}}>
         </div>
       </section>
 
+      {/* Story Section */}
+      <section className="section" style={{ background: '#FFFFFF' }}>
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '5rem', alignItems: 'center' }}>
+            <ScrollReveal direction="left">
+              <div style={{ position: 'relative', aspectRatio: '4/3', overflow: 'hidden' }}>
+                <Image
+                  src="/images/about_bright.jpg"
+                  alt="Biskore founders Biju and Sujith"
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  sizes="(max-width: 900px) 100vw, 50vw"
+                />
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal direction="right">
+              <div className="section-badge">
+                <span className="text-label">The Biskore Name</span>
+              </div>
+              <AnimatedBiskoreName />
+              <p style={{marginBottom: '1.25rem', color: '#555', lineHeight: 1.7, 
+fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', 
+fontWeight: 400}}>
+                The name Biskore combines <strong style={{ color: '#062C22' }}>BI-S</strong> — representing the two
+                founders, Biju and Sujith — with <strong style={{ color: '#062C22' }}>Kore/Core</strong>, symbolising
+                the central strength, unity, and foundation of the company.
+              </p>
+              <p style={{marginBottom: '1.25rem', color: '#555', lineHeight: 1.7, 
+fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', 
+fontWeight: 400}}>
+                What began as a farm-to-market fresh produce operation in Kasargod has grown into an integrated group
+                spanning international trade, two consumer brands, and a pan-India logistics fleet.
+              </p>
+              <p style={{color: '#555', lineHeight: 1.7, 
+fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', 
+fontWeight: 400}}>
+                Every vertical is built on the same principle: direct sourcing, consistent quality, and long-term
+                partnership with farmers, suppliers, and clients alike.
+              </p>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       {/* Quality Commitment */}
       <section className="section" style={{ background: '#FFFFFF' }}>
         <div className="container">
           <ScrollReveal>
             <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
               <div className="section-badge" style={{ justifyContent: 'center' }}>
-                <span className="gold-line" />
                 <span className="text-label">Quality & Compliance</span>
-                <span className="gold-line" />
               </div>
               <h2 className="text-h2" style={{marginTop: '0.75rem', 
 fontSize: 'clamp(2rem, 5vw, 4rem)', 
@@ -281,11 +276,11 @@ fontWeight: 400}}>
         </div>
       </section>
 
-      {/* CTA — dark green band */}
-      <section className="section-sm" style={{ background: '#062C22' }}>
+      {/* CTA — light background */}
+      <section className="section-sm" style={{ background: '#FFFFFF' }}>
         <div className="container" style={{ textAlign: 'center' }}>
           <ScrollReveal>
-            <h2 className="text-h2" style={{marginBottom: '1.5rem', color: '#FFFFFF', 
+            <h2 className="text-h2" style={{marginBottom: '1.5rem', color: '#0D0D0D', 
 fontSize: 'clamp(2rem, 5vw, 4rem)', 
 fontWeight: 300, 
 letterSpacing: '-0.03em', 
@@ -299,7 +294,7 @@ lineHeight: 1.1}}>
                 fontWeight: 700, fontSize: '0.875rem', letterSpacing: '0.05em',
                 textTransform: 'uppercase', borderRadius: '9999px', transition: 'all 400ms',
               }}>Contact Us</Link>
-              <Link href="/" className="btn-outline-light">Explore Sectors</Link>
+              <Link href="/" className="btn-outline">Explore Sectors</Link>
             </div>
           </ScrollReveal>
         </div>

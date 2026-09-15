@@ -39,8 +39,8 @@ export default function Header() {
 
   // Hero is now light colored, so we always use dark text
   const navTextColor = '#1A1A1A';
-  const navActiveColor = '#FFB71D';
-  const navHoverColor = '#FFB71D';
+  const navActiveColor = '#0D0D0D';
+  const navHoverColor = '#0D0D0D';
 
   return (
     <>
@@ -177,7 +177,7 @@ export default function Header() {
                                 padding: '0.65rem 1rem',
                                 borderRadius: '10px',
                                 fontSize: '0.875rem',
-                                color: isActive(child.href) ? '#0D0D0D' : '#3D3D3D',
+                                color: isActive(child.href) ? '#FFFFFF' : '#3D3D3D',
                                 transition: 'all 200ms',
                                 background: isActive(child.href)
                                   ? navActiveColor
@@ -213,7 +213,7 @@ export default function Header() {
                     style={{
                       padding: '0.5rem 1rem',
                       fontSize: '0.875rem',
-                      fontWeight: 600,
+                      fontWeight: isActive(link.href) ? 800 : 600,
                       letterSpacing: '0.02em',
                       color: isActive(link.href) ? navActiveColor : navTextColor,
                       transition: 'color 200ms',
@@ -237,8 +237,8 @@ export default function Header() {
                           left: '50%',
                           transform: 'translateX(-50%)',
                           width: '60%',
-                          height: 2,
-                          background: '#FFB71D',
+                          height: 3,
+                          background: '#0D0D0D',
                           borderRadius: '9999px',
                         }}
                       />
@@ -284,7 +284,7 @@ export default function Header() {
                     display: 'block',
                     width: 24,
                     height: 2,
-                    background: scrolled ? '#062C22' : '#FFB71D',
+                    background: scrolled ? '#062C22' : '#0D0D0D',
                     borderRadius: '9999px',
                     transition: 'all 300ms',
                     transform:
@@ -368,8 +368,8 @@ export default function Header() {
                   display: 'block',
                   padding: '1rem 0',
                   fontSize: '1.5rem',
-                  fontWeight: 700,
-                  color: isActive(link.href) ? '#FFB71D' : '#1A1A1A',
+                  fontWeight: isActive(link.href) ? 800 : 600,
+                  color: isActive(link.href) ? '#0D0D0D' : '#1A1A1A',
                   borderBottom: '1px solid rgba(0,0,0,0.06)',
                 }}
               >

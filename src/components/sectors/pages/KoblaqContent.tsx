@@ -174,10 +174,10 @@ export default function KoblaqContent({ sector }: SectorProps) {
   ];
 
   return (
-    <div style={{ background: '#0D0D0D', color: '#F5F5F7' }}>
+    <div style={{ background: '#FFFFFF', color: '#0D0D0D' }}>
 
       {/* SECTION 01: Koblaq Brand Introduction (Centered Luxury Logo + Slowly Appearing Silhouettes) */}
-      <section style={{ padding: '7rem 0', background: 'radial-gradient(circle at center, #1C1C1F 0%, #0D0D0D 80%)', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ padding: '7rem 0', background: '#FFFFFF', position: 'relative', overflow: 'hidden' }}>
         
         {/* Floating Subtle Ambient Silhouettes */}
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', overflow: 'hidden' }}>
@@ -189,9 +189,9 @@ export default function KoblaqContent({ sector }: SectorProps) {
             style={{ position: 'absolute', top: '20%', left: '12%' }}
           >
             <svg width="64" height="80" viewBox="0 0 44 44" fill="none" opacity="0.6">
-              <rect x="12" y="16" width="20" height="24" rx="4" stroke="#C5A059" strokeWidth="1.5" />
-              <rect x="18" y="10" width="8" height="6" rx="1" fill="#C5A059" opacity="0.4" />
-              <rect x="20" y="6" width="4" height="4" fill="#C5A059" opacity="0.4" />
+              <rect x="12" y="16" width="20" height="24" rx="4" stroke="#E0E0E0" strokeWidth="1.5" />
+              <rect x="18" y="10" width="8" height="6" rx="1" fill="#E0E0E0" opacity="0.4" />
+              <rect x="20" y="6" width="4" height="4" fill="#E0E0E0" opacity="0.4" />
             </svg>
           </motion.div>
 
@@ -203,9 +203,9 @@ export default function KoblaqContent({ sector }: SectorProps) {
             style={{ position: 'absolute', top: '25%', right: '14%' }}
           >
             <svg width="80" height="60" viewBox="0 0 44 44" fill="none" opacity="0.6">
-              <path d="M12 14L22 8L32 14" stroke="#D4A5B8" strokeWidth="1.5" strokeLinecap="round" />
-              <path d="M22 8V4C22 2.5 24 2 25 3" stroke="#D4A5B8" strokeWidth="1.5" strokeLinecap="round" />
-              <path d="M10 24L14 14H30L34 24L30 36H14L10 24Z" stroke="#D4A5B8" strokeWidth="1" strokeDasharray="3 3" opacity="0.5" />
+              <path d="M12 14L22 8L32 14" stroke="#E0E0E0" strokeWidth="1.5" strokeLinecap="round" />
+              <path d="M22 8V4C22 2.5 24 2 25 3" stroke="#E0E0E0" strokeWidth="1.5" strokeLinecap="round" />
+              <path d="M10 24L14 14H30L34 24L30 36H14L10 24Z" stroke="#E0E0E0" strokeWidth="1" strokeDasharray="3 3" opacity="0.5" />
             </svg>
           </motion.div>
 
@@ -217,8 +217,8 @@ export default function KoblaqContent({ sector }: SectorProps) {
             style={{ position: 'absolute', bottom: '18%', left: '18%' }}
           >
             <svg width="70" height="50" viewBox="0 0 44 44" fill="none" opacity="0.5">
-              <path d="M8 26C12 26 16 24 20 20L28 20C32 20 36 24 36 28L8 28Z" stroke="#7FA1C3" strokeWidth="1.5" />
-              <rect x="6" y="28" width="32" height="4" rx="1" fill="#7FA1C3" opacity="0.4" />
+              <path d="M8 26C12 26 16 24 20 20L28 20C32 20 36 24 36 28L8 28Z" stroke="#E0E0E0" strokeWidth="1.5" />
+              <rect x="6" y="28" width="32" height="4" rx="1" fill="#E0E0E0" opacity="0.4" />
             </svg>
           </motion.div>
 
@@ -230,8 +230,8 @@ export default function KoblaqContent({ sector }: SectorProps) {
             style={{ position: 'absolute', bottom: '20%', right: '16%' }}
           >
             <svg width="60" height="70" viewBox="0 0 44 44" fill="none" opacity="0.5">
-              <rect x="15" y="22" width="14" height="18" rx="2" stroke="#E09FAD" strokeWidth="1.5" />
-              <path d="M17 22L20 8L24 8L27 22" fill="#E09FAD" opacity="0.4" />
+              <rect x="15" y="22" width="14" height="18" rx="2" stroke="#E0E0E0" strokeWidth="1.5" />
+              <path d="M17 22L20 8L24 8L27 22" fill="#E0E0E0" opacity="0.4" />
             </svg>
           </motion.div>
         </div>
@@ -242,21 +242,21 @@ export default function KoblaqContent({ sector }: SectorProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            style={{ maxWidth: '850px', margin: '0 auto' }}
+            style={{ maxWidth: '1100px', margin: '0 auto' }}
           >
             {/* Elegant Luxury Typography Wordmark replaced with actual logo */}
-            <div style={{ display: 'flex', flexWrap: 'wrap-reverse', alignItems: 'center', justifyContent: 'space-between', gap: '3rem', textAlign: 'left' }}>
-              <div style={{ flex: '1 1 400px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', alignItems: 'center', gap: '4rem', textAlign: 'left' }}>
+              <div>
                 <div style={{ fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)', fontWeight: 300, letterSpacing: '0.2em', color: '#C5A059', textTransform: 'uppercase', lineHeight: 1.3 }}>
                   Lifestyle, made accessible.
                 </div>
                 <div style={{ width: '60px', height: '1px', background: '#C5A059', margin: '2rem 0', opacity: 0.6 }} />
-                <p style={{ fontSize: 'clamp(1rem, 1.4vw, 1.15rem)', color: 'rgba(255, 255, 255, 0.75)', lineHeight: 1.85, maxWidth: '650px', fontWeight: 300 }}>
+                <p style={{ fontSize: 'clamp(1rem, 1.4vw, 1.15rem)', color: '#555', lineHeight: 1.85, maxWidth: '650px', fontWeight: 300 }}>
                   Koblaq brings together clothing, beauty, fragrances, footwear and everyday lifestyle products under one accessible brand.
                 </p>
               </div>
-              <div style={{ flex: '1 1 300px', display: 'flex', justifyContent: 'center' }}>
-                <img src="/images/koblaq/logo_cropped_6.png" alt="Koblaq Logo" style={{ height: 'auto', width: '100%', maxWidth: '450px', mixBlendMode: 'screen', opacity: 0.9, clipPath: 'inset(4px)' }} />
+              <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <img src="/images/koblaq/logo_cropped_6.png" alt="Koblaq Logo" style={{ height: 'auto', width: '100%', maxWidth: '750px', filter: 'invert(1)', mixBlendMode: 'multiply', opacity: 0.9, transform: 'scale(1.1)', clipPath: 'inset(4px)' }} />
               </div>
             </div>
           </motion.div>
@@ -264,7 +264,7 @@ export default function KoblaqContent({ sector }: SectorProps) {
       </section>
 
       {/* SECTION 02: The Koblaq World (Visual Product Wall - 8 Cards) */}
-      <section style={{ padding: '7rem 0', background: '#111113' }}>
+      <section style={{ padding: '7rem 0', background: '#FFFFFF' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 4.5rem' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
@@ -279,13 +279,13 @@ export default function KoblaqContent({ sector }: SectorProps) {
                 fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)',
                 fontWeight: 300,
                 letterSpacing: '-0.03em',
-                color: '#FFFFFF',
+                color: '#0D0D0D',
                 marginBottom: '1rem',
               }}
             >
               The Koblaq World
             </h2>
-            <p style={{ fontSize: 'clamp(1rem, 1.4vw, 1.15rem)', color: 'rgba(255,255,255,0.6)', lineHeight: 1.7 }}>
+            <p style={{ fontSize: 'clamp(1rem, 1.4vw, 1.15rem)', color: '#555', lineHeight: 1.7 }}>
               Eight curated lifestyle collections designed with fine craftsmanship and accessible everyday elegance.
             </p>
           </div>
@@ -294,7 +294,7 @@ export default function KoblaqContent({ sector }: SectorProps) {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+              gridTemplateColumns: 'repeat(4, 1fr)',
               gap: '1.75rem',
             }}
           >
@@ -309,10 +309,10 @@ export default function KoblaqContent({ sector }: SectorProps) {
                 onMouseEnter={() => setHoveredCard(idx)}
                 onMouseLeave={() => setHoveredCard(null)}
                 style={{
-                  background: 'linear-gradient(180deg, #18181C 0%, #141416 100%)',
+                  background: '#F9F9F9',
                   borderRadius: '20px',
                   padding: '2.5rem 2rem',
-                  border: hoveredCard === idx ? `1px solid ${item.accent}` : '1px solid rgba(255,255,255,0.07)',
+                  border: hoveredCard === idx ? `1px solid ${item.accent}` : '1px solid rgba(0,0,0,0.15)',
                   
                   transition: 'border 300ms, box-shadow 300ms',
                   display: 'flex',
@@ -324,19 +324,14 @@ export default function KoblaqContent({ sector }: SectorProps) {
               >
                 
 
-                <h3 style={{ fontSize: '1.35rem', fontWeight: 700, color: '#FFFFFF', marginBottom: '0.75rem' }}>
+                <h3 style={{ fontSize: '1.15rem', letterSpacing: '-0.01em', fontWeight: 700, color: '#0D0D0D', marginBottom: '0.75rem', whiteSpace: 'nowrap' }}>
                   {item.title}
                 </h3>
-                <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.85, fontWeight: 300, flexGrow: 1 }}>
+                <p style={{ fontSize: '0.9rem', color: '#555', lineHeight: 1.85, fontWeight: 300, flexGrow: 1 }}>
                   {item.desc}
                 </p>
 
-                <div style={{ marginTop: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: item.accent, fontSize: '0.8rem', fontWeight: 600 }}>
-                  <span>View Range</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                </div>
+
               </motion.div>
             ))}
           </div>
@@ -396,7 +391,6 @@ export default function KoblaqContent({ sector }: SectorProps) {
                   border: '1px solid rgba(6, 44, 33, 0.08)',
                 }}
               >
-                <div style={{ width: 36, height: 2, background: '#062c21', marginBottom: '1.75rem' }} />
                 <h3 style={{ fontSize: '1.5rem', fontWeight: 300, color: '#062c21', marginBottom: '0.5rem' }}>
                   {card.title}
                 </h3>
@@ -413,7 +407,7 @@ export default function KoblaqContent({ sector }: SectorProps) {
       </section>
 
       {/* SECTION 04: Quality Behind the Brand (4 Cards with Subtle Scanning Line Animation revealing ✓) */}
-      <section style={{ padding: '7rem 0', background: '#141417', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+      <section style={{ padding: '7rem 0', background: '#FFFFFF' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 4rem' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
@@ -428,13 +422,13 @@ export default function KoblaqContent({ sector }: SectorProps) {
                 fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)',
                 fontWeight: 300,
                 letterSpacing: '-0.03em',
-                color: '#FFFFFF',
+                color: '#0D0D0D',
                 marginBottom: '1rem',
               }}
             >
               Quality Behind the Brand
             </h2>
-            <p style={{ fontSize: 'clamp(1rem, 1.4vw, 1.15rem)', color: 'rgba(255,255,255,0.65)', lineHeight: 1.7 }}>
+            <p style={{ fontSize: 'clamp(1rem, 1.4vw, 1.15rem)', color: '#555', lineHeight: 1.7 }}>
               Every apparel piece, cosmetic jar, and fragrance vial undergo precision quality checks before consumer release.
             </p>
           </div>
@@ -457,10 +451,10 @@ export default function KoblaqContent({ sector }: SectorProps) {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 style={{
-                  background: '#0D0D0F',
+                  background: '#F9F9F9',
                   borderRadius: '16px',
                   padding: '2.25rem 1.75rem',
-                  border: '1px solid rgba(255,255,255,0.06)',
+                  border: '1px solid rgba(0,0,0,0.06)',
                   display: 'flex',
                   flexDirection: 'column',
                 }}
@@ -468,10 +462,10 @@ export default function KoblaqContent({ sector }: SectorProps) {
                 <span style={{ fontSize: '0.85rem', fontWeight: 300, color: '#C5A059', marginBottom: '1rem' }}>
                   STEP {qc.step}
                 </span>
-                <h4 style={{ fontSize: '1.2rem', fontWeight: 300, color: '#FFFFFF', marginBottom: '0.75rem' }}>
+                <h4 style={{ fontSize: '1.2rem', fontWeight: 300, color: '#0D0D0D', marginBottom: '0.75rem' }}>
                   {qc.title}
                 </h4>
-                <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.65 }}>
+                <p style={{ fontSize: '0.9rem', color: '#555', lineHeight: 1.65 }}>
                   {qc.desc}
                 </p>
               </motion.div>
@@ -485,10 +479,10 @@ export default function KoblaqContent({ sector }: SectorProps) {
         <div className="container">
           <div
             style={{
-              background: 'linear-gradient(180deg, #111113 0%, #062C22 100%)',
+              background: '#D4D4D4',
               borderRadius: '24px',
               padding: '3.5rem',
-              color: '#FFFFFF',
+              color: '#0D0D0D',
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
@@ -500,10 +494,10 @@ export default function KoblaqContent({ sector }: SectorProps) {
           >
             <div style={{ maxWidth: '600px', position: 'relative', zIndex: 2 }}>
 
-              <h3 className="text-h3" style={{ color: '#FFFFFF', marginBottom: '0.75rem' }}>
+              <h3 className="text-h3" style={{ color: '#0D0D0D', marginBottom: '0.75rem' }}>
                 Built as a Brand. Supported by a Business.
               </h3>
-              <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.05rem', lineHeight: 1.6 }}>
+              <p style={{ color: '#555', fontSize: '1.05rem', lineHeight: 1.6 }}>
                 Koblaq creates the design, fragrance, and lifestyle allure — while Biskore’s unified logistics infrastructure moves products into regional stores and direct-to-consumer networks pan-India.
               </p>
             </div>
@@ -515,8 +509,8 @@ export default function KoblaqContent({ sector }: SectorProps) {
                 fontSize: '1rem',
                 fontWeight: 700,
                 borderRadius: '100px',
-                background: '#FFFFFF',
-                color: '#0D0D0D',
+                background: '#0D0D0D',
+                color: '#FFFFFF',
                 textDecoration: 'none',
                 display: 'inline-flex',
                 alignItems: 'center',

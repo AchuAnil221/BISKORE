@@ -173,7 +173,7 @@ export const SECTORS = [
       "Tastecore brings consistent quality across spices, breakfast products, soft drinks, and juices to everyday consumers across India — built on taste consistency, freshness, and reliable quality in every batch.",
     icon: "🍃",
     image: "/images/sectors/tastecore.jpg",
-    accentColor: "#E91E63",
+    accentColor: "#8B0000",
     bgColor: "#FFF0F5",
     href: "/sectors/tastecore",
     categories: [
