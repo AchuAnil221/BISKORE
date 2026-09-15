@@ -65,7 +65,7 @@ export default function Footer() {
 
           {/* Navigation Column */}
           <div>
-            <p style={{ fontSize: '0.7rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#FFB71D', marginBottom: '1.25rem' }}>
+            <p style={{ fontSize: '0.7rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#D4AF37', marginBottom: '1.25rem' }}>
               Navigation
             </p>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
@@ -85,7 +85,7 @@ export default function Footer() {
 
           {/* Sectors Column */}
           <div>
-            <p style={{ fontSize: '0.7rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#FFB71D', marginBottom: '1.25rem' }}>
+            <p style={{ fontSize: '0.7rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#D4AF37', marginBottom: '1.25rem' }}>
               Our Sectors
             </p>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
@@ -105,7 +105,7 @@ export default function Footer() {
 
           {/* Address Column */}
           <div>
-            <p style={{ fontSize: '0.7rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#FFB71D', marginBottom: '1.25rem' }}>
+            <p style={{ fontSize: '0.7rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#D4AF37', marginBottom: '1.25rem' }}>
               Find Us
             </p>
             <address

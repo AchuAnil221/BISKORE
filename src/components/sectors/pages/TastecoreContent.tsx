@@ -68,12 +68,12 @@ export default function TastecoreContent({ sector }: SectorProps) {
       category: 'Refreshment',
       desc: 'Crisp carbonated fruit beverages, botanical fizz, and flavoured sparkling drinks made with pure cane sugar.',
       badge: 'Carbonated Fizz',
-      accent: '#C2185B',
+      accent: '#EF6C00',
       icon: (
         <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-          <circle cx="22" cy="22" r="18" fill="#FCE4EC" />
-          <rect x="18" y="14" width="8" height="22" rx="2" fill="#E91E63" />
-          <rect x="20" y="8" width="4" height="6" fill="#AD1457" />
+          <circle cx="22" cy="22" r="18" fill="#FFF3E0" />
+          <rect x="18" y="14" width="8" height="22" rx="2" fill="#F57C00" />
+          <rect x="20" y="8" width="4" height="6" fill="#E65100" />
           <circle cx="22" cy="22" r="1.5" fill="#FFF" />
           <circle cx="20" cy="27" r="1" fill="#FFF" />
         </svg>
@@ -203,7 +203,7 @@ export default function TastecoreContent({ sector }: SectorProps) {
               transition={{ duration: 0.8 }}
               style={{
                 position: 'relative',
-                background: 'linear-gradient(135deg, #FFEBEE 0%, #FFCDD2 100%)',
+                background: 'linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%)',
                 borderRadius: '24px',
                 padding: '3rem 2rem',
                 border: '1px solid rgba(230, 74, 25, 0.15)',
@@ -273,7 +273,7 @@ export default function TastecoreContent({ sector }: SectorProps) {
                     animate={{ x: 35, y: 20 }}
                     transition={{ duration: 2.1, repeat: Infinity, repeatType: 'reverse', delay: 0.6 }}
                   >
-                    <rect x="-12" y="-20" width="24" height="40" rx="4" fill="#C2185B" />
+                    <rect x="-12" y="-20" width="24" height="40" rx="4" fill="#EF6C00" />
                     <text x="0" y="4" textAnchor="middle" fill="#FFF" fontSize="8" fontWeight="700">SODA</text>
                   </motion.g>
                 </g>
@@ -518,7 +518,7 @@ export default function TastecoreContent({ sector }: SectorProps) {
         <div className="container">
           <div
             style={{
-              background: 'linear-gradient(135deg, #BF360C 0%, #D84315 100%)',
+              background: 'linear-gradient(135deg, #FF9800 0%, #E65100 100%)',
               borderRadius: '24px',
               padding: '3.5rem',
               color: '#FFFFFF',

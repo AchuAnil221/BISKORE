@@ -7,7 +7,7 @@ import { STRENGTHS, VALUES } from '@/lib/constants';
 
 export default function WhyBiskore() {
   return (
-    <section className="hero-overlap-section whybiskore-section" style={{ position: 'relative', paddingTop: '4rem', paddingBottom: '8rem' }}>
+    <section className="hero-overlap-section whybiskore-section" style={{ position: 'relative', paddingTop: '0rem', paddingBottom: '8rem' }}>
       <div className="container">
         {/* Strengths */}
         <div style={{ marginBottom: '4rem' }}>
@@ -90,8 +90,8 @@ export default function WhyBiskore() {
             cards={VALUES.map((v, i) => ({
               title: v.value,
               description: v.detail,
-              bgColor: ['#062C22', '#D8D2C4', '#FFB71D', '#5BA87A', '#111111'][i],
-              textColor: ['#FFFFFF', '#0D0D0D', '#0D0D0D', '#FFFFFF', '#FFFFFF'][i],
+              bgColor: ['#062C22', '#D8D2C4', '#FFB71D', '#5BA87A', '#111111', '#1A4A6E'][i] ?? '#062C22',
+              textColor: ['#FFFFFF', '#0D0D0D', '#0D0D0D', '#FFFFFF', '#FFFFFF', '#FFFFFF'][i] ?? '#FFFFFF',
             }))}
           />
         </div>
@@ -112,22 +112,21 @@ export default function WhyBiskore() {
               What we stand for
             </h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.4rem' }}>
             {VALUES.map((v, i) => {
-              const bgColors = ['#062C22', '#D8D2C4', '#FFB71D', '#5BA87A', '#111111'];
-              const textColors = ['#FFFFFF', '#0D0D0D', '#0D0D0D', '#FFFFFF', '#FFFFFF'];
+              const bgColors = ['#062C22', '#D8D2C4', '#FFB71D', '#5BA87A', '#111111', '#1A4A6E'];
+              const textColors = ['#FFFFFF', '#0D0D0D', '#0D0D0D', '#FFFFFF', '#FFFFFF', '#FFFFFF'];
               return (
                 <div
                   key={v.value}
                   style={{
-                    backgroundColor: bgColors[i],
-                    color: textColors[i],
+                    backgroundColor: bgColors[i] ?? '#062C22',
+                    color: textColors[i] ?? '#FFFFFF',
                     borderRadius: '16px',
                     padding: '1.5rem 1rem',
                     display: 'flex',
                     flexDirection: 'column',
                     gap: '0.5rem',
-                    gridColumn: i === VALUES.length - 1 && VALUES.length % 2 !== 0 ? '1 / -1' : undefined,
                   }}
                 >
                   <h3 style={{ fontWeight: 700, fontSize: '1rem', margin: 0 }}>{v.value}</h3>

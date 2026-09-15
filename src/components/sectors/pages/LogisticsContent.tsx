@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import IndiaLogisticsMap from '@/components/ui/IndiaLogisticsMap';
 
 interface SectorProps {
   sector: {
@@ -74,7 +75,7 @@ export default function LogisticsContent({ sector }: SectorProps) {
       subtitle: 'Own fleet and delivery schedules.',
       desc: 'We own, maintain, and dispatch our vehicles directly. No dependency on unvetted broker networks or erratic market trucks.',
       icon: (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FF9800" strokeWidth="2">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" strokeWidth="2">
           <circle cx="12" cy="12" r="10" />
           <path d="M12 6v6l4 2" />
         </svg>
@@ -85,7 +86,7 @@ export default function LogisticsContent({ sector }: SectorProps) {
       subtitle: 'Experience moving perishable goods.',
       desc: 'Decades of collective experience handling high-spoilage agro-produce and temperature-critical goods under urgent deadlines.',
       icon: (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FF9800" strokeWidth="2">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" strokeWidth="2">
           <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z" />
         </svg>
       ),
@@ -95,7 +96,7 @@ export default function LogisticsContent({ sector }: SectorProps) {
       subtitle: 'Supports Biskore’s own sectors.',
       desc: 'Shared operational backbone moving goods seamlessly across Fresh Produce, International Trade, Koblaq, and Tastecore.',
       icon: (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FF9800" strokeWidth="2">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" strokeWidth="2">
           <rect x="2" y="7" width="20" height="14" rx="2" />
           <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
         </svg>
@@ -106,7 +107,7 @@ export default function LogisticsContent({ sector }: SectorProps) {
       subtitle: 'Transport services for businesses.',
       desc: 'Extending industrial-grade freight capacity and reliable route logistics to leading third-party manufacturers and distributors.',
       icon: (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FF9800" strokeWidth="2">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" strokeWidth="2">
           <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
           <circle cx="9" cy="7" r="4" />
           <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
@@ -120,7 +121,7 @@ export default function LogisticsContent({ sector }: SectorProps) {
     <div style={{ background: '#F8F7F4', color: '#0D0D0D' }}>
 
       {/* SECTION 01: Logistics Introduction (Industrial & Precise + Truck Departing Biskore Facility) */}
-      <section style={{ padding: '6rem 0', background: '#F8F7F4', borderBottom: '1px solid rgba(255, 152, 0, 0.15)' }}>
+      <section style={{ padding: '6rem 0', background: '#F8F7F4', borderBottom: '1px solid rgba(59, 130, 246, 0.15)' }}>
         <div className="container">
           <div
             style={{
@@ -162,11 +163,11 @@ export default function LogisticsContent({ sector }: SectorProps) {
 
               <div style={{ display: 'flex', gap: '2.5rem', flexWrap: 'wrap' }}>
                 <div>
-                  <div style={{ fontSize: '2.2rem', fontWeight: 300, color: '#FF9800' }}>All-India</div>
+                  <div style={{ fontSize: '2.2rem', fontWeight: 300, color: '#3B82F6' }}>All-India</div>
                   <div style={{ fontSize: '0.85rem', color: '#666666' }}>National Permit Vehicles</div>
                 </div>
                 <div>
-                  <div style={{ fontSize: '2.2rem', fontWeight: 300, color: '#FF9800' }}>24/7</div>
+                  <div style={{ fontSize: '2.2rem', fontWeight: 300, color: '#3B82F6' }}>24/7</div>
                   <div style={{ fontSize: '0.85rem', color: '#666666' }}>GPS Telemetry & Dispatch</div>
                 </div>
               </div>
@@ -181,10 +182,10 @@ export default function LogisticsContent({ sector }: SectorProps) {
               className="mobile-card-squish"
               style={{
                 position: 'relative',
-                background: '#FFF0DF',
+                background: '#DBEAFE',
                 borderRadius: '24px',
                 padding: '2.5rem 2rem',
-                border: '1px solid rgba(255, 152, 0, 0.2)',
+                border: '1px solid rgba(59, 130, 246, 0.2)',
                 overflow: 'hidden',
               }}
             >
@@ -200,27 +201,27 @@ export default function LogisticsContent({ sector }: SectorProps) {
 
                 {/* Left: Modern Biskore Logistics Building Depot */}
                 <g transform="translate(30, 40)">
-                  <rect x="0" y="20" width="130" height="150" rx="4" fill="#FFFFFF" stroke="#FFE0B2" strokeWidth="2" />
-                  <rect x="15" y="35" width="100" height="25" rx="2" fill="#FFF0DF" />
-                  <text x="65" y="52" textAnchor="middle" fill="#FF9800" fontSize="11" fontWeight="800" letterSpacing="2">
+                  <rect x="0" y="20" width="130" height="150" rx="4" fill="#FFFFFF" stroke="#DBEAFE" strokeWidth="2" />
+                  <rect x="15" y="35" width="100" height="25" rx="2" fill="#DBEAFE" />
+                  <text x="65" y="52" textAnchor="middle" fill="#3B82F6" fontSize="11" fontWeight="800" letterSpacing="2">
                     BISKORE
                   </text>
                   <text x="65" y="80" textAnchor="middle" fill="#666666" fontSize="8" letterSpacing="1">
                     LOGISTICS HUB
                   </text>
                   {/* Bay Doors */}
-                  <rect x="15" y="100" width="40" height="70" fill="#FFF0DF" stroke="#FFCC80" strokeWidth="1" />
-                  <line x1="15" y1="120" x2="55" y2="120" stroke="#FFE0B2" strokeWidth="1" />
-                  <line x1="15" y1="140" x2="55" y2="140" stroke="#FFE0B2" strokeWidth="1" />
+                  <rect x="15" y="100" width="40" height="70" fill="#DBEAFE" stroke="#93C5FD" strokeWidth="1" />
+                  <line x1="15" y1="120" x2="55" y2="120" stroke="#DBEAFE" strokeWidth="1" />
+                  <line x1="15" y1="140" x2="55" y2="140" stroke="#DBEAFE" strokeWidth="1" />
 
-                  <rect x="75" y="100" width="40" height="70" fill="#FFF0DF" stroke="#FFCC80" strokeWidth="1" />
-                  <line x1="75" y1="120" x2="115" y2="120" stroke="#FFE0B2" strokeWidth="1" />
-                  <line x1="75" y1="140" x2="115" y2="140" stroke="#FFE0B2" strokeWidth="1" />
+                  <rect x="75" y="100" width="40" height="70" fill="#DBEAFE" stroke="#93C5FD" strokeWidth="1" />
+                  <line x1="75" y1="120" x2="115" y2="120" stroke="#DBEAFE" strokeWidth="1" />
+                  <line x1="75" y1="140" x2="115" y2="140" stroke="#DBEAFE" strokeWidth="1" />
                 </g>
 
                 {/* Highway Road Line */}
                 <rect x="0" y="210" width="500" height="50" fill="#333" />
-                <line x1="0" y1="235" x2="500" y2="235" stroke="#FF9800" strokeWidth="3" strokeDasharray="16 16" />
+                <line x1="0" y1="235" x2="500" y2="235" stroke="#3B82F6" strokeWidth="3" strokeDasharray="16 16" />
 
                 {/* Animated Truck Starting from Depot onto the Highway */}
                 <g transform="translate(0, 185)">
@@ -229,18 +230,18 @@ export default function LogisticsContent({ sector }: SectorProps) {
                     transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
                   >
                     {/* Heavy Freight Container Trailer */}
-                    <rect x="0" y="0" width="65" height="36" rx="3" fill="#FFF0DF" stroke="#FFCC80" strokeWidth="1.5" />
+                    <rect x="0" y="0" width="65" height="36" rx="3" fill="#DBEAFE" stroke="#93C5FD" strokeWidth="1.5" />
                     <rect x="4" y="4" width="57" height="8" rx="1" fill="#FFFFFF" />
-                    <text x="32" y="11" textAnchor="middle" fill="#FF9800" fontSize="7" fontWeight="800">ALL INDIA PERMIT</text>
+                    <text x="32" y="11" textAnchor="middle" fill="#3B82F6" fontSize="7" fontWeight="800">ALL INDIA PERMIT</text>
                     {/* Cabin */}
-                    <polygon points="65,12 80,12 90,24 90,36 65,36" fill="#D97706" />
+                    <polygon points="65,12 80,12 90,24 90,36 65,36" fill="#1E40AF" />
                     <polygon points="68,15 78,15 84,23 68,23" fill="#E2E8F0" />
                     {/* Headlight beam */}
                     <polygon points="90,28 140,24 140,36" fill="#FDE047" opacity="0.35" />
                     {/* Wheels */}
-                    <circle cx="15" cy="38" r="6" fill="#333" stroke="#FFCC80" strokeWidth="2" />
-                    <circle cx="45" cy="38" r="6" fill="#333" stroke="#FFCC80" strokeWidth="2" />
-                    <circle cx="80" cy="38" r="6" fill="#333" stroke="#FFCC80" strokeWidth="2" />
+                    <circle cx="15" cy="38" r="6" fill="#333" stroke="#93C5FD" strokeWidth="2" />
+                    <circle cx="45" cy="38" r="6" fill="#333" stroke="#93C5FD" strokeWidth="2" />
+                    <circle cx="80" cy="38" r="6" fill="#333" stroke="#93C5FD" strokeWidth="2" />
                   </motion.g>
                 </g>
               </svg>
@@ -293,7 +294,7 @@ export default function LogisticsContent({ sector }: SectorProps) {
                   background: '#FFFFFF',
                   borderRadius: '20px',
                   padding: svc.isSmall ? '2rem' : '2.5rem 2rem',
-                  border: selectedService === i ? '1.5px solid #FF9800' : '1px solid rgba(0,0,0,0.08)',
+                  border: selectedService === i ? '1.5px solid #3B82F6' : '1px solid rgba(0,0,0,0.08)',
                   transition: 'all 250ms ease',
                   cursor: 'pointer',
                   display: 'flex',
@@ -306,7 +307,7 @@ export default function LogisticsContent({ sector }: SectorProps) {
                     style={{
                       fontSize: '0.75rem',
                       fontWeight: 700,
-                      color: '#FF9800',
+                      color: '#3B82F6',
                     }}
                   >
                     {svc.badge}
@@ -370,7 +371,7 @@ export default function LogisticsContent({ sector }: SectorProps) {
                 }}
               >
                 <div style={{ fontSize: '1.5rem', marginBottom: '0.75rem' }}>{stg.icon}</div>
-                <div style={{ fontSize: '0.8rem', fontWeight: 300, color: '#FF9800', marginBottom: '0.35rem' }}>
+                <div style={{ fontSize: '0.8rem', fontWeight: 300, color: '#3B82F6', marginBottom: '0.35rem' }}>
                   STAGE {stg.code}
                 </div>
                 <h4 style={{ fontSize: 'clamp(1rem, 1.4vw, 1.15rem)', fontWeight: 300, color: '#0D0D0D', marginBottom: '0.5rem' }}>
@@ -386,7 +387,7 @@ export default function LogisticsContent({ sector }: SectorProps) {
       </section>
 
       {/* SECTION 04: The Network (Large Abstract India Map + Central Hub Routes Drawing Outward) */}
-      <section className="mobile-squish" style={{ padding: '7rem 0', background: '#D97706', borderTop: '1px solid rgba(255, 152, 0, 0.15)' }}>
+      <section className="mobile-squish" style={{ padding: '7rem 0', background: '#0F172A', borderTop: '1px solid rgba(59, 130, 246, 0.15)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 4.5rem' }}>
             
@@ -395,17 +396,18 @@ export default function LogisticsContent({ sector }: SectorProps) {
                 fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)',
                 fontWeight: 300,
                 letterSpacing: '-0.03em',
-                color: '#0D0D0D',
+                color: '#FFFFFF',
                 marginBottom: '1rem',
               }}
             >
               One Fleet. A Wider Reach.
             </h2>
-            <p style={{ fontSize: 'clamp(1rem, 1.4vw, 1.15rem)', color: '#555555', lineHeight: 1.7 }}>
+            <p style={{ fontSize: 'clamp(1rem, 1.4vw, 1.15rem)', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.7 }}>
               With All India Permit vehicles, Biskore can support interstate freight movement across the country.
             </p>
           </div>
-
+          
+          <IndiaLogisticsMap />
 
         </div>
       </section>
@@ -460,7 +462,7 @@ export default function LogisticsContent({ sector }: SectorProps) {
                 <h3 style={{ fontSize: '1.35rem', fontWeight: 300, color: '#0D0D0D', marginBottom: '0.5rem', minHeight: '4.5rem' }}>
                   {c.title}
                 </h3>
-                <div style={{ fontSize: '0.9rem', color: '#FF9800', fontWeight: 600, marginBottom: '1rem', minHeight: '3rem' }}>
+                <div style={{ fontSize: '0.9rem', color: '#3B82F6', fontWeight: 600, marginBottom: '1rem', minHeight: '3rem' }}>
                   {c.subtitle}
                 </div>
                 <p style={{ fontSize: '0.95rem', color: '#555555', lineHeight: 1.85, fontWeight: 300, flexGrow: 1 }}>
@@ -473,7 +475,7 @@ export default function LogisticsContent({ sector }: SectorProps) {
           {/* Closing CTA */}
           <div
             style={{
-              background: '#D97706',
+              background: '#0F172A',
               borderRadius: '24px',
               padding: '3.5rem',
               color: '#0D0D0D',
@@ -482,14 +484,14 @@ export default function LogisticsContent({ sector }: SectorProps) {
               alignItems: 'center',
               flexWrap: 'wrap',
               gap: '2rem',
-              border: '1px solid rgba(255, 152, 0, 0.3)',
+              border: '1px solid rgba(59, 130, 246, 0.3)',
             }}
           >
             <div style={{ maxWidth: '600px' }}>
-              <h3 className="text-h3" style={{ color: '#0D0D0D', marginBottom: '0.75rem' }}>
+              <h3 className="text-h3" style={{ color: '#FFFFFF', marginBottom: '0.75rem' }}>
                 Need to move something? Let’s talk.
               </h3>
-              <p style={{ color: '#555555', fontSize: '1.05rem', lineHeight: 1.6 }}>
+              <p style={{ color: 'rgba(255, 255, 255, 0.85)', fontSize: '1.05rem', lineHeight: 1.6 }}>
                 Whether you need dedicated cold-chain reefer runs or pan-India general freight contracts, Biskore Logistics delivers.
               </p>
             </div>

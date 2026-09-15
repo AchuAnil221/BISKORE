@@ -101,8 +101,8 @@ export default function EcosystemAnimation() {
           </linearGradient>
 
           <linearGradient id="roadGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#4A4A4A" />
-            <stop offset="100%" stopColor="#2A2A2A" />
+            <stop offset="0%" stopColor="#4A4F4D" />
+            <stop offset="100%" stopColor="#313634" />
           </linearGradient>
 
           {/* Truck Gradients (Brand Colors) */}
@@ -261,10 +261,15 @@ export default function EcosystemAnimation() {
           <g transform="translate(210, 10)">
             <rect x="25" y="15" width="80" height="20" fill="#111" opacity="0.4" />
             <text x="65" y="29" fill="#FFB71D" fontSize="10" fontFamily="sans-serif" letterSpacing="3" textAnchor="middle" fontWeight="600" opacity="0.7">KOBLAQ</text>
-            <rect x="15" y="90" width="100" height="60" fill="#1A2523" opacity="0.45" />
-            <rect x="15" y="90" width="100" height="60" fill="none" stroke="#FFB71D" strokeWidth="1" opacity="0.3" />
-            <path d="M 50 103 L 80 103 L 76 128 L 54 128 Z" fill="none" stroke="#FFB71D" strokeWidth="1.5" opacity="0.5" />
-            <path d="M 58 103 Q 65 91 72 103" fill="none" stroke="#FFB71D" strokeWidth="1.5" opacity="0.5" />
+            <rect x="15" y="65" width="100" height="60" fill="#1A2523" opacity="0.8" />
+            <rect x="15" y="65" width="100" height="60" fill="none" stroke="#FFB71D" strokeWidth="1" opacity="0.5" />
+            {/* Exact Koblaq Logo Extracted From PDF */}
+            <g transform="translate(32.5, 74) scale(0.12)" opacity="0.95">
+              <path transform="matrix(1,0,0,-1,272.3033,200.9853)" d="M0 0C-8.528 1.897-18.019-3.222-20.334-11.863L-35.735-69.341C-36.496-72.181-38.431-73.855-41.293-73.71-43.322-73.608-46.713-71.283-46.012-68.573L-36.795-32.937-30.616-9.545C-26.547 5.862-7.131 16.998 9.2 7.724 15.413 4.196 21.161-1.682 23.072-8.887L38.472-66.936C39.299-70.051 37.633-73.034 34.799-73.602 31.607-74.241 29.22-72.376 28.4-69.274L13.406-12.526C11.762-6.306 6.42-1.428 0 0" fill="#FFB71D"/>
+              <path transform="matrix(1,0,0,-1,264.8817,151.1145)" d="M0 0C8.528-1.897 18.019 3.222 20.334 11.863L35.735 69.341C36.496 72.181 38.431 73.855 41.293 73.71 43.322 73.608 46.713 71.283 46.012 68.573L36.795 32.937 30.616 9.545C26.547-5.862 7.131-16.998-9.2-7.724-15.413-4.196-21.161 1.682-23.072 8.887L-38.472 66.936C-39.299 70.051-37.633 73.034-34.799 73.602-31.607 74.241-29.22 72.376-28.4 69.274L-13.406 12.526C-11.762 6.306-6.42 1.428 0 0" fill="#FFB71D"/>
+              <path transform="matrix(1,0,0,-1,239.8534,178.70601)" d="M0 0C1.897 8.528-3.222 18.019-11.863 20.334L-69.341 35.735C-72.181 36.496-73.855 38.431-73.71 41.293-73.608 43.322-71.283 46.713-68.573 46.012L-32.937 36.795-9.545 30.616C5.862 26.547 16.998 7.131 7.724-9.2 4.196-15.413-1.682-21.161-8.887-23.072L-66.936-38.472C-70.051-39.299-73.034-37.633-73.602-34.799-74.241-31.607-72.376-29.22-69.274-28.4L-12.526-13.406C-6.306-11.762-1.428-6.42 0 0" fill="#FFB71D"/>
+              <path transform="matrix(1,0,0,-1,297.9961,171.2843)" d="M0 0C-1.897-8.528 3.222-18.019 11.863-20.334L69.341-35.735C72.181-36.496 73.855-38.431 73.71-41.293 73.608-43.322 71.283-46.713 68.573-46.012L32.937-36.795 9.545-30.616C-5.862-26.547-16.998-7.131-7.724 9.2-4.196 15.413 1.682 21.161 8.887 23.072L66.936 38.472C70.051 39.299 73.034 37.633 73.602 34.799 74.241 31.607 72.376 29.22 69.274 28.4L12.526 13.406C6.306 11.762 1.428 6.42 0 0" fill="#FFB71D"/>
+            </g>
           </g>
 
           {/* Bldg D */}
@@ -404,120 +409,148 @@ export default function EcosystemAnimation() {
 
         {/* Foreground Highway Embankment (Separating Road from Sea) */}
         <g>
-          {/* Solid ground separating sea from road */}
-          <rect x="0" y="930" width="1920" height="15" fill="#7A8582" />
-          <rect x="0" y="930" width="1920" height="2" fill="#9BA6A3" />
+          {/* Concrete barrier / curb separating sea from road */}
+          <rect x="0" y="930" width="1920" height="15" fill="#8E9E99" />
+          <rect x="0" y="930" width="1920" height="3" fill="#A8B5B1" />
+          <rect x="0" y="942" width="1920" height="3" fill="#6A7A76" />
           
           {/* Main Road Deck */}
-          <rect x="0" y="945" width="1920" height="60" fill="url(#roadGrad)" filter="url(#dropShadow)" />
+          <rect x="0" y="945" width="1920" height="60" fill="url(#roadGrad)" />
+          
+          {/* Solid white edge lines */}
+          <rect x="0" y="948" width="1920" height="2" fill="#FFFFFF" opacity="0.4" />
+          <rect x="0" y="1001" width="1920" height="2" fill="#FFFFFF" opacity="0.4" />
           
           {/* Foreground solid block below road */}
-          <rect x="0" y="1005" width="1920" height="75" fill="#3D4543" />
+          <rect x="0" y="1005" width="1920" height="75" fill="#2E3332" />
           
-          {/* Road markings */}
-          <g fill="#FFB71D" opacity="0.8">
-            <rect x="50" y="973" width="60" height="6" />
-            <rect x="250" y="973" width="60" height="6" />
-            <rect x="450" y="973" width="60" height="6" />
-            <rect x="650" y="973" width="60" height="6" />
-            <rect x="850" y="973" width="60" height="6" />
-            <rect x="1050" y="973" width="60" height="6" />
-            <rect x="1250" y="973" width="60" height="6" />
-            <rect x="1450" y="973" width="60" height="6" />
-            <rect x="1650" y="973" width="60" height="6" />
-            <rect x="1850" y="973" width="60" height="6" />
+          {/* Road markings - White dashed center line */}
+          <g fill="#FFFFFF" opacity="0.75">
+            <rect x="50" y="974" width="40" height="3" />
+            <rect x="250" y="974" width="40" height="3" />
+            <rect x="450" y="974" width="40" height="3" />
+            <rect x="650" y="974" width="40" height="3" />
+            <rect x="850" y="974" width="40" height="3" />
+            <rect x="1050" y="974" width="40" height="3" />
+            <rect x="1250" y="974" width="40" height="3" />
+            <rect x="1450" y="974" width="40" height="3" />
+            <rect x="1650" y="974" width="40" height="3" />
+            <rect x="1850" y="974" width="40" height="3" />
           </g>
         </g>
 
         {/* Realistic Logistics Truck (Biskore Fleet) */}
         <g className="anim-truck">
           <g transform="translate(0, 830)" filter="url(#softShadow)">
-            {/* Trailer */}
+            {/* Trailer Body */}
             <rect x="10" y="20" width="260" height="100" rx="4" fill="url(#truckTrailerGrad)" />
-            {/* Trailer details */}
-            <rect x="15" y="30" width="250" height="2" fill="#E6E6E6" />
+            {/* Trailer Ribbing (vertical lines) */}
+            {[...Array(12)].map((_, i) => (
+              <line key={`rib-${i}`} x1={30 + i * 20} y1="22" x2={30 + i * 20} y2="118" stroke="#E0E0E0" strokeWidth="1" opacity="0.6" />
+            ))}
+            {/* Reefer Cooling Unit on front of trailer */}
+            <rect x="270" y="25" width="10" height="75" rx="2" fill="#D9D9D9" />
+            <rect x="272" y="30" width="10" height="30" fill="#999" />
+            {/* Trailer top highlight & bottom shadow */}
+            <rect x="10" y="20" width="260" height="3" fill="#FFFFFF" opacity="0.5" />
+            <rect x="10" y="117" width="260" height="3" fill="#000000" opacity="0.1" />
             
-            <text x="140" y="75" fill="#0A3D30" fontSize="22" fontFamily="sans-serif" letterSpacing="10" textAnchor="middle" fontWeight="800" opacity="0.15">BISKORE</text>
+            {/* Biskore Wordmark */}
+            <text x="140" y="75" fill="#0A3D30" fontSize="26" fontFamily="sans-serif" letterSpacing="12" textAnchor="middle" fontWeight="800" opacity="0.25">BISKORE</text>
+            
+            {/* Trailer rear doors/bumper details */}
+            <rect x="5" y="22" width="5" height="96" fill="#CCCCCC" />
+            <rect x="5" y="110" width="5" height="10" fill="#FF3333" />
             
             {/* Truck Exhaust Smoke */}
-            <g transform="translate(282, 20)">
-              <rect x="-2" y="-15" width="4" height="20" fill="#666" />
+            <g transform="translate(285, 10)">
+              <rect x="-2" y="-15" width="4" height="25" fill="#444" />
+              <rect x="-3" y="-15" width="6" height="4" fill="#222" />
               <circle cx="0" cy="-20" r="6" fill="#D9D9D9" style={{ animation: 'smoke 1.5s infinite linear' }} />
               <circle cx="-5" cy="-25" r="8" fill="#E6E6E6" style={{ animation: 'smoke 1.5s infinite linear 0.4s' }} />
               <circle cx="5" cy="-30" r="10" fill="#F2F2F2" style={{ animation: 'smoke 1.5s infinite linear 0.8s' }} />
             </g>
             
-            <rect x="15" y="90" width="250" height="2" fill="#E6E6E6" />
             {/* Biskore Gold Brand Stripe */}
-            <rect x="10" y="100" width="260" height="12" fill="#FFB71D" />
+            <rect x="10" y="102" width="260" height="10" fill="#FFB71D" />
+            <rect x="10" y="112" width="260" height="2" fill="#E6A319" />
             
             {/* Truck Cab (Deep Green) */}
-            <path d="M 275 25 L 325 25 Q 345 25 350 45 L 360 70 L 360 120 L 275 120 Z" fill="url(#truckCabGrad)" />
-            <path d="M 275 25 L 325 25 Q 345 25 350 45 L 360 70 L 275 70 Z" fill="#0A3D30" />
+            {/* Aerodynamic Cab Body */}
+            <path d="M 285 25 L 325 25 Q 350 25 355 50 L 365 75 L 365 120 L 285 120 Z" fill="url(#truckCabGrad)" />
+            {/* Cab Front Grill & Bumper */}
+            <path d="M 365 75 L 370 75 L 370 110 L 365 110 Z" fill="#999" />
+            <rect x="363" y="110" width="9" height="10" rx="2" fill="#333" />
+            {/* Headlights */}
+            <rect x="360" y="95" width="6" height="10" rx="3" fill="#FFC933" />
+            <rect x="360" y="96" width="4" height="8" rx="2" fill="#FFFBE6" />
             
-            {/* Window */}
-            <path d="M 285 35 L 320 35 Q 330 35 335 45 L 345 65 L 285 65 Z" fill="#1A2523" />
+            {/* Door Panel Lines */}
+            <path d="M 330 65 L 330 115" stroke="#052019" strokeWidth="1" opacity="0.5" />
+            <path d="M 330 115 L 290 115 L 290 25" stroke="#052019" strokeWidth="1" opacity="0.5" />
+            {/* Door Handle */}
+            <rect x="315" y="75" width="10" height="3" rx="1.5" fill="#111" />
+            {/* Side Mirror */}
+            <rect x="330" y="45" width="6" height="16" rx="2" fill="#111" />
+            <rect x="333" y="45" width="2" height="16" fill="#333" />
+            
+            {/* Windows */}
+            {/* Windshield */}
+            <path d="M 325 30 Q 345 30 350 50 L 360 70 L 330 70 L 325 30 Z" fill="#1A2523" />
+            {/* Side Window */}
+            <path d="M 290 30 L 320 30 L 325 70 L 290 70 Z" fill="#1A2523" />
             {/* Window reflection */}
-            <path d="M 295 35 L 320 35 L 335 65 L 310 65 Z" fill="#FFFFFF" opacity="0.1" />
+            <path d="M 300 30 L 315 30 L 320 70 L 305 70 Z" fill="#FFFFFF" opacity="0.15" />
+            <path d="M 335 38 L 345 38 L 350 70 L 340 70 Z" fill="#FFFFFF" opacity="0.15" />
 
-            {/* Cab details */}
-            <rect x="290" y="80" width="20" height="6" rx="2" fill="#111" />
-            <rect x="345" y="95" width="10" height="10" rx="5" fill="#FFC933" />
-            <rect x="350" y="110" width="12" height="6" rx="2" fill="#333" />
-            
             {/* Chassis/Underbelly */}
-            <rect x="10" y="120" width="345" height="15" fill="#222" />
-            <rect x="40" y="115" width="30" height="10" fill="#111" />
-            <rect x="100" y="115" width="50" height="10" fill="#111" />
+            <rect x="10" y="120" width="355" height="12" fill="#222" />
+            {/* Rear Mudflaps */}
+            <rect x="25" y="120" width="4" height="22" fill="#111" />
+            {/* Fuel Tanks */}
+            <rect x="220" y="120" width="50" height="18" rx="8" fill="#999" />
+            <rect x="225" y="120" width="2" height="18" fill="#666" />
+            <rect x="260" y="120" width="2" height="18" fill="#666" />
+            {/* Fifth Wheel Connection */}
+            <path d="M 270 115 L 280 115 L 285 125 L 270 125 Z" fill="#111" />
 
-            {/* Wheels */}
-            {/* Trailer Wheels */}
-            <g transform="translate(45, 130)">
-              <circle cx="0" cy="0" r="18" fill="#111" />
-              <circle cx="0" cy="0" r="12" fill="#444" />
-              <g className="anim-wheel">
-                <circle cx="0" cy="0" r="8" fill="#D9D9D9" />
-                <circle cx="0" cy="4" r="2" fill="#333" />
-                <circle cx="0" cy="-4" r="2" fill="#333" />
-                <circle cx="4" cy="0" r="2" fill="#333" />
-                <circle cx="-4" cy="0" r="2" fill="#333" />
+            {/* Highly Detailed Realistic Wheels */}
+            {[
+              { x: 50 }, { x: 95 }, // Trailer
+              { x: 295 }, { x: 345 } // Cab
+            ].map((wheel, i) => (
+              <g key={`wheel-${i}`} transform={`translate(${wheel.x}, 130)`}>
+                {/* Tire Shadow */}
+                <ellipse cx="0" cy="18" rx="20" ry="4" fill="#000" opacity="0.5" />
+                {/* Outer Tire */}
+                <circle cx="0" cy="0" r="18" fill="#1A1A1A" />
+                {/* Tire Tread Highlight */}
+                <circle cx="0" cy="0" r="17" fill="none" stroke="#333" strokeWidth="2" />
+                {/* Inner Rim Edge */}
+                <circle cx="0" cy="0" r="12" fill="#E6E6E6" />
+                <circle cx="0" cy="0" r="10" fill="#999" />
+                <g className="anim-wheel">
+                  {/* 8 Lug Nuts */}
+                  <circle cx="0" cy="-7" r="1.5" fill="#FFF" />
+                  <circle cx="5" cy="-5" r="1.5" fill="#FFF" />
+                  <circle cx="7" cy="0" r="1.5" fill="#FFF" />
+                  <circle cx="5" cy="5" r="1.5" fill="#FFF" />
+                  <circle cx="0" cy="7" r="1.5" fill="#FFF" />
+                  <circle cx="-5" cy="5" r="1.5" fill="#FFF" />
+                  <circle cx="-7" cy="0" r="1.5" fill="#FFF" />
+                  <circle cx="-5" cy="-5" r="1.5" fill="#FFF" />
+                  {/* Rim cutouts */}
+                  <circle cx="0" cy="-10" r="1.5" fill="#555" />
+                  <circle cx="9" cy="-3" r="1.5" fill="#555" />
+                  <circle cx="6" cy="8" r="1.5" fill="#555" />
+                  <circle cx="-6" cy="8" r="1.5" fill="#555" />
+                  <circle cx="-9" cy="-3" r="1.5" fill="#555" />
+                </g>
+                {/* Wheel Hub (Static, centered perfectly so it doesn't wobble) */}
+                <circle cx="0" cy="0" r="6" fill="#333" />
+                <circle cx="0" cy="0" r="3" fill="#111" />
               </g>
-            </g>
-            <g transform="translate(90, 130)">
-              <circle cx="0" cy="0" r="18" fill="#111" />
-              <circle cx="0" cy="0" r="12" fill="#444" />
-              <g className="anim-wheel">
-                <circle cx="0" cy="0" r="8" fill="#D9D9D9" />
-                <circle cx="0" cy="4" r="2" fill="#333" />
-                <circle cx="0" cy="-4" r="2" fill="#333" />
-                <circle cx="4" cy="0" r="2" fill="#333" />
-                <circle cx="-4" cy="0" r="2" fill="#333" />
-              </g>
-            </g>
-
-            {/* Cab Wheels */}
-            <g transform="translate(290, 130)">
-              <circle cx="0" cy="0" r="18" fill="#111" />
-              <circle cx="0" cy="0" r="12" fill="#444" />
-              <g className="anim-wheel">
-                <circle cx="0" cy="0" r="8" fill="#D9D9D9" />
-                <circle cx="0" cy="4" r="2" fill="#333" />
-                <circle cx="0" cy="-4" r="2" fill="#333" />
-                <circle cx="4" cy="0" r="2" fill="#333" />
-                <circle cx="-4" cy="0" r="2" fill="#333" />
-              </g>
-            </g>
-            <g transform="translate(340, 130)">
-              <circle cx="0" cy="0" r="18" fill="#111" />
-              <circle cx="0" cy="0" r="12" fill="#444" />
-              <g className="anim-wheel">
-                <circle cx="0" cy="0" r="8" fill="#D9D9D9" />
-                <circle cx="0" cy="4" r="2" fill="#333" />
-                <circle cx="0" cy="-4" r="2" fill="#333" />
-                <circle cx="4" cy="0" r="2" fill="#333" />
-                <circle cx="-4" cy="0" r="2" fill="#333" />
-              </g>
-            </g>
+            ))}
           </g>
         </g>
       </svg>

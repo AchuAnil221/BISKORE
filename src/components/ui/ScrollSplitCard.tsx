@@ -66,7 +66,7 @@ export function ScrollSplitCard({
       ref={containerRef}
       className={cn("relative h-[300vh] w-full", className)}
     >
-      <div className="sticky top-[85px] flex flex-col h-[calc(100vh-85px)] w-full items-center justify-center overflow-hidden [perspective:1200px]">
+      <div className="sticky top-[85px] flex flex-col h-[calc(100vh-85px)] w-full items-center justify-center [perspective:1200px]">
         {titleNode && (
           <div className="relative z-10 w-full" style={{ marginBottom: '5rem' }}>
             {titleNode}
@@ -75,7 +75,7 @@ export function ScrollSplitCard({
 
         <motion.div
           style={{ scale, transformStyle: "preserve-3d" }}
-          className="flex h-[400px] w-full max-w-5xl px-8 relative justify-center"
+          className="flex h-[400px] w-full max-w-6xl px-12 relative justify-center"
         >
           {cards.map((card, i) => (
             <motion.div

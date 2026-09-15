@@ -14,7 +14,7 @@ export default function LeadershipCta() {
     <section
       style={{
         position: 'relative',
-        paddingTop: '8rem',
+        paddingTop: '4rem',
         paddingBottom: '8rem',
         overflow: 'hidden',
       }}
@@ -27,7 +27,7 @@ export default function LeadershipCta() {
           <div className="leadership-col-left">
             <RevealLines
               as="h2"
-              lines={['Founded by', 'Biju & Sujith.']}
+              lines={['Driven by', 'partnership.']}
               duration={1000}
               stagger={130}
               style={{
@@ -196,11 +196,11 @@ export default function LeadershipCta() {
                         justifyContent: 'center',
                         margin: '0 auto 1.5rem',
                       }}>
-                        <span style={{ fontSize: '3rem', fontWeight: 900, color: '#FFB71D' }}>
+                        <span style={{ fontSize: '3rem', fontWeight: 900, color: '#D4AF37' }}>
                           {leader.initial}
                         </span>
                       </div>
-                      <p style={{ color: '#FFB71D', fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+                      <p style={{ color: '#D4AF37', fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
                         {leader.role}
                       </p>
                     </div>
@@ -210,31 +210,7 @@ export default function LeadershipCta() {
             </div>
           </div>
         </div>
-          {/* ── FOUNDER QUOTE BLOCK ── */}
-          <div className="leadership-quote" style={{ gridColumn: '1 / 13', marginTop: '6rem', paddingTop: '4rem', borderTop: '1px solid rgba(0,0,0,0.07)' }}>
-            <ScrollReveal>
-              <div style={{ display: 'flex', alignItems: 'flex-start' }}>
-                <blockquote
-                  className="quote-reveal is-visible"
-                  style={{ margin: 0, opacity: 1, transform: 'none', width: '100%' }}
-                >
-                  <p
-                    style={{
-                      fontSize: 'clamp(1.5rem, 3.5vw, 3rem)',
-                      fontWeight: 300,
-                      lineHeight: 1.25,
-                      letterSpacing: '-0.02em',
-                      color: 'rgba(0, 0, 0, 0.85)',
-                      fontStyle: 'italic',
-                    }}
-                  >
-                    &ldquo;We believe consistent quality isn&apos;t a feature — it&apos;s a promise that holds every business we touch to a single standard.&rdquo;
-                  </p>
-                </blockquote>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
+      </div>
     </section>
   );
 }

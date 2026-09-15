@@ -137,8 +137,8 @@ export const SECTORS = [
       "Koblaq is Biskore's lifestyle and fashion brand — a one-stop destination covering perfumes, cosmetics, clothing, innerwear, and footwear across India, designed for accessible, everyday quality.",
     icon: "✨",
     image: "/images/sectors/koblaq.jpg",
-    accentColor: "#111111",
-    bgColor: "#F9F9F9",
+    accentColor: "#9C27B0",
+    bgColor: "#F8F0FF",
     href: "/sectors/koblaq",
     categories: [
       { name: "Ladies Clothing", detail: "Tops, dresses, fusion wear" },
@@ -173,8 +173,8 @@ export const SECTORS = [
       "Tastecore brings consistent quality across spices, breakfast products, soft drinks, and juices to everyday consumers across India — built on taste consistency, freshness, and reliable quality in every batch.",
     icon: "🍃",
     image: "/images/sectors/tastecore.jpg",
-    accentColor: "#8B0000",
-    bgColor: "#FFF0F5",
+    accentColor: "#E65100",
+    bgColor: "#FFF3E0",
     href: "/sectors/tastecore",
     categories: [
       { name: "Spices", detail: "Ground spices, blended masalas, regional mixes" },
@@ -207,8 +207,8 @@ export const SECTORS = [
       "Biskore operates a fleet of vehicles with All India Permit — enabling unrestricted inter-state freight movement. Originally built for our own fresh produce and import operations, we now offer B2B logistics services to external clients.",
     icon: "🚛",
     image: "/images/sectors/logistics.jpg",
-    accentColor: "#FF9800",
-    bgColor: "#FFF8E1",
+    accentColor: "#0047AB",
+    bgColor: "#F8F7F4",
     href: "/sectors/logistics",
     categories: [
       { name: "Fresh Produce", detail: "Cold and time-sensitive cargo delivery" },
@@ -276,11 +276,12 @@ export const STRENGTHS = [
 
 // ─── CORE VALUES ─────────────────────────────────────────────
 export const VALUES = [
-  { value: "Quality", detail: "High standard across all five sectors" },
-  { value: "Integrity", detail: "Honest and transparent in every dealing" },
-  { value: "Reliability", detail: "Dependable for every partner and customer" },
-  { value: "Accountability", detail: "One standard across all verticals" },
-  { value: "Growth", detail: "Agile and open to new opportunities" },
+  { value: "Integrity", detail: "Honest, consistent, and transparent across every transaction." },
+  { value: "Quality", detail: "High standards across every product, service, and process." },
+  { value: "Reliability", detail: "Dependable for every partner, supplier, and customer." },
+  { value: "Customer Focus", detail: "Building what the market needs, not just what is convenient." },
+  { value: "Accountability", detail: "One accountable standard across all five sectors." },
+  { value: "Agility", detail: "Adapting quickly to new markets, categories, and opportunities." },
 ] as const;
 
 // ─── HOW WE WORK ─────────────────────────────────────────────
@@ -291,7 +292,7 @@ export const HOW_WE_WORK = {
     { step: "03", icon: "📋", title: "Documentation & Compliance", detail: "Preparing all trade, customs, regulatory, and logistics paperwork accurately." },
     { step: "04", icon: "🚛", title: "Logistics & Fulfilment", detail: "Deploying own fleet and third-party carriers for reliable movement of goods." },
     { step: "05", icon: "📦", title: "Distribution & Delivery", detail: "Supplying to wholesale markets, retail partners, institutions, and end customers." },
-    { step: "06", icon: "🤝", title: "After-Sales & Relationship", detail: "Maintaining long-term partnerships beyond the transaction." },
+    { step: "06", icon: "🤝", title: "Ongoing Support & Partnership", detail: "Maintaining long-term partnerships beyond the transaction." },
   ],
 };
 

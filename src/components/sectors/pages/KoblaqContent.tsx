@@ -24,14 +24,14 @@ export default function KoblaqContent({ sector }: SectorProps) {
       category: 'Fragrance',
       desc: 'Signature EDP & EDT perfumes crafted with fine French oils and long-lasting notes for men and women.',
       color: '#1F1F24',
-      accent: '#C5A059',
+      accent: '#9C27B0',
       icon: (
         <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-          <rect x="12" y="16" width="20" height="24" rx="4" fill="#C5A059" opacity="0.15" stroke="#C5A059" strokeWidth="2" />
-          <rect x="18" y="10" width="8" height="6" rx="1" fill="#C5A059" />
-          <rect x="20" y="6" width="4" height="4" fill="#C5A059" />
-          <line x1="16" y1="28" x2="28" y2="28" stroke="#C5A059" strokeWidth="1.5" strokeLinecap="round" />
-          <circle cx="22" cy="22" r="2" fill="#C5A059" />
+          <rect x="12" y="16" width="20" height="24" rx="4" fill="#9C27B0" opacity="0.15" stroke="#9C27B0" strokeWidth="2" />
+          <rect x="18" y="10" width="8" height="6" rx="1" fill="#9C27B0" />
+          <rect x="20" y="6" width="4" height="4" fill="#9C27B0" />
+          <line x1="16" y1="28" x2="28" y2="28" stroke="#9C27B0" strokeWidth="1.5" strokeLinecap="round" />
+          <circle cx="22" cy="22" r="2" fill="#9C27B0" />
         </svg>
       ),
     },
@@ -247,10 +247,10 @@ export default function KoblaqContent({ sector }: SectorProps) {
             {/* Elegant Luxury Typography Wordmark replaced with actual logo */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', alignItems: 'center', gap: '4rem', textAlign: 'left' }}>
               <div>
-                <div style={{ fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)', fontWeight: 300, letterSpacing: '0.2em', color: '#C5A059', textTransform: 'uppercase', lineHeight: 1.3 }}>
+                <div style={{ fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)', fontWeight: 300, letterSpacing: '0.2em', color: '#9C27B0', textTransform: 'uppercase', lineHeight: 1.3 }}>
                   Lifestyle, made accessible.
                 </div>
-                <div style={{ width: '60px', height: '1px', background: '#C5A059', margin: '2rem 0', opacity: 0.6 }} />
+                <div style={{ width: '60px', height: '1px', background: '#9C27B0', margin: '2rem 0', opacity: 0.6 }} />
                 <p style={{ fontSize: 'clamp(1rem, 1.4vw, 1.15rem)', color: '#555', lineHeight: 1.85, maxWidth: '650px', fontWeight: 300 }}>
                   Koblaq brings together clothing, beauty, fragrances, footwear and everyday lifestyle products under one accessible brand.
                 </p>
@@ -268,11 +268,11 @@ export default function KoblaqContent({ sector }: SectorProps) {
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 4.5rem' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
-              <span style={{ width: '24px', height: '1px', background: '#C5A059' }} />
-              <span style={{ fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.2em', color: '#C5A059', textTransform: 'uppercase' }}>
+              <span style={{ width: '24px', height: '1px', background: '#9C27B0' }} />
+              <span style={{ fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.2em', color: '#9C27B0', textTransform: 'uppercase' }}>
                 Lookbook 2026 • Product Universe
               </span>
-              <span style={{ width: '24px', height: '1px', background: '#C5A059' }} />
+              <span style={{ width: '24px', height: '1px', background: '#9C27B0' }} />
             </div>
             <h2
               style={{
@@ -340,13 +340,19 @@ export default function KoblaqContent({ sector }: SectorProps) {
       </section>
 
       {/* SECTION 03: Designed for Everyone (Brand Philosophy + 3 Cards) */}
-      <section className="mobile-squish" style={{ padding: '7rem 0', background: '#f5d299' }}>
+      <section className="mobile-squish" style={{ padding: '7rem 0', background: '#C2A3D1' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 4.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <img
               src="/images/koblaq/logo_cropped_4.png"
               alt="Koblaq Icon"
-              style={{ height: '80px', marginBottom: '2rem' }}
+              style={{ 
+                height: '80px', 
+                marginBottom: '2rem', 
+                mixBlendMode: 'multiply', 
+                filter: 'grayscale(1) contrast(1.5) brightness(1.2)',
+                transform: 'translateX(15px)'
+              }}
             />
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
               <span style={{ width: '24px', height: '1px', background: '#062c21' }} />
@@ -412,11 +418,11 @@ export default function KoblaqContent({ sector }: SectorProps) {
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 4rem' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
-              <span style={{ width: '24px', height: '1px', background: '#C5A059' }} />
-              <span style={{ fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.2em', color: '#C5A059', textTransform: 'uppercase' }}>
+              <span style={{ width: '24px', height: '1px', background: '#9C27B0' }} />
+              <span style={{ fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.2em', color: '#9C27B0', textTransform: 'uppercase' }}>
                 Testing & Assurance
               </span>
-              <span style={{ width: '24px', height: '1px', background: '#C5A059' }} />
+              <span style={{ width: '24px', height: '1px', background: '#9C27B0' }} />
             </div>
             <h2
               style={{
@@ -461,7 +467,7 @@ export default function KoblaqContent({ sector }: SectorProps) {
                 }}
                 className="mobile-card-squish"
               >
-                <span style={{ fontSize: '0.85rem', fontWeight: 300, color: '#C5A059', marginBottom: '1rem' }}>
+                <span style={{ fontSize: '0.85rem', fontWeight: 300, color: '#9C27B0', marginBottom: '1rem' }}>
                   STEP {qc.step}
                 </span>
                 <h4 style={{ fontSize: '1.2rem', fontWeight: 300, color: '#0D0D0D', marginBottom: '0.75rem' }}>
@@ -481,7 +487,7 @@ export default function KoblaqContent({ sector }: SectorProps) {
         <div className="container">
           <div
             style={{
-              background: '#D4D4D4',
+              background: '#F3E5F5',
               borderRadius: '24px',
               padding: '3.5rem',
               color: '#0D0D0D',
