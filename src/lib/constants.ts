@@ -324,17 +324,18 @@ export const LEADERSHIP: {
   role: string;
   initial: string;
   image?: string;
+  objectPosition?: string;
 }[] = [
   {
     name: "Biju",
     role: "Co-Founder & Managing Partner",
     initial: "B",
-    image: "/images/founder_biju.jpg",
+    image: "/images/Biju.png",
   },
   {
     name: "Sujith",
     role: "Co-Founder & Managing Partner",
     initial: "S",
-    image: "/images/founder_sujith.jpg",
+    image: "/images/Sujith.png",
   },
 ];

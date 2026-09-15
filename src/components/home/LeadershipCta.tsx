@@ -177,7 +177,10 @@ export default function LeadershipCta() {
                         src={leader.image}
                         alt={leader.name}
                         fill
-                        style={{ objectFit: 'cover', objectPosition: 'center top' }}
+                        style={{ 
+                          objectFit: 'cover', 
+                          objectPosition: leader.name === 'Sujith' ? 'center 30%' : (leader.name === 'Biju' ? 'center top' : 'center top')
+                        }}
                         sizes="40vw"
                       />
                     </div>
@@ -204,8 +207,6 @@ export default function LeadershipCta() {
                   )}
                 </div>
               ))}
-
-
             </div>
           </div>
         </div>
