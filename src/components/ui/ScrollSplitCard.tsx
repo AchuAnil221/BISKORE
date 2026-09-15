@@ -39,8 +39,6 @@ export function ScrollSplitCard({
   const rotateY = useTransform(scrollYProgress, [0.35, 0.9], [0, 180]);
 
   const borderOpacity = useTransform(scrollYProgress, [0, 0.2], [0, 0.2]);
-  const shadowOpacity = useTransform(scrollYProgress, [0, 0.2], [0, 0.4]);
-  const boxShadow = useMotionTemplate`0 25px 50px -12px rgba(0, 0, 0, ${shadowOpacity})`;
 
   // Positions and rotations for up to 5 cards
   const getX = (i: number, total: number) => {
@@ -97,7 +95,6 @@ export function ScrollSplitCard({
                 style={{
                   zIndex: 2, // Ensure front stays above initially
                   borderRadius: getBorderRadius(i, cards.length),
-                  boxShadow,
                 }}
               >
                 <div
@@ -116,8 +113,7 @@ export function ScrollSplitCard({
               <motion.div
                 className={cn(
                   "absolute inset-0 overflow-hidden flex flex-col justify-center items-center text-center px-4 py-6 [backface-visibility:hidden] will-change-transform",
-                  "border border-white/5 bg-gradient-to-br from-white/10 to-transparent",
-                  "shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),inset_0_-24px_48px_rgba(0,0,0,0.2)]"
+                  "border border-white/5 bg-gradient-to-br from-white/10 to-transparent"
                 )}
                 style={{
                   backgroundColor: card.bgColor,
@@ -125,7 +121,6 @@ export function ScrollSplitCard({
                   transform: "rotateY(180deg)",
                   zIndex: 1, // Ensure back is behind before flip
                   borderRadius: getBorderRadius(i, cards.length),
-                  boxShadow,
                 }}
               >
 

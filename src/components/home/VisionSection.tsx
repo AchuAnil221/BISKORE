@@ -45,7 +45,7 @@ export default function VisionSection() {
                 marginTop: '1.5rem',
               }}
             >
-              Where we&apos;re headed
+              The Path Forward
             </RevealText>
             <p style={{
               marginTop: '2rem',

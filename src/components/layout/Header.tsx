@@ -21,13 +21,14 @@ export default function Header() {
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
+      if (mobileOpen) return;
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
         setSectorsOpen(false);
       }
     };
     document.addEventListener('mousedown', handler);
     return () => document.removeEventListener('mousedown', handler);
-  }, []);
+  }, [mobileOpen]);
 
   useEffect(() => {
     setMobileOpen(false);
@@ -374,6 +375,7 @@ export default function Header() {
                           <Link
                             key={child.href}
                             href={child.href}
+                            onClick={() => setMobileOpen(false)}
                             style={{
                               display: 'flex',
                               alignItems: 'center',
@@ -403,6 +405,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
+                onClick={() => setMobileOpen(false)}
                 style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -424,6 +427,7 @@ export default function Header() {
 
           <Link
             href="/contact"
+            onClick={() => setMobileOpen(false)}
             className="btn-primary"
             style={{ marginTop: '1.75rem', justifyContent: 'center', fontSize: '0.8rem' }}
           >

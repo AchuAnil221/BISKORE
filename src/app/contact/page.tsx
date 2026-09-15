@@ -53,63 +53,7 @@ export default function ContactPage() {
           overflow: 'hidden',
         }}
       >
-        {/* Animated Abstract Connections Background */}
-        <div style={{ position: 'absolute', inset: 0, opacity: 0.45 }}>
-          <svg width="100%" height="100%" viewBox="0 0 1920 600" preserveAspectRatio="xMidYMid slice">
-            <defs>
-              <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stopColor="#062C22" stopOpacity="0.1" />
-                <stop offset="50%" stopColor="#062C22" stopOpacity="0.6" />
-                <stop offset="100%" stopColor="#062C22" stopOpacity="0.1" />
-              </linearGradient>
-            </defs>
-            <style>
-              {`
-                .anim-line { 
-                  stroke-dasharray: 2000; 
-                  stroke-dashoffset: 2000; 
-                  animation: dashSweep 10s linear infinite; 
-                }
-                .anim-line:nth-child(2) { animation-delay: -3s; animation-duration: 12s; }
-                .anim-line:nth-child(3) { animation-delay: -6s; animation-duration: 16s; }
-                .anim-line:nth-child(4) { animation-delay: -1s; animation-duration: 14s; }
-                .anim-line:nth-child(5) { animation-delay: -5s; animation-duration: 18s; }
-                @keyframes dashSweep {
-                  0% { stroke-dashoffset: 2000; }
-                  100% { stroke-dashoffset: -2000; }
-                }
-                .anim-node { animation: pulseNode 4s ease-in-out infinite alternate; transform-origin: center; transform-box: fill-box; }
-                @keyframes pulseNode {
-                  0% { transform: scale(0.6); opacity: 0.4; }
-                  100% { transform: scale(1.4); opacity: 1; }
-                }
-              `}
-            </style>
-            
-            {/* Connection Lines (Sweeping Curves) */}
-            <path className="anim-line" d="M -100 150 Q 500 300 1200 -50" fill="none" stroke="url(#lineGrad)" strokeWidth="2" />
-            <path className="anim-line" d="M -50 450 Q 700 100 1600 550" fill="none" stroke="url(#lineGrad)" strokeWidth="1.5" />
-            <path className="anim-line" d="M 200 -100 Q 800 500 1800 100" fill="none" stroke="url(#lineGrad)" strokeWidth="2.5" />
-            <path className="anim-line" d="M 300 700 Q 1100 0 2000 400" fill="none" stroke="url(#lineGrad)" strokeWidth="2" />
-            <path className="anim-line" d="M 1000 -50 Q 1300 600 2200 150" fill="none" stroke="url(#lineGrad)" strokeWidth="1.5" />
-            
-            {/* Nodes perfectly placed on the path intersections/curves */}
-            <g fill="#0A3D30">
-              {/* On Path 1 */}
-              <circle cx="200" cy="225" r="5" className="anim-node" style={{ animationDelay: '0s' }} />
-              {/* On Path 2 */}
-              <circle cx="450" cy="255" r="4" className="anim-node" style={{ animationDelay: '1s' }} />
-              {/* On Path 3 intersection */}
-              <circle cx="780" cy="250" r="6" className="anim-node" style={{ animationDelay: '2s' }} />
-              {/* On Path 4 */}
-              <circle cx="1150" cy="180" r="5" className="anim-node" style={{ animationDelay: '0.5s' }} />
-              {/* On Path 5 */}
-              <circle cx="1450" cy="300" r="4" className="anim-node" style={{ animationDelay: '1.5s' }} />
-            </g>
-          </svg>
-        </div>
-
-        <div className="container" style={{ position: 'relative', textAlign: 'center' }}>
+        <div className="container" style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
           <ScrollReveal>
             <div className="section-badge" style={{ justifyContent: 'center' }}>
               <span style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#FFB71D' }}>
@@ -122,7 +66,7 @@ fontWeight: 500,
 letterSpacing: '-0.02em', 
 lineHeight: 1.15}}>
               Let&apos;s{' '}
-              <span style={{ color: '#0A3D30' }}>
+              <span style={{ color: '#0D0D0D' }}>
                 connect
               </span>
             </h1>
@@ -138,13 +82,12 @@ fontWeight: 400}}>
       {/* Contact Content — white */}
       <section className="section" style={{ background: '#FFFFFF' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '4rem', alignItems: 'start' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '4rem', alignItems: 'stretch' }}>
             {/* Left — Info */}
-            <ScrollReveal direction="left">
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+            <ScrollReveal direction="left" className="h-full">
+              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '3rem', background: '#F8F7F4', border: '1px solid rgba(0,0,0,0.07)', height: '100%' }}>
                 {/* Address */}
                 {[
-                  { label: 'Office Address', content: <address style={{ fontStyle: 'normal', fontSize: '0.9rem', lineHeight: 1.85, color: '#555' }}>{SITE.address}</address> },
                   {
                     label: 'Phone', content: (
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
@@ -159,8 +102,9 @@ fontWeight: 400}}>
                   },
                   { label: 'Email', content: <a href={`mailto:${SITE.email}`} style={{ fontSize: '1rem', fontWeight: 600, color: '#062C22' }} onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = '0.7')} onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = '1')}>{SITE.email}</a> },
                   { label: 'Website', content: <a href="https://www.biskore.com" target="_blank" rel="noopener noreferrer" style={{ fontSize: '1rem', fontWeight: 600, color: '#062C22' }} onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = '0.7')} onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = '1')}>www.biskore.com</a> },
+                  { label: 'Office Address', content: <address style={{ fontStyle: 'normal', fontSize: '0.9rem', lineHeight: 1.85, color: '#555' }}>{SITE.address}</address> },
                 ].map(({ label, content }) => (
-                  <div key={label} style={{ padding: '1.75rem', border: '1px solid rgba(0,0,0,0.08)', background: '#F8F7F4' }}>
+                  <div key={label}>
                     <p style={{ fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', fontWeight: 400, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#B8860B', marginBottom: '0.75rem' }}>
                       {label}
                     </p>
@@ -171,12 +115,13 @@ fontWeight: 400}}>
             </ScrollReveal>
 
             {/* Right — Form */}
-            <ScrollReveal direction="right">
+            <ScrollReveal direction="right" className="h-full">
               <div
                 style={{
                   padding: '3rem',
                   background: '#F8F7F4',
                   border: '1px solid rgba(0,0,0,0.07)',
+                  height: '100%'
                 }}
               >
                 <h2 className="text-h2" style={{marginBottom: '0.5rem', 
