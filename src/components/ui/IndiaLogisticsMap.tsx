@@ -168,7 +168,7 @@ export default function IndiaLogisticsMap() {
               <text 
                 x={hub.dx || (hub.isCentral ? 12 : 8)} 
                 y={hub.dy || 4} 
-                textAnchor={hub.textAnchor || 'start'}
+                textAnchor={(hub.textAnchor as "start" | "end" | "middle" | "inherit") || 'start'}
                 fill={hub.isCentral ? '#93C5FD' : '#DBEAFE'} 
                 fontSize={hub.isCentral ? '12' : '10'} 
                 fontWeight={hub.isCentral ? '700' : '500'}
