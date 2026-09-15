@@ -12,13 +12,13 @@ export default function HowWeWork() {
       style={{
         position: 'relative',
         paddingTop: '8rem',
-        paddingBottom: '8rem',
+        paddingBottom: '4rem',
         overflow: 'hidden',
       }}
-      className="hero-overlap-section"
+      className="hero-overlap-section howwework-section"
     >
       {/* ── HOW WE WORK STEPS ── */}
-      <div style={{ paddingBottom: '4rem' }}>
+      <div style={{ paddingBottom: '2rem' }}>
         <div className="container">
           {/* Heading */}
           <div style={{ marginBottom: '5rem' }}>

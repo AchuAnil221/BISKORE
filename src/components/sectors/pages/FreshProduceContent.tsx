@@ -256,6 +256,7 @@ export default function FreshProduceContent({ sector }: SectorProps) {
     <div style={{ background: "#FFFFFF", color: "#0D0D0D" }}>
       {/* SECTION 01: Farm to Market (Split Layout with Farm -> Basket -> Collection Animation) */}
       <section
+        className="mobile-squish"
         style={{
           padding: "6rem 0",
           background: "#FFFFFF",
@@ -616,7 +617,7 @@ export default function FreshProduceContent({ sector }: SectorProps) {
       </section>
 
       {/* SECTION 02: How It Moves (Horizontal 5-Step Process with traveling crate) */}
-      <section style={{ padding: "7rem 0", background: "#F8F7F4" }}>
+      <section className="mobile-squish" style={{ padding: "7rem 0", background: "#F8F7F4" }}>
         <div className="container">
           <div
             style={{
@@ -670,6 +671,7 @@ export default function FreshProduceContent({ sector }: SectorProps) {
                   position: "relative",
                   overflow: "hidden",
                 }}
+                className="mobile-card-squish"
               >
                 <div
                   style={{
@@ -731,7 +733,7 @@ export default function FreshProduceContent({ sector }: SectorProps) {
       </section>
 
       {/* SECTION 03: What We Supply (6 Cards with Small Produce SVGs & Hover Expansion) */}
-      <section style={{ padding: "7rem 0", background: "#FFFFFF" }}>
+      <section className="mobile-squish" style={{ padding: "7rem 0", background: "#FFFFFF" }}>
         <div className="container">
           <div
             style={{
@@ -790,6 +792,7 @@ export default function FreshProduceContent({ sector }: SectorProps) {
                   display: "flex",
                   flexDirection: "column",
                 }}
+                className="mobile-card-squish"
               >
 
                 <h3
@@ -820,6 +823,7 @@ export default function FreshProduceContent({ sector }: SectorProps) {
 
       {/* SECTION 04: Built for Freshness (3 Large Cards + Truck Driving along Route Animation) */}
       <section
+        className="mobile-squish"
         style={{
           padding: "7rem 0",
           background: "#F1F8F4",
@@ -862,6 +866,7 @@ export default function FreshProduceContent({ sector }: SectorProps) {
               border: "1px solid rgba(46, 125, 50, 0.12)",
               overflow: "hidden",
             }}
+            className="mobile-card-squish"
           >
             <div
               style={{
@@ -1089,6 +1094,7 @@ export default function FreshProduceContent({ sector }: SectorProps) {
                 padding: "3rem 2.5rem",
                 border: "1px solid rgba(46, 125, 50, 0.15)",
               }}
+              className="mobile-card-squish"
             >
               <div
                 style={{
@@ -1146,6 +1152,7 @@ export default function FreshProduceContent({ sector }: SectorProps) {
                 padding: "3rem 2.5rem",
                 border: "1px solid rgba(46, 125, 50, 0.15)",
               }}
+              className="mobile-card-squish"
             >
               <div
                 style={{
@@ -1200,6 +1207,7 @@ export default function FreshProduceContent({ sector }: SectorProps) {
                 padding: "3rem 2.5rem",
                 border: "1px solid rgba(46, 125, 50, 0.15)",
               }}
+              className="mobile-card-squish"
             >
               <div
                 style={{
@@ -1265,6 +1273,7 @@ export default function FreshProduceContent({ sector }: SectorProps) {
               position: 'relative',
               overflow: 'hidden'
             }}
+            className="mobile-card-squish"
           >
             <div
               style={{

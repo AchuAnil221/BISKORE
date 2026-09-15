@@ -284,7 +284,7 @@ export default function TastecoreContent({ sector }: SectorProps) {
       </section>
 
       {/* SECTION 02: Tastecore Product World (6 Visual Cards with floating animations) */}
-      <section style={{ padding: '7rem 0', background: '#FFFFFF' }}>
+      <section className="mobile-squish" style={{ padding: '7rem 0', background: '#FFFFFF' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 4.5rem' }}>
             
@@ -330,6 +330,7 @@ export default function TastecoreContent({ sector }: SectorProps) {
                   display: 'flex',
                   flexDirection: 'column',
                 }}
+                className="mobile-card-squish"
               >
 
 
@@ -349,7 +350,7 @@ export default function TastecoreContent({ sector }: SectorProps) {
       </section>
 
       {/* SECTION 03: From Ingredient to Product (Realistic Packaging Flow: INGREDIENT -> PRODUCT -> PACKAGE -> READY) */}
-      <section style={{ padding: '7rem 0', background: '#F8F7F4' }}>
+      <section className="mobile-squish" style={{ padding: '7rem 0', background: '#F8F7F4' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 4.5rem' }}>
             
@@ -435,6 +436,7 @@ export default function TastecoreContent({ sector }: SectorProps) {
                   padding: '2rem 1.5rem',
                   border: '1px solid rgba(0,0,0,0.06)',
                 }}
+                className="mobile-card-squish"
               >
                 <div style={{ fontSize: '0.8rem', fontWeight: 300, color: '#E64A19', marginBottom: '0.5rem' }}>
                   PHASE 0{idx + 1}
@@ -452,7 +454,7 @@ export default function TastecoreContent({ sector }: SectorProps) {
       </section>
 
       {/* SECTION 04: The Tastecore Promise (3 Big Cards + Package Scanner Animation) */}
-      <section style={{ padding: '7rem 0', background: '#FFFFFF' }}>
+      <section className="mobile-squish" style={{ padding: '7rem 0', background: '#FFFFFF' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 4rem' }}>
             
@@ -494,6 +496,7 @@ export default function TastecoreContent({ sector }: SectorProps) {
                   display: 'flex',
                   flexDirection: 'column',
                 }}
+                className="mobile-card-squish"
               >
                 <h3 style={{ fontSize: '1.5rem', fontWeight: 300, color: '#0D0D0D', marginBottom: '0.5rem' }}>
                   {card.title}
@@ -524,9 +527,10 @@ export default function TastecoreContent({ sector }: SectorProps) {
               alignItems: 'center',
               flexWrap: 'wrap',
               gap: '2rem',
-              position: 'relative',
-              overflow: 'hidden'
+              marginBottom: '3rem',
+              overflow: 'hidden',
             }}
+            className="mobile-card-squish"
           >
             <div style={{ maxWidth: '600px', position: 'relative', zIndex: 2 }}>
 

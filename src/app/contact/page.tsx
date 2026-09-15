@@ -203,7 +203,7 @@ lineHeight: 1.7}}>Thank you for reaching out. We&apos;ll get back to you soon.</
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
+                    <div className="contact-grid-row" style={{ gap: '1.25rem' }}>
                       {[
                         { id: 'contact-name', label: 'Full Name *', type: 'text', placeholder: 'Your name', field: 'name' as const, required: true },
                         { id: 'contact-email', label: 'Email *', type: 'email', placeholder: 'your@email.com', field: 'email' as const, required: true },
@@ -227,7 +227,7 @@ lineHeight: 1.7}}>Thank you for reaching out. We&apos;ll get back to you soon.</
                       ))}
                     </div>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
+                    <div className="contact-grid-row" style={{ gap: '1.25rem' }}>
                       <div>
                         <label style={{ display: 'block', fontSize: '0.75rem', color: '#B8860B', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Phone</label>
                         <input

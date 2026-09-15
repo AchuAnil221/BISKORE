@@ -18,20 +18,13 @@ export default function LeadershipCta() {
         paddingBottom: '8rem',
         overflow: 'hidden',
       }}
-      className="hero-overlap-section"
+      className="hero-overlap-section leadership-section"
     >
 
       <div className="container">
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(12, 1fr)',
-            gap: '2rem',
-            alignItems: 'start',
-          }}
-        >
+        <div className="leadership-grid">
           {/* LEFT — Founder list */ }
-          <div style={{ gridColumn: '1 / 7' }}>
+          <div className="leadership-col-left">
             <RevealLines
               as="h2"
               lines={['Founded by', 'Biju & Sujith.']}
@@ -62,7 +55,7 @@ export default function LeadershipCta() {
             </div>
 
             {/* Founder rows — hover activates image cross-fade */}
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <div className="mobile-hide" style={{ display: 'flex', flexDirection: 'column' }}>
               {LEADERSHIP.map((leader, i) => (
                 <div
                   key={leader.name}
@@ -145,8 +138,8 @@ export default function LeadershipCta() {
 
           {/* RIGHT — Sticky cross-fade images */}
           <div
+            className="leadership-col-right mobile-hide"
             style={{
-              gridColumn: '8 / 13',
               position: 'sticky',
               top: '15vh',
               height: '70vh',
@@ -217,7 +210,7 @@ export default function LeadershipCta() {
           </div>
         </div>
           {/* ── FOUNDER QUOTE BLOCK ── */}
-          <div style={{ gridColumn: '1 / 13', marginTop: '6rem', paddingTop: '4rem', borderTop: '1px solid rgba(0,0,0,0.07)' }}>
+          <div className="leadership-quote" style={{ gridColumn: '1 / 13', marginTop: '6rem', paddingTop: '4rem', borderTop: '1px solid rgba(0,0,0,0.07)' }}>
             <ScrollReveal>
               <div style={{ display: 'flex', alignItems: 'flex-start' }}>
                 <blockquote

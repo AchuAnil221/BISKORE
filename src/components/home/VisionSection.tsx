@@ -25,7 +25,7 @@ export default function VisionSection() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   return (
-    <section className="hero-overlap-section" style={{ paddingTop: '4rem', paddingBottom: '8rem', position: 'relative', overflow: 'hidden' }}>
+    <section className="hero-overlap-section vision-section" style={{ paddingTop: '4rem', paddingBottom: '8rem', position: 'relative', overflow: 'hidden' }}>
       {/* Inject keyframe once globally */}
       <style>{MARCH_KEYFRAMES}</style>
 
@@ -256,7 +256,7 @@ export default function VisionSection() {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: '1rem' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: '0.75rem' }}>
           {FUTURE_OUTLOOK.map((item, i) => (
             <ScrollReveal
               key={i}
@@ -268,8 +268,8 @@ export default function VisionSection() {
                 style={{
                   display: 'flex',
                   alignItems: 'flex-start',
-                  gap: '1.25rem',
-                  padding: '1.5rem 2rem',
+                  gap: '1rem',
+                  padding: '1rem 1.25rem',
                   border: '1px solid rgba(0,0,0,0.08)',
                   borderRadius: '12px',
                   background: '#FFFFFF',

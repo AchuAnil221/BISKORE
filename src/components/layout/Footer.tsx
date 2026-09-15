@@ -47,7 +47,7 @@ export default function Footer() {
         >
           {/* Brand Column */}
           <div>
-            <BiskoreLogo size="2xl" src="/images/logo_hero_transparent.png" />
+            <BiskoreLogo size="3xl" src="/images/logo_footer_v4.png" />
             <p
               style={{
                 marginTop: '1.25rem',
@@ -60,25 +60,7 @@ export default function Footer() {
               An Integrated House of Trade, Brand &amp; Logistics. Five sectors.
               One consistent standard of quality.
             </p>
-            <div style={{ marginTop: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              <a
-                href={`mailto:${SITE.email}`}
-                className="hover-gold"
-                style={{ fontSize: '0.85rem', color: 'rgba(255,183,29,0.85)', transition: 'color 200ms' }}
-              >
-                {SITE.email}
-              </a>
-              {SITE.phone.map((p) => (
-                <a
-                  key={p}
-                  href={`tel:${p.replace(/\s/g, '')}`}
-                  className="hover-gold"
-                  style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', transition: 'color 200ms' }}
-                >
-                  {p}
-                </a>
-              ))}
-            </div>
+
           </div>
 
           {/* Navigation Column */}
@@ -136,6 +118,25 @@ export default function Footer() {
             >
               {SITE.address}
             </address>
+            <div style={{ marginTop: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+              <a
+                href={`mailto:${SITE.email}`}
+                className="hover-gold"
+                style={{ fontSize: '0.85rem', color: 'rgba(255,183,29,0.85)', transition: 'color 200ms' }}
+              >
+                {SITE.email}
+              </a>
+              {SITE.phone.map((p) => (
+                <a
+                  key={p}
+                  href={`tel:${p.replace(/\s/g, '')}`}
+                  className="hover-gold"
+                  style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', transition: 'color 200ms' }}
+                >
+                  {p}
+                </a>
+              ))}
+            </div>
             <Link
               href="/contact"
               className="btn-outline-light"

@@ -24,7 +24,7 @@ export default function ImportExportContent({ sector }: SectorProps) {
       subtitle: 'Educational, recreational and infant toys.',
       tags: ['Educational Kits', 'Infant Care', 'Recreational Toys', 'Safety Certified'],
       icon: (
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+        <svg width="32" height="32" viewBox="0 0 48 48" fill="none">
           {/* Toy Train / Blocks Graphic */}
           <rect x="6" y="24" width="18" height="14" rx="2" fill="#1565C0" />
           <polygon points="12,14 18,14 22,24 8,24" fill="#42A5F5" />
@@ -42,7 +42,7 @@ export default function ImportExportContent({ sector }: SectorProps) {
       subtitle: 'Consumer electronics, gadgets and accessories.',
       tags: ['Smart Accessories', 'Audio & Sound', 'Power Devices', 'BIS Compliant'],
       icon: (
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+        <svg width="32" height="32" viewBox="0 0 48 48" fill="none">
           {/* Modern Gadget / Smartphone / Chip Graphic */}
           <rect x="12" y="8" width="24" height="34" rx="4" fill="#0D47A1" />
           <rect x="15" y="13" width="18" height="22" rx="1" fill="#64B5F6" />
@@ -57,7 +57,7 @@ export default function ImportExportContent({ sector }: SectorProps) {
       subtitle: 'Kitchen and household appliances.',
       tags: ['Kitchen Essentials', 'Climate Devices', 'Cleaning Tech', 'Energy Efficient'],
       icon: (
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+        <svg width="32" height="32" viewBox="0 0 48 48" fill="none">
           {/* Modern Kitchen Appliance / Blender Graphic */}
           <rect x="16" y="22" width="16" height="18" rx="2" fill="#1976D2" />
           <path d="M18 12H30L28 22H20L18 12Z" fill="#90CAF9" opacity="0.8" />
@@ -101,7 +101,7 @@ export default function ImportExportContent({ sector }: SectorProps) {
     <div style={{ background: '#FFFFFF', color: '#0D0D0D' }}>
 
       {/* SECTION 01: Global Trade (World Map + Source Points Lighting up -> Route to India) */}
-      <section style={{ padding: '6rem 0', background: '#FFFFFF', borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
+      <section className="mobile-squish" style={{ padding: '6rem 0', background: '#FFFFFF', borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
         <div className="container">
           <div
             style={{
@@ -169,6 +169,7 @@ export default function ImportExportContent({ sector }: SectorProps) {
                 flexDirection: 'column',
                 alignItems: 'center',
               }}
+              className="mobile-card-squish"
             >
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '1.5rem', width: '100%' }}>
                 <span style={{ fontSize: '0.85rem', color: '#FFFFFF', fontWeight: 700, letterSpacing: '0.12em' }}>
@@ -268,7 +269,7 @@ export default function ImportExportContent({ sector }: SectorProps) {
       </section>
 
       {/* SECTION 02: What We Trade (3 Large Cards with Slide-In Product SVGs) */}
-      <section style={{ padding: '7rem 0', background: '#F8F7F4' }}>
+      <section className="mobile-squish" style={{ padding: '7rem 0', background: '#F8F7F4' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 4rem' }}>
             <h2
@@ -315,15 +316,16 @@ export default function ImportExportContent({ sector }: SectorProps) {
                   position: 'relative',
                   overflow: 'hidden',
                 }}
+                className="mobile-card-squish"
               >
                 {/* Animated Slide-in SVG icon */}
                 <motion.div
                   animate={{ x: activeCard === idx ? 5 : 0 }}
                   transition={{ duration: 0.3 }}
                   style={{
-                    width: 72,
-                    height: 72,
-                    borderRadius: '16px',
+                    width: 56,
+                    height: 56,
+                    borderRadius: '12px',
                     background: '#F0F5FF',
                     display: 'flex',
                     alignItems: 'center',
@@ -366,7 +368,7 @@ export default function ImportExportContent({ sector }: SectorProps) {
       </section>
 
       {/* SECTION 03: How International Trade Works (5 Steps with Container Ship -> Truck Transition) */}
-      <section style={{ padding: '7rem 0', background: '#FFFFFF' }}>
+      <section className="mobile-squish" style={{ padding: '7rem 0', background: '#FFFFFF' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 4rem' }}>
             <h2
@@ -395,6 +397,7 @@ export default function ImportExportContent({ sector }: SectorProps) {
               marginBottom: '3.5rem',
               overflow: 'hidden',
             }}
+            className="mobile-card-squish"
           >
             <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.5rem' }}>
               <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#0D0D0D' }}>
@@ -464,6 +467,7 @@ export default function ImportExportContent({ sector }: SectorProps) {
                   display: 'flex',
                   flexDirection: 'column',
                 }}
+                className="mobile-card-squish"
               >
                 <span style={{ fontSize: '1.25rem', fontWeight: 300, color: '#90CAF9', marginBottom: '1rem' }}>
                   {s.num}
@@ -481,7 +485,7 @@ export default function ImportExportContent({ sector }: SectorProps) {
       </section>
 
       {/* SECTION 04: From Port to Market (Visual Flow: SHIP -> INDIA -> TRUCK -> BUYER with Container Transfer) */}
-      <section style={{ padding: '7rem 0', background: '#0A192F', color: '#FFFFFF' }}>
+      <section className="mobile-squish" style={{ padding: '7rem 0', background: '#0A192F', color: '#FFFFFF' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 4.5rem' }}>
             <h2
@@ -523,6 +527,7 @@ export default function ImportExportContent({ sector }: SectorProps) {
                 border: '1px solid rgba(255,255,255,0.1)',
                 textAlign: 'center',
               }}
+              className="mobile-card-squish"
             >
               <div style={{ height: '70px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
                 <svg width="60" height="40" viewBox="0 0 60 40" fill="none">
@@ -549,6 +554,7 @@ export default function ImportExportContent({ sector }: SectorProps) {
                 border: '1px solid rgba(33, 150, 243, 0.4)',
                 textAlign: 'center',
               }}
+              className="mobile-card-squish"
             >
               <div style={{ height: '70px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
                 <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#2196F3" strokeWidth="2">
@@ -573,6 +579,7 @@ export default function ImportExportContent({ sector }: SectorProps) {
                 border: '1px solid rgba(255,255,255,0.1)',
                 textAlign: 'center',
               }}
+              className="mobile-card-squish"
             >
               <div style={{ height: '70px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
                 <svg width="60" height="40" viewBox="0 0 60 40" fill="none">
@@ -600,6 +607,7 @@ export default function ImportExportContent({ sector }: SectorProps) {
                 border: '1px solid rgba(255,255,255,0.1)',
                 textAlign: 'center',
               }}
+              className="mobile-card-squish"
             >
               <div style={{ height: '70px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
                 <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#FFB71D" strokeWidth="2">
@@ -615,7 +623,7 @@ export default function ImportExportContent({ sector }: SectorProps) {
       </section>
 
       {/* SECTION 05: Trade With Confidence (3 Cards: Supplier Vetting, Quality Inspection, Documentation & Compliance) */}
-      <section style={{ padding: '7rem 0', background: '#F8F7F4' }}>
+      <section className="mobile-squish" style={{ padding: '7rem 0', background: '#F8F7F4' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 4rem' }}>
             <h2
@@ -657,6 +665,7 @@ export default function ImportExportContent({ sector }: SectorProps) {
                   display: 'flex',
                   flexDirection: 'column',
                 }}
+                className="mobile-card-squish"
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
                   <div

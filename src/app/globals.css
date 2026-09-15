@@ -715,3 +715,222 @@ html, body {
   border-color: rgba(184, 134, 11, 0.25) !important;
   transform: translateX(4px);
 }
+
+/* ── GroupSnapshot Grid — desktop defaults ── */
+.snapshot-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+}
+.snapshot-col-left {
+  grid-column: 1 / 7;
+  padding-bottom: 2rem;
+}
+.snapshot-col-right {
+  grid-column: 8 / 13;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ── GroupSnapshot Grid — mobile only (no desktop changes) ── */
+/* ── Forms ─────────────────────────────────────────────────── */
+.contact-grid-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 768px) {
+  .hero-overlap-section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  .mobile-squish {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  .mobile-hide {
+    display: none !important;
+  }
+  .mobile-card-squish {
+    padding: 1.5rem !important;
+  }
+
+  .contact-grid-row {
+    grid-template-columns: 1fr;
+  }
+
+  .snapshot-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .snapshot-col-left {
+    grid-column: 1 / -1;
+    padding-bottom: 0;
+  }
+  .snapshot-col-right {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+    gap: 1.5rem;
+  }
+}
+
+/* ── SectorsGrid — desktop defaults ── */
+.sectors-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* Mobile sector images: hidden on desktop, shown on mobile */
+.sector-mobile-image {
+  display: none;
+}
+
+/* ── Values cards visibility ── */
+/* Animated version shown on desktop */
+.values-scroll-desktop { display: block; }
+/* Simple grid hidden on desktop */
+.values-mobile-grid { display: none; }
+
+/* ── LeadershipCta grid — desktop defaults ── */
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+.leadership-col-left {
+  grid-column: 1 / 7;
+}
+.leadership-col-right {
+  grid-column: 8 / 13;
+}
+
+/* ── Mobile-only overrides (≤ 767px) ── */
+@media (max-width: 767px) {
+
+  /* SectorsGrid: full-width list, hide sticky panel */
+  .sectors-section {
+    padding-bottom: 2rem !important;
+  }
+  .howwework-section {
+    padding-top: 2rem !important;
+  }
+  .vision-section {
+    padding-bottom: 2rem !important;
+  }
+  .leadership-section {
+    padding-top: 2rem !important;
+  }
+  .sectors-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .sectors-list {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+  .sectors-sticky-panel {
+    display: none !important;
+  }
+  /* Show inline images on mobile, reduce row min-height */
+  .sector-mobile-image {
+    display: block !important;
+  }
+
+  /* LeadershipCta: stack photo below text */
+  .leadership-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .leadership-col-left {
+    grid-column: 1 / -1;
+  }
+  .leadership-col-right {
+    display: none !important;
+  }
+
+  /* ScrollSplitCard values: reduce height and allow scroll */
+  .h-\[300vh\] {
+    height: 250vh;
+  }
+  .h-\[400px\] {
+    height: 260px !important;
+  }
+  /* Values: hide animated desktop version, show simple grid */
+  .values-scroll-desktop {
+    display: none !important;
+  }
+  .values-mobile-grid {
+    display: block !important;
+  }
+}
+
+
+/* ── About page hero — fix header overlap on mobile ── */
+@media (max-width: 767px) {
+  .about-hero {
+    padding-top: calc(75px + 3rem) !important;
+    min-height: auto !important;
+  }
+}
+
+/* ── Sectors gold accent bar — hidden on mobile ── */
+@media (max-width: 767px) {
+  .sector-accent-bar {
+    display: none !important;
+  }
+}
+
+/* ── Reduce all inter-section white space on mobile ── */
+@media (max-width: 767px) {
+  /* WhyBiskore section container padding */
+  .whybiskore-section .container {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  /* Strengths grid bottom margin */
+  .whybiskore-section .container > div:first-child {
+    margin-bottom: 2rem !important;
+  }
+  /* HowWeWork inner wrapper */
+  .howwework-section {
+    padding-bottom: 2rem !important;
+  }
+  /* VisionSection already handled — ensure top also tight */
+  .vision-section {
+    padding-top: 2rem !important;
+  }
+  /* LeadershipCta quote block: reduce huge top margin */
+  .leadership-quote {
+    margin-top: 2rem !important;
+    padding-top: 2rem !important;
+  }
+  /* LeadershipCta bottom */
+  .leadership-section {
+    padding-bottom: 2rem !important;
+  }
+  
+  /* Center align sector rows on mobile since yellow line is removed */
+  .sector-row {
+    padding-left: 0 !important;
+    text-align: center;
+    align-items: center;
+  }
+  .sector-row p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sector-row a {
+    justify-content: center;
+  }
+}
+
+/* ── Prevent horizontal scroll on mobile (fixes header shifting) ── */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+  }
+}

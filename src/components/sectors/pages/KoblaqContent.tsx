@@ -177,7 +177,7 @@ export default function KoblaqContent({ sector }: SectorProps) {
     <div style={{ background: '#FFFFFF', color: '#0D0D0D' }}>
 
       {/* SECTION 01: Koblaq Brand Introduction (Centered Luxury Logo + Slowly Appearing Silhouettes) */}
-      <section style={{ padding: '7rem 0', background: '#FFFFFF', position: 'relative', overflow: 'hidden' }}>
+      <section className="mobile-squish" style={{ padding: '7rem 0', background: '#FFFFFF', position: 'relative', overflow: 'hidden' }}>
         
         {/* Floating Subtle Ambient Silhouettes */}
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', overflow: 'hidden' }}>
@@ -245,7 +245,7 @@ export default function KoblaqContent({ sector }: SectorProps) {
             style={{ maxWidth: '1100px', margin: '0 auto' }}
           >
             {/* Elegant Luxury Typography Wordmark replaced with actual logo */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', alignItems: 'center', gap: '4rem', textAlign: 'left' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', alignItems: 'center', gap: '4rem', textAlign: 'left' }}>
               <div>
                 <div style={{ fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)', fontWeight: 300, letterSpacing: '0.2em', color: '#C5A059', textTransform: 'uppercase', lineHeight: 1.3 }}>
                   Lifestyle, made accessible.
@@ -264,7 +264,7 @@ export default function KoblaqContent({ sector }: SectorProps) {
       </section>
 
       {/* SECTION 02: The Koblaq World (Visual Product Wall - 8 Cards) */}
-      <section style={{ padding: '7rem 0', background: '#FFFFFF' }}>
+      <section className="mobile-squish" style={{ padding: '7rem 0', background: '#FFFFFF' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 4.5rem' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
@@ -294,7 +294,7 @@ export default function KoblaqContent({ sector }: SectorProps) {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(4, 1fr)',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
               gap: '1.75rem',
             }}
           >
@@ -321,6 +321,7 @@ export default function KoblaqContent({ sector }: SectorProps) {
                   position: 'relative',
                   overflow: 'hidden',
                 }}
+                className="mobile-card-squish"
               >
                 
 
@@ -339,7 +340,7 @@ export default function KoblaqContent({ sector }: SectorProps) {
       </section>
 
       {/* SECTION 03: Designed for Everyone (Brand Philosophy + 3 Cards) */}
-      <section style={{ padding: '7rem 0', background: '#f5d299' }}>
+      <section className="mobile-squish" style={{ padding: '7rem 0', background: '#f5d299' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 4.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <img
@@ -407,7 +408,7 @@ export default function KoblaqContent({ sector }: SectorProps) {
       </section>
 
       {/* SECTION 04: Quality Behind the Brand (4 Cards with Subtle Scanning Line Animation revealing ✓) */}
-      <section style={{ padding: '7rem 0', background: '#FFFFFF' }}>
+      <section className="mobile-squish" style={{ padding: '7rem 0', background: '#FFFFFF' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 4rem' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
@@ -458,6 +459,7 @@ export default function KoblaqContent({ sector }: SectorProps) {
                   display: 'flex',
                   flexDirection: 'column',
                 }}
+                className="mobile-card-squish"
               >
                 <span style={{ fontSize: '0.85rem', fontWeight: 300, color: '#C5A059', marginBottom: '1rem' }}>
                   STEP {qc.step}

@@ -10,6 +10,7 @@ export default function AboutPage() {
     <main>
       {/* Page Hero — Light Theme */}
       <section
+        className="about-hero"
         style={{
           paddingTop: 'calc(85px + 2rem)',
           paddingBottom: '4rem',

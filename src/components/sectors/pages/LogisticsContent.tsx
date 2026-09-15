@@ -178,6 +178,7 @@ export default function LogisticsContent({ sector }: SectorProps) {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
+              className="mobile-card-squish"
               style={{
                 position: 'relative',
                 background: '#FFF0DF',
@@ -249,7 +250,7 @@ export default function LogisticsContent({ sector }: SectorProps) {
       </section>
 
       {/* SECTION 02: Our Services (5 Primary Cards + 1 Smaller Card; Hovering Changes Truck Cargo) */}
-      <section style={{ padding: '7rem 0', background: '#F8F7F4' }}>
+      <section className="mobile-squish" style={{ padding: '7rem 0', background: '#F8F7F4' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 4.5rem' }}>
             
@@ -385,7 +386,7 @@ export default function LogisticsContent({ sector }: SectorProps) {
       </section>
 
       {/* SECTION 04: The Network (Large Abstract India Map + Central Hub Routes Drawing Outward) */}
-      <section style={{ padding: '7rem 0', background: '#D97706', borderTop: '1px solid rgba(255, 152, 0, 0.15)' }}>
+      <section className="mobile-squish" style={{ padding: '7rem 0', background: '#D97706', borderTop: '1px solid rgba(255, 152, 0, 0.15)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 4.5rem' }}>
             
@@ -453,6 +454,7 @@ export default function LogisticsContent({ sector }: SectorProps) {
                   display: 'flex',
                   flexDirection: 'column',
                 }}
+                className="mobile-card-squish"
               >
                 <div style={{ marginBottom: '1.5rem' }}>{c.icon}</div>
                 <h3 style={{ fontSize: '1.35rem', fontWeight: 300, color: '#0D0D0D', marginBottom: '0.5rem', minHeight: '4.5rem' }}>
