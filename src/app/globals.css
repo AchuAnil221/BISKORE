@@ -51,6 +51,17 @@
   --space-120: 7.5rem;    /* 120px */
   --space-160: 10rem;     /* 160px */
 
+  /* ── Semantic Content-Group Gaps ─────────────────────────
+     Use these instead of raw spacing values in components.
+     Hierarchy: label → heading → body → button → next group
+  ─────────────────────────────────────────────────────── */
+  --gap-xs:  0.5rem;   /*  8px — label→heading, icon→text */
+  --gap-sm:  1rem;     /* 16px — heading→paragraph */
+  --gap-md:  1.5rem;   /* 24px — paragraph→button, card internal */
+  --gap-lg:  2.5rem;   /* 40px — content group bottom, step rows */
+  --gap-xl:  4rem;     /* 64px — section heading block bottom margin */
+  --gap-xxl: 6rem;     /* 96px — major content group separations */
+
   /* Border Radius */
   --radius-sm:  4px;
   --radius-md:  8px;
@@ -334,8 +345,9 @@ button {
   position: relative;
 }
 
+/* Primary section: 6rem top/bottom on desktop */
 .section {
-  padding: var(--space-80) 0;
+  padding: var(--gap-xxl) 0;
   position: relative;
 }
 
@@ -356,6 +368,33 @@ button {
   margin: 0 auto;
   padding: 0 var(--space-32);
 }
+
+/* ── Content-Group Utility Classes ─────────────────────────── */
+/* Wrap eyebrow+heading+paragraph as a block with consistent bottom gap */
+.section-header {
+  margin-bottom: var(--gap-xl);
+}
+
+/* Heading → paragraph gap */
+.heading-gap {
+  margin-top: var(--gap-sm);
+}
+
+/* Paragraph → button gap */
+.btn-gap {
+  margin-top: var(--gap-md);
+}
+
+/* Eyebrow label → heading gap */
+.label-gap {
+  margin-bottom: var(--gap-xs);
+}
+
+/* Flex/grid column stacks */
+.stack-xs { display: flex; flex-direction: column; gap: var(--gap-xs); }
+.stack-sm { display: flex; flex-direction: column; gap: var(--gap-sm); }
+.stack-md { display: flex; flex-direction: column; gap: var(--gap-md); }
+.stack-lg { display: flex; flex-direction: column; gap: var(--gap-lg); }
 
 /* ── Decorative Elements ───────────────────────────────────── */
 .gold-line {
@@ -508,24 +547,35 @@ html, body {
 @media (max-width: 1024px) {
   .container, .container-wide { padding: 0 var(--space-24); }
   .section-hero { padding: var(--space-120) 0; }
-  .section-lg { padding: var(--space-100) 0; }
-  .section { padding: var(--space-64) 0; }
-  .section-sm { padding: var(--space-48) 0; }
+  .section-lg   { padding: var(--space-100) 0; }
+  .section      { padding: var(--space-80) 0; }   /* 5rem tablet */
+  .section-sm   { padding: var(--space-48) 0; }
+  /* Semantic gap tokens scale down on tablet */
+  :root {
+    --gap-xl:  3rem;   /* 48px tablet */
+    --gap-xxl: 5rem;   /* 80px tablet */
+  }
 }
 
 @media (max-width: 768px) {
   .container, .container-wide { padding: 0 var(--space-16); }
   .section-hero { padding: var(--space-100) 0; }
-  .section-lg { padding: var(--space-80) 0; }
-  .section { padding: var(--space-64) 0; }
-  .section-sm { padding: var(--space-48) 0; }
+  .section-lg   { padding: var(--space-80) 0; }
+  .section      { padding: 3.5rem 0; }            /* 3.5rem mobile */
+  .section-sm   { padding: var(--space-48) 0; }
+  /* Further reduce semantic gaps on mobile */
+  :root {
+    --gap-lg:  2rem;    /* 32px */
+    --gap-xl:  2.5rem;  /* 40px */
+    --gap-xxl: 3.5rem;  /* 56px */
+  }
 }
 
 @media (max-width: 480px) {
   .section-hero { padding: var(--space-80) 0; }
-  .section-lg { padding: var(--space-64) 0; }
-  .section { padding: var(--space-48) 0; }
-  .section-sm { padding: var(--space-32) 0; }
+  .section-lg   { padding: var(--space-64) 0; }
+  .section      { padding: 2.5rem 0; }            /* 2.5rem small mobile */
+  .section-sm   { padding: var(--space-32) 0; }
 }
 
 /* ── CSS Hover Utilities (Light Theme — Server Components) ──── */
@@ -805,134 +855,51 @@ html, body {
   grid-column: 8 / 13;
 }
 
+
 /* ── Mobile-only overrides (≤ 767px) ── */
+/* NOTE: Section padding is now handled by .section class responsive breakpoints above.
+   Only structural/layout overrides remain here. */
 @media (max-width: 767px) {
 
-  /* SectorsGrid: full-width list, hide sticky panel */
-  .sectors-section {
-    padding-bottom: 2rem !important;
-  }
-  .mobile-only-sticky-content {
-    display: block !important;
-  }
-  .howwework-section {
-    padding-top: 2rem !important;
-  }
-  .vision-section {
-    padding-bottom: 2rem !important;
-  }
-  .leadership-section {
-    padding-top: 2rem !important;
-  }
-  .sectors-grid {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-  .sectors-list {
-    padding-top: 4rem !important;
-    padding-bottom: 4rem !important;
-  }
-  .sectors-sticky-panel {
-    display: none !important;
-  }
-  /* Show inline images on mobile, reduce row min-height */
-  .sector-mobile-image {
-    display: block !important;
-  }
-
-  /* LeadershipCta: stack photo below text */
-  .leadership-grid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-  .leadership-col-left {
-    grid-column: 1 / -1;
-  }
-  .leadership-col-right {
-    display: none !important;
-  }
-
-  /* ScrollSplitCard values: reduce height and allow scroll */
-  .h-\[300vh\] {
-    height: 250vh;
-  }
-  .h-\[400px\] {
-    height: 260px !important;
-  }
-  /* Values: hide animated desktop version, show simple grid */
-  .values-scroll-desktop {
-    display: none !important;
-  }
-  .values-mobile-grid {
-    display: block !important;
-  }
-}
-
-
-/* ── About page hero — fix header overlap on mobile ── */
-@media (max-width: 767px) {
+  /* ── About hero: account for fixed header height ── */
   .about-hero {
-    padding-top: calc(75px + 3rem) !important;
+    padding-top: calc(75px + 2rem) !important;
     min-height: auto !important;
   }
-}
 
-/* ── Sectors gold accent bar — hidden on mobile ── */
-@media (max-width: 767px) {
-  .sector-accent-bar {
-    display: none !important;
-  }
-}
+  /* ── SectorsGrid: switch to single-column, hide sticky panel ── */
+  .sectors-section     { padding-bottom: 2rem !important; }
+  .sectors-grid        { grid-template-columns: 1fr; gap: 0; }
+  .sectors-list        { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+  .sectors-sticky-panel { display: none !important; }
+  .sector-mobile-image { display: block !important; }
+  .sector-accent-bar   { display: none !important; }
+  .mobile-only-sticky-content { display: block !important; }
 
-/* ── Reduce all inter-section white space on mobile ── */
-@media (max-width: 767px) {
-  /* WhyBiskore section container padding */
-  .whybiskore-section .container {
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
-  }
-  /* Strengths grid bottom margin */
-  .whybiskore-section .container > div:first-child {
-    margin-bottom: 2rem !important;
-  }
-  /* HowWeWork inner wrapper */
-  .howwework-section {
-    padding-bottom: 2rem !important;
-  }
-  /* VisionSection already handled — ensure top also tight */
-  .vision-section {
-    padding-top: 2rem !important;
-  }
-  /* LeadershipCta quote block: reduce huge top margin */
-  .leadership-quote {
-    margin-top: 2rem !important;
-    padding-top: 2rem !important;
-  }
-  /* LeadershipCta bottom */
-  .leadership-section {
-    padding-bottom: 2rem !important;
-  }
-  
-  /* Center align sector rows on mobile since yellow line is removed */
+  /* ── Sector rows: center-align on mobile ── */
   .sector-row {
     padding-left: 0 !important;
     text-align: center;
     align-items: center;
   }
-  .sector-row p {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .sector-row a {
-    justify-content: center;
-  }
+  .sector-row p { margin-left: auto; margin-right: auto; }
+  .sector-row a { justify-content: center; }
+
+  /* ── LeadershipCta: stack grid, hide right image column ── */
+  .leadership-grid       { grid-template-columns: 1fr; gap: 2rem; }
+  .leadership-col-left   { grid-column: 1 / -1; }
+  .leadership-col-right  { display: none !important; }
+
+  /* ── ScrollSplitCard / Values: switch to simple mobile grid ── */
+  .h-\[300vh\]           { height: 250vh; }
+  .h-\[400px\]           { height: 260px !important; }
+  .values-scroll-desktop { display: none !important; }
+  .values-mobile-grid    { display: block !important; }
 }
 
-/* ── Prevent horizontal scroll on mobile (fixes header shifting) ── */
+/* ── Prevent horizontal scroll on mobile ── */
 @media (max-width: 768px) {
-  html, body {
-    overflow-x: hidden;
-  }
+  html, body { overflow-x: hidden; }
 }
 
 /* Custom Reveal Added by User Request */
@@ -950,4 +917,5 @@ html, body {
   opacity: 1;
   transform: translateY(0);
 }
+
 

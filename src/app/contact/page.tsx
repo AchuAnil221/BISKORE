@@ -43,11 +43,10 @@ export default function ContactPage() {
 
   return (
     <main>
-      {/* Hero — dark green */}
+      {/* Hero */}
       <section
+        className="section-lg"
         style={{
-          paddingTop: '11rem',
-          paddingBottom: '7rem',
           background: 'linear-gradient(180deg, #F8F7F4 0%, #FDF3DB 40%, #E8DFCB 100%)',
           position: 'relative',
           overflow: 'hidden',

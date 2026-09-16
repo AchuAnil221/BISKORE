@@ -25,7 +25,7 @@ export default function VisionSection() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   return (
-    <section className="hero-overlap-section vision-section" style={{ paddingTop: '4rem', paddingBottom: '8rem', position: 'relative', overflow: 'hidden' }}>
+    <section className="hero-overlap-section section vision-section" style={{ position: 'relative', overflow: 'hidden' }}>
       {/* Inject keyframe once globally */}
       <style>{MARCH_KEYFRAMES}</style>
 
@@ -33,7 +33,7 @@ export default function VisionSection() {
 
         {/* Vision */}
         <ScrollReveal>
-          <div style={{ marginBottom: '5rem' }}>
+          <div style={{ marginBottom: 'var(--gap-xl)' }}>
             <RevealText
               as="h2"
               style={{
@@ -42,13 +42,13 @@ export default function VisionSection() {
                 lineHeight: 1.1,
                 letterSpacing: '-0.02em',
                 color: '#0D0D0D',
-                marginTop: '1.5rem',
+                marginTop: 'var(--gap-xs)',
               }}
             >
               The Path Forward
             </RevealText>
             <p style={{
-              marginTop: '2rem',
+              marginTop: 'var(--gap-sm)',
               fontSize: 'clamp(1rem, 1.5vw, 1.2rem)',
               lineHeight: 1.85,
               fontWeight: 400,
@@ -64,7 +64,7 @@ export default function VisionSection() {
         {/* Mission per sector — Bento Grid */}
         <div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6"
-          style={{ gap: '1.25rem', marginBottom: '5rem' }}
+          style={{ gap: '1.25rem', marginBottom: 'var(--gap-xl)' }}
         >
           {MISSION_PER_SECTOR.map((item, i) => {
             const isHovered = hoveredCard === i;

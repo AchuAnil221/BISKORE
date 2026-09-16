@@ -11,17 +11,15 @@ export default function HowWeWork() {
     <section
       style={{
         position: 'relative',
-        paddingTop: '4rem',
-        paddingBottom: '0rem',
         overflow: 'hidden',
       }}
-      className="hero-overlap-section howwework-section"
+      className="hero-overlap-section section howwework-section"
     >
       {/* ── HOW WE WORK STEPS ── */}
-      <div style={{ paddingBottom: '2rem' }}>
+      <div style={{ paddingBottom: 0 }}>
         <div className="container">
           {/* Heading */}
-          <div style={{ marginBottom: '5rem' }}>
+          <div style={{ marginBottom: 'var(--gap-xl)' }}>
             <RevealLines
               as="h2"
               lines={['How we operate.']}
@@ -82,7 +80,7 @@ export default function HowWeWork() {
                       fontSize: 'clamp(1.15rem, 2vw, 1.6rem)',
                       fontWeight: 400,
                       color: '#0D0D0D',
-                      marginBottom: '0.625rem',
+                      marginBottom: 'var(--gap-xs)',
                       lineHeight: 1.2,
                       letterSpacing: '-0.01em',
                     }}

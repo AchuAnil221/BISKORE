@@ -7,10 +7,10 @@ import { STRENGTHS, VALUES } from '@/lib/constants';
 
 export default function WhyBiskore() {
   return (
-    <section className="hero-overlap-section whybiskore-section" style={{ position: 'relative', paddingTop: '0rem', paddingBottom: '8rem' }}>
+    <section className="hero-overlap-section section whybiskore-section" style={{ position: 'relative' }}>
       <div className="container">
         {/* Strengths */}
-        <div style={{ marginBottom: '4rem' }}>
+        <div style={{ marginBottom: 'var(--gap-xl)' }}>
           <RevealText
             as="h2"
             style={{
@@ -19,7 +19,7 @@ export default function WhyBiskore() {
               lineHeight: 1.1,
               letterSpacing: '-0.02em',
               color: '#0D0D0D',
-              marginTop: '1.5rem',
+              marginTop: 'var(--gap-xs)',
             }}
           >
             <span className="gradient-text">Strengths</span> that set us apart
@@ -28,7 +28,7 @@ export default function WhyBiskore() {
         <div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
           style={{
-            marginBottom: '8rem',
+            marginBottom: 'var(--gap-xl)',
           }}
         >
           {STRENGTHS.map((item, i) => (

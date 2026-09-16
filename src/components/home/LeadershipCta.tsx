@@ -14,11 +14,9 @@ export default function LeadershipCta() {
     <section
       style={{
         position: 'relative',
-        paddingTop: '4rem',
-        paddingBottom: '8rem',
         overflow: 'hidden',
       }}
-      className="hero-overlap-section leadership-section"
+      className="hero-overlap-section section leadership-section"
     >
 
       <div className="container">
@@ -41,7 +39,7 @@ export default function LeadershipCta() {
             />
 
             <div
-              style={{ marginBottom: '3.5rem' }}
+              style={{ marginBottom: 'var(--gap-lg)' }}
               className="sr sr-d3"
               ref={(el) => {
                 if (!el) return;
@@ -106,7 +104,7 @@ export default function LeadershipCta() {
 
             {/* Contact + CTA */}
             <div
-              style={{ marginTop: '3rem', display: 'flex', gap: '2rem', alignItems: 'center', flexWrap: 'wrap' }}
+              style={{ marginTop: 'var(--gap-lg)', display: 'flex', gap: '2rem', alignItems: 'center', flexWrap: 'wrap' }}
               className="sr sr-d4"
               ref={(el) => {
                 if (!el) return;

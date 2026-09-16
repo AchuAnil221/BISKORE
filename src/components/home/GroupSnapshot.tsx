@@ -12,11 +12,9 @@ export default function GroupSnapshot() {
     <section
       style={{
         position: 'relative',
-        paddingTop: '4rem',
-        paddingBottom: '8rem',
         overflow: 'hidden',
       }}
-      className="hero-overlap-section"
+      className="hero-overlap-section section"
     >
 
 
@@ -41,7 +39,7 @@ export default function GroupSnapshot() {
 
             {/* Stats — slide in below heading */}
             <div
-              style={{ marginTop: '5.5rem', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}
+              style={{ marginTop: 'var(--gap-xl)', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}
               className="sr sr-d3"
               ref={(el) => {
                 if (!el) return;

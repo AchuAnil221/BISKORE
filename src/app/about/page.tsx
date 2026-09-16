@@ -90,8 +90,8 @@ export default function AboutPage() {
                   letterSpacing: '-0.03em',
                   lineHeight: 1.15,
                   color: '#0D0D0D',
-                  marginTop: '0.75rem',
-                  marginBottom: '1.5rem',
+                  marginTop: 'var(--gap-xs)',
+                  marginBottom: 'var(--gap-sm)',
                 }}
               >
                 An Integrated House of <br /> <span className="gradient-text">Trade, Brands & Logistics</span>
@@ -187,7 +187,7 @@ export default function AboutPage() {
                 </div>
                 <h2
                   style={{
-                    marginTop: '0.75rem',
+                    marginTop: 'var(--gap-xs)',
                     fontSize: 'clamp(2rem, 4vw, 3.5rem)',
                     fontWeight: 300,
                     letterSpacing: '-0.03em',
@@ -197,7 +197,7 @@ export default function AboutPage() {
                 >
                   Built to serve every <span className="gradient-text">partner,</span> every sector.
                 </h2>
-                <p style={{ marginTop: '1.25rem', color: '#666', fontSize: '1rem', lineHeight: 1.7 }}>
+                <p style={{ marginTop: 'var(--gap-sm)', color: '#666', fontSize: '1rem', lineHeight: 1.7 }}>
                   Across five sectors, Biskore operates with one consistent purpose — delivering quality, reliability, and long-term value.
                 </p>
               </div>
