@@ -11,6 +11,7 @@ export default function HowWeWork() {
     <section
       style={{
         position: 'relative',
+        paddingTop: 0,
         overflow: 'hidden',
       }}
       className="hero-overlap-section section howwework-section"

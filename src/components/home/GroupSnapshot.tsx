@@ -7,21 +7,18 @@ import { GROUP_SNAPSHOT } from '@/lib/constants';
 
 export default function GroupSnapshot() {
 
-
   return (
     <section
       style={{
         position: 'relative',
-        overflow: 'hidden',
       }}
       className="hero-overlap-section section"
     >
-
-
       <div className="container">
 
-        <div className="snapshot-grid">
-          {/* LEFT — sticky headline */}
+        {/* ── Row 1: Heading (left) + Body text (right) ── */}
+        <div className="snapshot-grid" style={{ marginBottom: 'var(--gap-xl)' }}>
+          {/* LEFT — headline */}
           <div className="snapshot-col-left">
             <RevealLines
               as="h2"
@@ -36,33 +33,10 @@ export default function GroupSnapshot() {
                 color: '#0D0D0D',
               }}
             />
-
-            {/* Stats — slide in below heading */}
-            <div
-              style={{ marginTop: 'var(--gap-xl)', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}
-              className="sr sr-d3"
-              ref={(el) => {
-                if (!el) return;
-                const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { el.classList.add('is-visible'); obs.unobserve(el); } }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-                obs.observe(el);
-              }}
-            >
-              {GROUP_SNAPSHOT.stats.map(({ value, label }) => (
-                <div key={label} style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  <span style={{ fontSize: 'clamp(1.8rem, 3vw, 2.75rem)', fontWeight: 800, color: '#D4AF37', lineHeight: 1, letterSpacing: '-0.02em', whiteSpace: 'nowrap' }}>
-                    {value}
-                  </span>
-                  <span style={{ fontSize: '0.7rem', color: '#888', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600 }}>
-                    {label}
-                  </span>
-                </div>
-              ))}
-            </div>
           </div>
 
-          {/* RIGHT — scrolling content */}
+          {/* RIGHT — body text + CTA */}
           <div className="snapshot-col-right">
-            {/* Body text */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               <RevealText
                 as="p"
@@ -93,39 +67,92 @@ export default function GroupSnapshot() {
 
             {/* CTA link */}
             <div
+              style={{ marginTop: 'var(--gap-md)' }}
               className="sr sr-d4"
-                ref={(el) => {
-                  if (!el) return;
-                  const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { el.classList.add('is-visible'); obs.unobserve(el); } }, { threshold: 0.1 });
-                  obs.observe(el);
+              ref={(el) => {
+                if (!el) return;
+                const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { el.classList.add('is-visible'); obs.unobserve(el); } }, { threshold: 0.1 });
+                obs.observe(el);
+              }}
+            >
+              <Link
+                href="/about"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.625rem',
+                  fontSize: '0.8rem',
+                  fontWeight: 600,
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                  color: '#0D0D0D',
+                  borderBottom: '1px solid #0D0D0D',
+                  paddingBottom: '2px',
+                  transition: 'color 300ms, border-color 300ms',
                 }}
+                className="hover-gold"
               >
-                <Link
-                  href="/about"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.625rem',
-                    fontSize: '0.8rem',
-                    fontWeight: 600,
-                    letterSpacing: '0.12em',
-                    textTransform: 'uppercase',
-                    color: '#0D0D0D',
-                    borderBottom: '1px solid #0D0D0D',
-                    paddingBottom: '2px',
-                    transition: 'color 300ms, border-color 300ms',
-                  }}
-                  className="hover-gold"
-                >
-                  Our Story
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                    <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </Link>
-              </div>
+                Our Story
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </Link>
             </div>
           </div>
         </div>
+      </div>
+      {/* ── Row 2: Full-width 5-stat bar ── */}
+      <div
+        className="sr sr-d3"
+        ref={(el) => {
+          if (!el) return;
+          const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { el.classList.add('is-visible'); obs.unobserve(el); } }, { threshold: 0.1 });
+          obs.observe(el);
+        }}
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(5, 1fr)',
+          width: '100%',
+          padding: '0 2rem',
+          maxWidth: '1600px',
+          margin: '0 auto',
+        }}
+      >
+        {GROUP_SNAPSHOT.stats.map(({ value, label }) => (
+          <div
+            key={label}
+            style={{
+              padding: '2rem 1rem',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '0.5rem',
+              alignItems: 'center',
+              textAlign: 'center',
+            }}
+          >
+            <span style={{
+              fontSize: 'clamp(1.75rem, 2.5vw, 2.5rem)',
+              fontWeight: 700,
+              color: '#D4AF37',
+              lineHeight: 1,
+              letterSpacing: '-0.02em',
+              whiteSpace: 'nowrap',
+            }}>
+              {value}
+            </span>
+            <span style={{
+              fontSize: '0.65rem',
+              color: '#888',
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+              fontWeight: 600,
+            }}>
+              {label}
+            </span>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }
+

@@ -35,13 +35,13 @@ export default function SectorsGrid() {
       style={{
         position: 'relative',
         paddingTop: '4rem',
-        paddingBottom: '8rem',
+        paddingBottom: '4rem',
       }}
       className="hero-overlap-section sectors-section"
     >
       <div className="container">
         {/* Heading & Top CTA */}
-        <div style={{ marginBottom: '4rem', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-start', gap: '2rem' }}>
+        <div style={{ marginBottom: 'var(--gap-lg)', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-start', gap: '2rem' }}>
           <RevealLines
             as="h2"
             lines={['Five sectors.', 'One accountable group.']}

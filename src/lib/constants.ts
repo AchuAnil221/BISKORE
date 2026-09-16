@@ -50,13 +50,15 @@ export const STATS = [
 export const GROUP_SNAPSHOT = {
   heading: "Built across industries. Driven by ambition.",
   description:
-    "Biskore Dynamics LLP is a multi-sector business group operating across five verticals — fresh produce, international trade, lifestyle brands, food & beverages, and pan-India logistics — all under one accountable partnership founded in Kasargod, Kerala.",
+    "Biskore Dynamics LLP is a multi-sector business group operating across five sectors — fresh produce, international trade, lifestyle brands, food & beverages, and pan-India logistics — all under one accountable partnership founded in Kasargod, Kerala.",
   detail:
-    "Every vertical is built on the same principle: direct sourcing, consistent quality, and long-term partnership with farmers, suppliers, and clients alike.",
+    "Every sector is built on the same principle: direct sourcing, consistent quality, and long-term partnership with farmers, suppliers, and clients alike.",
   stats: [
-    { value: "5", label: "Business Sectors" },
-    { value: "2", label: "Consumer Brands" },
-    { value: "Pan-India", label: "Logistics Permit" },
+    { value: "5",         label: "Business Sectors" },
+    { value: "2",         label: "Consumer Brands" },
+    { value: "Pan-India", label: "Logistics Fleet" },
+    { value: "B2B+B2C",   label: "Trade Model" },
+    { value: "2",         label: "Global Markets" },
   ],
 };
 

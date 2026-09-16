@@ -14,6 +14,7 @@ export default function LeadershipCta() {
     <section
       style={{
         position: 'relative',
+        paddingTop: 0,
         overflow: 'hidden',
       }}
       className="hero-overlap-section section leadership-section"
@@ -23,6 +24,7 @@ export default function LeadershipCta() {
         <div className="leadership-grid">
           {/* LEFT — Founder list */ }
           <div className="leadership-col-left">
+            {/* Desktop heading */}
             <RevealLines
               as="h2"
               lines={['Driven by', 'partnership.']}
@@ -36,7 +38,23 @@ export default function LeadershipCta() {
                 color: '#0D0D0D',
                 marginBottom: '1rem',
               }}
+              className="mobile-hide"
             />
+
+            {/* Mobile-only heading */}
+            <h2
+              className="desktop-hide"
+              style={{
+                fontSize: 'clamp(2rem, 4vw, 3.5rem)',
+                fontWeight: 300,
+                lineHeight: 1.1,
+                letterSpacing: '-0.03em',
+                color: '#0D0D0D',
+                marginBottom: '1rem',
+              }}
+            >
+              Founded by<br />Biju &amp; Sujith.
+            </h2>
 
             <div
               style={{ marginBottom: 'var(--gap-lg)' }}

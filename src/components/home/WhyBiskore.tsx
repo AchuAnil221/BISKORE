@@ -7,7 +7,7 @@ import { STRENGTHS, VALUES } from '@/lib/constants';
 
 export default function WhyBiskore() {
   return (
-    <section className="hero-overlap-section section whybiskore-section" style={{ position: 'relative' }}>
+    <section className="hero-overlap-section section whybiskore-section" style={{ position: 'relative', paddingTop: 0 }}>
       <div className="container">
         {/* Strengths */}
         <div style={{ marginBottom: 'var(--gap-xl)' }}>
@@ -22,7 +22,7 @@ export default function WhyBiskore() {
               marginTop: 'var(--gap-xs)',
             }}
           >
-            <span className="gradient-text">Strengths</span> that set us apart
+            Strengths that set us apart
           </RevealText>
         </div>
         <div

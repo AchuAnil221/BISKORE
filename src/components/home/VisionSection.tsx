@@ -25,7 +25,7 @@ export default function VisionSection() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   return (
-    <section className="hero-overlap-section section vision-section" style={{ position: 'relative', overflow: 'hidden' }}>
+    <section className="hero-overlap-section section vision-section" style={{ position: 'relative', paddingTop: 0, overflow: 'hidden' }}>
       {/* Inject keyframe once globally */}
       <style>{MARCH_KEYFRAMES}</style>
 
@@ -53,8 +53,6 @@ export default function VisionSection() {
               lineHeight: 1.85,
               fontWeight: 400,
               color: '#444',
-              borderLeft: '3px solid #FFB71D',
-              paddingLeft: '1.75rem',
             }}>
               {VISION}
             </p>
@@ -64,7 +62,7 @@ export default function VisionSection() {
         {/* Mission per sector — Bento Grid */}
         <div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6"
-          style={{ gap: '1.25rem', marginBottom: 'var(--gap-xl)' }}
+          style={{ gap: '1.25rem', marginBottom: 'var(--gap-xxl)' }}
         >
           {MISSION_PER_SECTOR.map((item, i) => {
             const isHovered = hoveredCard === i;

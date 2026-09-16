@@ -769,6 +769,9 @@ html, body {
 .snapshot-col-left {
   grid-column: 1 / 7;
   padding-bottom: 2rem;
+  position: sticky;
+  top: 120px;
+  align-self: start;
 }
 .snapshot-col-right {
   grid-column: 8 / 13;
@@ -795,6 +798,10 @@ html, body {
   }
   .mobile-hide {
     display: none !important;
+  }
+  /* Show mobile-only heading */
+  .desktop-hide {
+    display: block !important;
   }
   .mobile-card-squish {
     padding: 1.5rem !important;
@@ -839,7 +846,9 @@ html, body {
 .values-mobile-grid { display: none; }
 
 /* Hide mobile-only sticky content on desktop */
+/* Hidden on desktop, visible on mobile */
 .mobile-only-sticky-content { display: none; }
+.desktop-hide { display: none; }
 
 /* ── LeadershipCta grid — desktop defaults ── */
 .leadership-grid {
