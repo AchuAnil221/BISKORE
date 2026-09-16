@@ -103,19 +103,11 @@ export default function GroupSnapshot() {
       </div>
       {/* ── Row 2: Full-width 5-stat bar ── */}
       <div
-        className="sr sr-d3"
+        className="sr sr-d3 snapshot-stats-grid"
         ref={(el) => {
           if (!el) return;
           const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { el.classList.add('is-visible'); obs.unobserve(el); } }, { threshold: 0.1 });
           obs.observe(el);
-        }}
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(5, 1fr)',
-          width: '100%',
-          padding: '0 2rem',
-          maxWidth: '1600px',
-          margin: '0 auto',
         }}
       >
         {GROUP_SNAPSHOT.stats.map(({ value, label }) => (

@@ -318,28 +318,19 @@ export default function ImportExportContent({ sector }: SectorProps) {
                 }}
                 className="mobile-card-squish"
               >
-                {/* Animated Slide-in SVG icon */}
-                <motion.div
-                  animate={{ x: activeCard === idx ? 5 : 0 }}
-                  transition={{ duration: 0.3 }}
-                  style={{
-                    width: 56,
-                    height: 56,
-                    borderRadius: '12px',
-                    background: '#F0F5FF',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    marginBottom: '2rem',
-                    border: '1px solid rgba(25, 118, 210, 0.12)',
-                  }}
-                >
-                  {cat.icon}
-                </motion.div>
-
-                <h3 style={{ fontSize: '1.6rem', fontWeight: 300, color: '#0D0D0D', marginBottom: '0.75rem', letterSpacing: '-0.03em' }}>
-                  {cat.title}
-                </h3>
+                {/* Header Group: Icon + Title */}
+                <div className="sector-card-header">
+                  <motion.div
+                    animate={{ x: activeCard === idx ? 5 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="sector-card-icon"
+                  >
+                    {cat.icon}
+                  </motion.div>
+                  <h3 className="sector-card-title">
+                    {cat.title}
+                  </h3>
+                </div>
                 <p style={{ fontSize: '1.05rem', color: '#555', lineHeight: 1.75, fontWeight: 300, marginBottom: '2rem' }}>
                   {cat.subtitle}
                 </p>
